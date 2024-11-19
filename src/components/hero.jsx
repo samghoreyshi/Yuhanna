@@ -1,10 +1,9 @@
 import Image from "next/image";
 
-
 export default function Hero() {
   return (
     <>
-      <header className="h-[calc(100vh-4rem)] sm:py-20">
+      <header className="h-[calc(100vh)] sm:py-20 bg-[url('/illus/pers-grid.webp')] bg-cover bg-center">
         {/* Hero Container */}
         <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
           {/* Component */}
@@ -35,13 +34,13 @@ export default function Hero() {
               <div className="flex gap-2 items-center">
                 <a
                   href="#"
-                  className="font-IranSans items-center rounded-md bg-black px-6 py-3 font-semibold text-white"
+                  className="font-IranSans items-center rounded-2xl bg-accent px-6 py-3 font-semibold text-white hover:bg-blue-600 transition-all duration-300 ease-in-out"
                 >
                   درخواست مشاوره
                 </a>
                 <a
                   href="#"
-                  className="font-IranSans items-center rounded-md bg-gray-100 border border-gray-300 px-6 py-3 font-semibold text-black"
+                  className="font-IranSans items-center rounded-2xl bg-gray-100 border-2 border-gray-300 px-6 py-3 font-semibold hover:border-accent hover:border-2 text-black transition-all duration-300 ease-in-out"
                 >
                   پرسش و پاسخ
                 </a>
@@ -50,15 +49,15 @@ export default function Hero() {
           </div>
         </div>
       </header>
-      <section className="bg-secondary">
-        <div className="py-20 flex flex-col justify-center items-center gap-10">
+      <section className="bg-white">
+        <div className="py-10 flex flex-col justify-center items-center gap-10">
           <h1 className="font-IranSans mx-10 font-extraBold text-center text-4xl leading-relaxed direction-rtl">
             می‌دونیم که گوشتون از این حرفا پُره، ولی ما
             <br /> فقط اهل حرف و{" "}
             <span className="font-extraBlack text-accent">شعار</span> نیستیم!
           </h1>
           <div className="grid sm:grid-cols-3 gap-5 mx-10 sm:mx-40">
-            <span className="flex flex-col w-full h-full font-IranSans bg-white border border-gray-300 direction-rtl p-10 gap-5 rounded-3xl">
+            <span className="flex flex-col w-full h-full font-IranSans bg-white border border-gray-300 direction-rtl p-10 gap-5 rounded-3xl shadow-lg">
               <img className="" src="/illus/feat-3.webp" alt="" />
               <h2 className="font-extraBlack">همیشه یک قدم جلوتر باشید</h2>
               <p className="text-gray-500">
@@ -67,7 +66,7 @@ export default function Hero() {
                 کرده‌ایم که از ابتدا تا انتهای مسیر همراه شماست.
               </p>
             </span>
-            <span className="flex flex-col w-full h-full font-IranSans bg-white border border-gray-300 direction-rtl p-10 gap-5 rounded-3xl">
+            <span className="flex flex-col w-full h-full font-IranSans bg-white border border-gray-300 direction-rtl p-10 gap-5 rounded-3xl shadow-lg">
               <img className="" src="/illus/feat-2.webp" alt="" />
               <h2 className="font-extraBlack">
                 محیطی آرام و حرفه‌ای برای بهترین بهره‌وری از زمان مطالعه شما!
@@ -79,7 +78,7 @@ export default function Hero() {
                 بپردازید.
               </p>
             </span>
-            <span className="flex flex-col w-full h-full font-IranSans bg-white border border-gray-300 direction-rtl p-10 gap-5 rounded-3xl">
+            <span className="flex flex-col w-full h-full font-IranSans bg-white border border-gray-300 direction-rtl p-10 gap-5 rounded-3xl shadow-lg">
               <img src="/illus/feat-1.webp" alt="" />
               <h2 className="font-extraBlack">
                 یوحنا به شما کمک می‌کند با باورهای نادرست خداحافظی کنید!
@@ -93,13 +92,13 @@ export default function Hero() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col  bg-secondary p-10">
-        <div className="flex items-center font-IranSans direction-rtl gap-5 justify-center">
-          <span className="flex flex-col direction-rtl gap-10">
-            <h1 className="text-6xl text-accent font-extraBlack">
+      <section className="flex flex-col  bg-white p-10">
+        <div className="flex flex-col sm:flex-row items-center font-IranSans direction-rtl gap-5 justify-between mx-5 sm:mx-32 sm:my-10">
+          <span className="flex flex-col direction-rtl gap-10  ">
+            <h1 className="text-4xl sm:text-6xl text-accent font-extraBlack">
               پانسیون حضوری
             </h1>
-            <p className="sm:w-[600px]">
+            <p className="sm:w-[800px]">
               یعنی حواس و هرز رفتن وقت همیشه بزرگترین سدهای درست درس خوندن بوده
               و هست. ما در خانه مطالعه یوحنا با چند ترفند حساب‌شده چاره‌ای برای
               این مسئله پیدا کرده‌ایم! فضای مطالعه که به اندازه اتاق خودتون گرم،
@@ -115,12 +114,42 @@ export default function Hero() {
             />
           </span>
         </div>
-        <div className="flex items-center font-IranSans direction-rtl gap-5 justify-center">
-          <span className="flex flex-col direction-rtl gap-10">
-            <h1 className="text-6xl text-accent font-extraBlack">
+        <div className="grid grid-cols-2 sm:grid-cols-2 gap-2 mx-5 sm:mx-32 my-5">
+          <div className="h-[150px] sm:h-[300px]">
+            <img
+              className="h-full w-full object-cover rounded-lg"
+              src="/photos/h-1.webp"
+              alt=""
+            />
+          </div>
+          <div className="h-[150px] sm:h-[300px]">
+            <img
+              className="h-full w-full object-cover rounded-lg"
+              src="/photos/h-2.webp"
+              alt=""
+            />
+          </div>
+          <div className="h-[150px] sm:h-[300px]">
+            <img
+              className="h-full w-full object-cover rounded-lg"
+              src="/photos/h-3.webp"
+              alt=""
+            />
+          </div>
+          <div className="h-[150px] sm:h-[300px]">
+            <img
+              className="h-full w-full object-cover rounded-lg"
+              src="/photos/h-4.webp"
+              alt=""
+            />
+          </div>
+        </div>
+        <div className="flex flex-col sm:flex-row items-center font-IranSans direction-rtl gap-5 justify-between mx-5 sm:mx-32 sm:my-10">
+          <span className="flex flex-col direction-rtl gap-10 my-5 ">
+            <h1 className="text-4xl sm:text-6xl text-accent font-extraBlack">
               پانسیون آنلاین
             </h1>
-            <p className="sm:w-[600px]">
+            <p className="sm:w-[800px]">
               جلسات آنلاین ما تو ایام کنکور برای کسایی که از راه دور نمی‌تونن
               ثبت نام کنن ولی دلمون می‌خواد بتونن از مزایای فضای مطالعه ما بهره
               ببرن و دسترسی به همراهی و انرژی تیممون بهره‌مند بشن.

@@ -24,8 +24,8 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ease-in-out ${
-        scrolled ? "shadow-sm" : ""
+      className={`fixed top-0 left-0 right-0 z-50transition-all duration-300 ease-in-out ${
+        scrolled ? "shadow-sm bg-white backdrop-blur-2xl" : "bg-white"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8 py-4 sm:py-4 lg:py-8">
@@ -126,14 +126,14 @@ export default function Navbar() {
             </button>
             <div className="sm:flex sm:gap-4">
               <a
-                className="block font-IranSans font-demiBold rounded-md bg-accent px-5 py-2.5 text-sm text-white transition hover:bg-blue-600"
+                className="block font-IranSans font-demiBold rounded-2xl bg-accent px-5 py-2.5 text-sm text-white transition hover:bg-blue-600"
                 href="#"
               >
                 درخواست مشاوره
               </a>
             </div>
             <div className="sm:flex sm:gap-4">
-              <h2 className="text-2xl font-IranSans font-extraBold text-gray-500">۰۲۱-۲۸۱۱۱۱۹٥</h2>
+              <h2 className="hidden md:block text-2xl font-IranSans font-extraBold text-gray-500">۰۲۱-۲۸۱۱۱۱۹٥</h2>
             </div>
           </div>
         </div>
