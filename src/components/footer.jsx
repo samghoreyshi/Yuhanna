@@ -7,7 +7,7 @@ export default function Footer() {
         <footer className=" flex flex-col-reverse sm:flex-row justify-between items-center bg-gray sm:rounded-lg sm:shadow-lg m-4 sm:border bg-white border-gray-300">
           <div className="justify-start items-center w-auto  h-full  flex   p-4 font-IranSans text-sm text-gray-500 font-medium">
             <p className="whitespace-nowrap text-[12px] sm:text-sm">
-              تمام حقوق مادی و معنوی این وبسایت متعلق به پانسون یوحنا می‌باشد ©
+              تمام حقوق مادی و معنوی این وبسایت متعلق خانه یوحنا می‌باشد ©
               2024
             </p>
           </div>
