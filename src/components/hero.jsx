@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <>
-      <header className="h-[calc(100vh)] sm:py-20 bg-[url('/illus/pers-grid.webp')] bg-cover bg-center">
+      <header className="h-[calc(100vh)] sm:py-20 sm:bg-[url('/illus/pers-grid.webp')] bg-cover bg-center">
         {/* Hero Container */}
         <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
           {/* Component */}
@@ -25,7 +25,7 @@ export default function Hero() {
                 <span className="font-extraBlack text-accent">خودت</span> باز
                 میشه!
               </h1>
-              <p className="font-IranSans font-medium mb-6 max-w-lg text-sm text-gray-500 sm:text-lg md:mb-10 lg:mb-12">
+              <p className="font-IranSans font-medium mb-6 max-w-lg text-right text-sm text-gray-500 sm:text-lg md:mb-10 lg:mb-12">
                 هدف یوحنا، تغییر یه باوره، باوری که از کنکور یه دِژ نفوذناپذیر
                 درست کرده؛ ولی راه قبولی در کنکور مشخص‌تر از چیزی که بهتون گفتن!
                 اما خب فوت و فن خودش رو داره.
@@ -50,10 +50,10 @@ export default function Hero() {
         </div>
       </header>
       <section className="bg-white">
-        <div className="py-10 flex flex-col justify-center items-center gap-10">
-          <h1 className="font-IranSans mx-10 font-extraBold text-center text-4xl leading-relaxed direction-rtl">
+        <div className="flex flex-col justify-center items-center gap-10 py-28">
+          <h1 className="font-IranSans mx-10 font-extraBold sm:text-center text-2xl text-right leading-relaxed direction-rtl">
             می‌دونیم که گوشتون از این حرفا پُره، ولی ما
-            <br /> فقط اهل حرف و{" "}
+            فقط اهل حرف و{" "}
             <span className="font-extraBlack text-accent">شعار</span> نیستیم!
           </h1>
           <div className="grid sm:grid-cols-3 gap-5 mx-10 sm:mx-40">

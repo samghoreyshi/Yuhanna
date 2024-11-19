@@ -106,7 +106,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="block rounded bg-gray-200 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden"
+              className="block rounded-xl bg-gray-200 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden"
             >
               <span className="sr-only">Toggle menu</span>
               <svg
