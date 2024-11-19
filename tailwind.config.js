@@ -12,7 +12,8 @@ module.exports = {
       },
       fontWeight: {
         medium: 400,   // Corresponds to IranSans Medium
-        demiBold: 600,  // Corresponds to IranSans DemiBold
+        demiBold: 500,  // Corresponds to IranSans DemiBold
+        extraBold: 600,  // Corresponds to IranSans ExtraBold
         extraBlack: 700 // Corresponds to IranSans ExtraBlack
       },
       colors: {

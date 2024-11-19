@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <>
-      <header className="sm:bg-[url(/illus/pers-grid.webp)] bg-cover bg-center">
+      <header className="h-[calc(100vh-4rem)] sm:py-20">
         {/* Hero Container */}
         <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
           {/* Component */}
@@ -18,15 +18,15 @@ export default function Hero() {
             <div className="flex flex-col direction-rtl ">
               {/* Hero Title */}
               <h1
-                className="font-demiBold mb-4 text-4xl md:text-6xl font-IranSans"
+                className="font-extraBold mb-4 text-4xl md:text-6xl font-IranSans"
                 style={{ lineHeight: "1.35" }}
               >
                 کورترین گره زندگیت هم فقط با دستای{" "}
                 <span className="font-extraBlack text-accent">خودت</span> باز
                 میشه!
               </h1>
-              <p className="font-IranSans font-medium mb-6 max-w-lg text-sm text-gray-500 sm:text-xl md:mb-10 lg:mb-12">
-                هدف یوحنا: تغییر یه باوره، باوری که از کنکور به در نفوذناپذیر
+              <p className="font-IranSans font-medium mb-6 max-w-lg text-sm text-gray-500 sm:text-lg md:mb-10 lg:mb-12">
+                هدف یوحنا، تغییر یه باوره، باوری که از کنکور یه دِژ نفوذناپذیر
                 درست کرده؛ ولی راه قبولی در کنکور مشخص‌تر از چیزی که بهتون گفتن!
                 اما خب فوت و فن خودش رو داره.
               </p>
@@ -51,19 +51,19 @@ export default function Hero() {
       </header>
       <section className="bg-secondary">
         <div className="py-20 flex flex-col justify-center items-center gap-10">
-          <h1 className="font-IranSans mx-10 font-demiBold text-center text-4xl leading-relaxed direction-rtl">
-            می‌دونیم به گوشتون از این حرفا پُره، ولی ما
+          <h1 className="font-IranSans mx-10 font-extraBold text-center text-4xl leading-relaxed direction-rtl">
+            می‌دونیم که گوشتون از این حرفا پُره، ولی ما
             <br /> فقط اهل حرف و{" "}
             <span className="font-extraBlack text-accent">شعار</span> نیستیم!
           </h1>
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-5 mx-10 sm:mx-40">
+          <div className="grid sm:grid-cols-3 gap-5 mx-10 sm:mx-40">
             <span className="flex flex-col w-full h-full font-IranSans bg-white border border-gray-300 direction-rtl p-10 gap-5 rounded-3xl">
               <img className="" src="/illus/feat-3.webp" alt="" />
               <h2 className="font-extraBlack">همیشه یک قدم جلوتر باشید</h2>
               <p className="text-gray-500">
                 در یوحنا، هدف ما این است که شما به صورت پیوسته و هدفمند درس
                 بخوانید. برای رسیدن به این هدف، ما سیستم نظارت دقیقی طراحی
-                کرده‌ایم که از ابتدا تا انتهای مسیر همراه شماست.a
+                کرده‌ایم که از ابتدا تا انتهای مسیر همراه شماست.
               </p>
             </span>
             <span className="flex flex-col w-full h-full font-IranSans bg-white border border-gray-300 direction-rtl p-10 gap-5 rounded-3xl">

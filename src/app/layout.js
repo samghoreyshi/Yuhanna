@@ -2,7 +2,7 @@ import "./globals.css";
 
 
 export const metadata = {
-  title: "پانسیون یوحنا",
+  title: "خانه یوحنا",
   description: "خانه یوحنا مکانی برای یادگیری در بهترین زمان",
 };
 
