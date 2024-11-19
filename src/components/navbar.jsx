@@ -138,7 +138,7 @@ export default function Navbar() {
           </div>
         </div>
         <a className="block text-accent" href="#">
-          <img src="/logo/logo.svg" alt="Logo" width={100} height={100} />
+          <img src="/logo/logo.png" alt="Logo" width={100} height={100} />
         </a>
       </div>
 
