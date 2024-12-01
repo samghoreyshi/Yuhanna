@@ -95,7 +95,7 @@ export default function Hero() {
       </section>
      
       {/* Counseling Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-accent/5 to-transparent">
+      <section id="counseling" className="relative overflow-hidden bg-gradient-to-b from-accent/5 to-transparent">
         {/* Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -right-1/4 -top-1/4 w-1/2 h-1/2 bg-accent/5 rounded-full blur-3xl" />
@@ -199,75 +199,73 @@ export default function Hero() {
                 </div>
                 
                 {/* Stats Overlay */}
-                <div className="absolute -bottom-20 right-1/2 translate-x-1/2 flex gap-4">
-                  {[
-                    { 
-                      value: '۸۵٪', 
-                      label: 'خواب راحت‌تر', 
-                      subtext: 'بدون استرس امتحان',
-                      icon: (
-                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                        </svg>
-                      ),
-                      color: 'from-indigo-500 to-purple-500'
-                    },
-                    { 
-                      value: '۲۰۰+', 
-                      label: 'لبخند در روز', 
-                      subtext: 'با برنامه‌ریزی درست',
-                      icon: (
-                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      ),
-                      color: 'from-amber-400 to-orange-500'
-                    },
-                    { 
-                      value: '۵۰۰۰+', 
-                      label: 'فنجان چای',
-                      subtext: 'همراه با مشاوره آنلاین',
-                      icon: (
-                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <div className="relative z-20 mx-auto px-4 -mt-24 sm:-mt-16 mb-8">
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    {[
+                      { 
+                        value: '۸۵٪', 
+                        label: 'خواب راحت‌تر', 
+                        subtext: 'بدون استرس امتحان',
+                        icon: (
+                          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                           </svg>
-                        </svg>
-                      ),
-                      color: 'from-teal-400 to-emerald-500'
-                    },
-                  ].map((stat, i) => (
-                    <div 
-                      key={i} 
-                      className="group relative bg-white p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 w-[180px]"
-                    >
-                      {/* Animated Background */}
-                      <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                      
-                      {/* Content */}
-                      <div className="relative flex flex-col items-center text-center gap-2 p-2">
-                        {/* Icon */}
-                        <div className="w-12 h-12 rounded-xl bg-accent/10 group-hover:bg-white/10 flex items-center justify-center text-accent group-hover:text-white transition-colors duration-300">
-                          {stat.icon}
-                        </div>
+                        ),
+                        color: 'from-indigo-500 to-purple-500'
+                      },
+                      { 
+                        value: '۲۰۰+', 
+                        label: 'دانش‌آموز موفق',
+                        subtext: 'قبولی در برترین دانشگاه‌ها',
+                        icon: (
+                          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        ),
+                        color: 'from-amber-400 to-orange-500'
+                      },
+                      { 
+                        value: '۸۰٪', 
+                        label: 'صرفه جویی در زمان',
+                        subtext: 'مطالعه هدفمند و بهینه',
+                        icon: (
+                          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        ),
+                        color: 'from-teal-400 to-emerald-500'
+                      },
+                    ].map((stat, i) => (
+                      <div 
+                        key={i} 
+                        className="group relative w-[280px] sm:w-[200px] bg-white p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                      >
+                        {/* Animated Background */}
+                        <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                         
-                        {/* Text */}
-                        <div>
-                          <div className="font-IranSans font-bold text-2xl text-gray-900 group-hover:text-white transition-colors duration-300">
-                            {stat.value}
+                        {/* Content */}
+                        <div className="relative flex flex-col items-center text-center gap-2">
+                          {/* Icon */}
+                          <div className="w-12 h-12 rounded-xl bg-accent/10 group-hover:bg-white/10 flex items-center justify-center text-accent group-hover:text-white transition-colors duration-300">
+                            {stat.icon}
                           </div>
-                          <div className="font-IranSans text-sm font-bold text-gray-800 group-hover:text-white transition-colors duration-300">
-                            {stat.label}
-                          </div>
-                          <div className="font-IranSans text-xs text-gray-600 group-hover:text-white/80 transition-colors duration-300 mt-1">
-                            {stat.subtext}
+                          
+                          {/* Text */}
+                          <div>
+                            <div className="font-IranSans font-bold text-2xl text-gray-900 group-hover:text-white transition-colors duration-300">
+                              {stat.value}
+                            </div>
+                            <div className="font-IranSans text-sm font-bold text-gray-800 group-hover:text-white transition-colors duration-300">
+                              {stat.label}
+                            </div>
+                            <div className="font-IranSans text-xs text-gray-600 group-hover:text-white/80 transition-colors duration-300 mt-1">
+                              {stat.subtext}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -275,106 +273,11 @@ export default function Hero() {
         </div>
       </section>
      
-      {/* Programs Section */}
-      <Programs />
-      
-      {/* Bento Grid Section */}
-      <section className="bg-white py-24">
-        <div className="mx-auto max-w-7xl px-5">
-          <div className="text-center mb-16">
-            <span className="bg-accent/10 text-accent px-4 py-2 rounded-xl font-IranSans font-bold text-sm inline-block mb-4">
-              گالری تصاویر
-            </span>
-            <h2 className="font-IranSans font-extraBold text-3xl">
-              لحظات <span className="text-accent font-extraBlack">ماندگار</span> در یوحنا
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[240px] gap-4 direction-rtl">
-            {/* Large Feature Image */}
-            <div className="relative col-span-1 sm:col-span-2 row-span-2 overflow-hidden rounded-3xl group">
-              <img
-                src="/images/gallery/h-5.webp"
-                alt="کلاس درس"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-                <div className="absolute bottom-6 right-6 text-white">
-                  <h3 className="font-IranSans font-bold text-xl mb-2">فضای آموزشی مدرن</h3>
-                  <p className="font-IranSans text-sm text-gray-200">محیطی ایده‌آل برای یادگیری</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Regular Grid Items */}
-            <div className="relative overflow-hidden rounded-3xl group">
-              <img
-                src="/images/gallery/h-6.webp"
-                alt="مشاوره"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-                <div className="absolute bottom-4 right-4 text-white">
-                  <h3 className="font-IranSans font-bold">جلسات مشاوره</h3>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative overflow-hidden rounded-3xl group">
-              <img
-                src="/images/gallery/h-4.webp"
-                alt="کتابخانه"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-                <div className="absolute bottom-4 right-4 text-white">
-                  <h3 className="font-IranSans font-bold">کتابخانه تخصصی</h3>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative overflow-hidden rounded-3xl group">
-              <img
-                src="/images/gallery/h-3.webp"
-                alt="آزمون"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-                <div className="absolute bottom-4 right-4 text-white">
-                  <h3 className="font-IranSans font-bold">سالن آزمون</h3>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative overflow-hidden rounded-3xl group">
-              <img
-                src="/images/gallery/h-2.webp"
-                alt="کلاس"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-                <div className="absolute bottom-4 right-4 text-white">
-                  <h3 className="font-IranSans font-bold">کلاس‌های رفع اشکال</h3>
-                </div>
-              </div>
-            </div>
-
-            {/* Wide Image */}
-            <div className="relative col-span-1 sm:col-span-2 overflow-hidden rounded-3xl group">
-              <img
-                src="/images/gallery/h-1.webp"
-                alt="فضای مطالعه"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-                <div className="absolute bottom-4 right-4 text-white">
-                  <h3 className="font-IranSans font-bold">سالن مطالعه اختصاصی</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section id="pension">
+        <Programs />
       </section>
+      
+
 
       {/* Exam Section */}
       <section className="bg-white py-24 overflow-hidden">
@@ -403,7 +306,7 @@ export default function Hero() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <path d="M22 11.08V12a10 10 0 01-5.93-9.14" />
                       <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
                   </div>
@@ -511,6 +414,103 @@ export default function Hero() {
                 >
                   مشاهده نمونه سوالات
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            {/* Bento Grid Section */}
+            <section className="bg-white py-24">
+        <div className="mx-auto max-w-7xl px-5">
+          <div className="text-center mb-16">
+            <span className="bg-accent/10 text-accent px-4 py-2 rounded-xl font-IranSans font-bold text-sm inline-block mb-4">
+              گالری تصاویر
+            </span>
+            <h2 className="font-IranSans font-extraBold text-3xl">
+              لحظات <span className="text-accent font-extraBlack">ماندگار</span> در یوحنا
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[240px] gap-4 direction-rtl">
+            {/* Large Feature Image */}
+            <div className="relative col-span-1 sm:col-span-2 row-span-2 overflow-hidden rounded-3xl group">
+              <img
+                src="/images/gallery/h-5.webp"
+                alt="کلاس درس"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
+                <div className="absolute bottom-6 right-6 text-white">
+                  <h3 className="font-IranSans font-bold text-xl mb-2">فضای آموزشی مدرن</h3>
+                  <p className="font-IranSans text-sm text-gray-200">محیطی ایده‌آل برای یادگیری</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Regular Grid Items */}
+            <div className="relative overflow-hidden rounded-3xl group">
+              <img
+                src="/images/gallery/h-6.webp"
+                alt="مشاوره"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
+                <div className="absolute bottom-4 right-4 text-white">
+                  <h3 className="font-IranSans font-bold">جلسات مشاوره</h3>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-3xl group">
+              <img
+                src="/images/gallery/h-4.webp"
+                alt="کتابخانه"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
+                <div className="absolute bottom-4 right-4 text-white">
+                  <h3 className="font-IranSans font-bold">کتابخانه تخصصی</h3>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-3xl group">
+              <img
+                src="/images/gallery/h-3.webp"
+                alt="آزمون"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
+                <div className="absolute bottom-4 right-4 text-white">
+                  <h3 className="font-IranSans font-bold">سالن آزمون</h3>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-3xl group">
+              <img
+                src="/images/gallery/h-2.webp"
+                alt="کلاس"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
+                <div className="absolute bottom-4 right-4 text-white">
+                  <h3 className="font-IranSans font-bold">کلاس‌های رفع اشکال</h3>
+                </div>
+              </div>
+            </div>
+
+            {/* Wide Image */}
+            <div className="relative col-span-1 sm:col-span-2 overflow-hidden rounded-3xl group">
+              <img
+                src="/images/gallery/h-1.webp"
+                alt="فضای مطالعه"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
+                <div className="absolute bottom-4 right-4 text-white">
+                  <h3 className="font-IranSans font-bold">سالن مطالعه اختصاصی</h3>
+                </div>
               </div>
             </div>
           </div>

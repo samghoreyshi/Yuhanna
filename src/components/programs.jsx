@@ -48,7 +48,7 @@ export default function Programs() {
       ],
       stats: [
         { value: '+۵۰۰', label: 'دانش‌آموز موفق' },
-        { value: '۲۴/۷', label: 'پشتیبانی' },
+        { value: 'مداوم', label: 'پشتیبانی' },
         { value: '۹۸٪', label: 'رضایت والدین' },
       ],
       image: '/images/inp-c.webp',
@@ -112,7 +112,7 @@ export default function Programs() {
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black font-IranSans mb-6">
-            برنامه‌های آموزشی
+            پانسیون یوحنا
           </h2>
           <p className="text-gray-600 font-IranSans text-lg leading-relaxed">
             انتخاب کنید، پیشرفت کنید، موفق شوید!

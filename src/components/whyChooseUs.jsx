@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
       gradient: "from-cyan-500 to-blue-500",
     },
     {
-      title: "پشتیبانی ۲۴ ساعته",
+      title: "پشتیبانی مداوم",
       description: "همیشه و همه جا در کنار شما هستیم",
       icon: (
         <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -43,6 +43,13 @@ export default function WhyChooseUs() {
       ),
       gradient: "from-amber-500 to-orange-500",
     },
+  ];
+
+  const stats = [
+    { number: "۱۰۰۰+", label: "دانش‌آموز موفق" },
+    { number: "۹۸٪", label: "رضایت والدین" },
+    { number: "۵۰+", label: "استاد مجرب" },
+    { number: "۹۵٪", label: "رضایت از پشتیبانی" },
   ];
 
   return (
@@ -56,74 +63,70 @@ export default function WhyChooseUs() {
       <div className="container mx-auto px-4 relative">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <motion.div 
+          <motion.h2 
+            className="text-4xl font-IranSans font-extraBlack mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-extraBold font-IranSans mb-4">
-              چرا <span className="text-accent">یوحنا</span> را انتخاب کنیم؟
-            </h2>
-          </motion.div>
-          <motion.div 
+            چرا <span className="text-accent">یوحنا</span> را انتخاب کنید؟
+          </motion.h2>
+          <motion.p 
+            className="text-gray-600 text-lg font-IranSans"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
           >
-            <p className="text-gray-600 font-IranSans text-lg max-w-2xl mx-auto">
-              ما با ترکیبی از تجربه، تخصص و نوآوری، محیطی ایده‌آل برای یادگیری فراهم می‌کنیم
-            </p>
-          </motion.div>
+            با بهترین امکانات و پشتیبانی، همراه شما در مسیر موفقیت هستیم
+          </motion.p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {features.map((feature, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-              className="relative group"
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="group relative bg-white p-4 lg:p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className="h-full bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-                {/* Feature Icon */}
-                <div className={`w-16 h-16 rounded-2xl bg-accent/10 p-4 mb-6 text-accent transform group-hover:scale-110 transition-transform duration-300`}>
+              {/* Gradient Background */}
+              <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+              
+              {/* Content */}
+              <div className="relative text-right">
+                {/* Icon */}
+                <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-white/10 group-hover:text-white transition-colors duration-300 mb-4 lg:mb-5 mr-auto">
                   {feature.icon}
                 </div>
                 
-                {/* Feature Content */}
-                <h3 className="text-xl font-extraBlack font-IranSans mb-4 text-right">
+                {/* Text */}
+                <h3 className="text-lg lg:text-xl font-IranSans font-bold mb-2 lg:mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 font-IranSans text-right">
+                <p className="text-sm lg:text-base text-gray-600 font-IranSans group-hover:text-white/80 transition-colors duration-300">
                   {feature.description}
                 </p>
-
-                {/* Hover Effect */}
-                <div className="absolute inset-0 rounded-3xl bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </motion.div>
           ))}
         </div>
 
         {/* Stats Section */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { number: "۱۰۰۰+", label: "دانش‌آموز موفق" },
-            { number: "۹۸٪", label: "رضایت والدین" },
-            { number: "۵۰+", label: "استاد مجرب" },
-            { number: "۹۵٪", label: "رضایت از پشتیبانی" },
-          ].map((stat, index) => (
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="text-3xl font-extraBold font-IranSans text-accent mb-2">
+              <div className="text-4xl font-IranSans font-bold text-gray-900 mb-2">
                 {stat.number}
               </div>
               <div className="text-gray-600 font-IranSans">

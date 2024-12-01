@@ -22,6 +22,13 @@ export default function Navbar() {
     };
   }, [scrolled]);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
@@ -33,72 +40,67 @@ export default function Navbar() {
           <nav aria-label="Global" className="hidden md:block font-IranSans ">
             <ul className="flex items-center gap-6 text-md">
               <li>
-                <a
+                <button
+                  onClick={() => scrollToSection('contact')}
                   className="text-gray-500 transition hover:text-accent"
-                  href="#"
-                >
-                  {" "}
-                  درباره‌ما{" "}
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-500 transition hover:text-accent"
-                  href="#"
                 >
                   {" "}
                   تماس با ما{" "}
-                </a>
+                </button>
               </li>
-
               <li>
-                <a
+                <button
+                  onClick={() => scrollToSection('about')}
                   className="text-gray-500 transition hover:text-accent"
-                  href="#"
                 >
                   {" "}
-                  رویدادها{" "}
-                </a>
+                  درباره‌ما{" "}
+                </button>
               </li>
-
               <li>
-                <a
+                <button
+                  onClick={() => scrollToSection('pension')}
                   className="text-gray-500 transition hover:text-accent"
-                  href="#"
-                >
-                  {" "}
-                  آزمون{" "}
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="text-gray-500 transition hover:text-accent"
-                  href="#"
                 >
                   {" "}
                   پانسیون{" "}
-                </a>
+                </button>
               </li>
-
               <li>
-                <a
+                <button
+                  onClick={() => scrollToSection('books')}
                   className="text-gray-500 transition hover:text-accent"
-                  href="#"
                 >
                   {" "}
-                  آموزش{" "}
-                </a>
+                 کتاب{" "}
+                </button>
               </li>
-
               <li>
-                <a
+                <button
+                  onClick={() => scrollToSection('counseling')}
                   className="text-gray-500 transition hover:text-accent"
-                  href="#"
                 >
                   {" "}
                   مشاوره{" "}
-                </a>
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollToSection('education')}
+                  className="text-gray-500 transition hover:text-accent"
+                >
+                  {" "}
+                  آموزش{" "}
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollToSection('hero')}
+                  className="text-gray-500 transition hover:text-accent"
+                >
+                  {" "}
+                  خانه{" "}
+                </button>
               </li>
             </ul>
           </nav>
@@ -125,12 +127,12 @@ export default function Navbar() {
               </svg>
             </button>
             <div className="sm:flex sm:gap-4">
-              <a
+              <button
+                onClick={() => scrollToSection('counseling')}
                 className="block font-IranSans font-demiBold rounded-2xl bg-accent px-5 py-2.5 text-sm text-white transition hover:bg-blue-600"
-                href="#"
               >
                 درخواست مشاوره
-              </a>
+              </button>
             </div>
             <div className="sm:flex sm:gap-4">
               <h2 className="hidden md:block text-2xl font-IranSans font-extraBold text-gray-500">۰۲۱-۲۸۱۱۱۱۹٥</h2>
@@ -148,60 +150,52 @@ export default function Navbar() {
             <nav className="font-IranSans border-b-gray-300 border-b shadow-md">
               <ul className="flex flex-col space-y-4 text-right p-4">
                 <li>
-                  <a
+                  <button
+                    onClick={() => scrollToSection('contact')}
                     className="block text-gray-500 transition hover:text-accent"
-                    href="#"
-                  >
-                    درباره‌ما
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="block text-gray-500 transition hover:text-accent"
-                    href="#"
                   >
                     تماس با ما
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a
+                  <button
+                    onClick={() => scrollToSection('about')}
                     className="block text-gray-500 transition hover:text-accent"
-                    href="#"
                   >
-                    رویدادها
-                  </a>
+                    درباره‌ما
+                  </button>
                 </li>
                 <li>
-                  <a
+                  <button
+                    onClick={() => scrollToSection('pension')}
                     className="block text-gray-500 transition hover:text-accent"
-                    href="#"
-                  >
-                    آزمون
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="block text-gray-500 transition hover:text-accent"
-                    href="#"
                   >
                     پانسیون
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a
+                  <button
+                    onClick={() => scrollToSection('counseling')}
                     className="block text-gray-500 transition hover:text-accent"
-                    href="#"
-                  >
-                    آموزش
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="block text-gray-500 transition hover:text-accent"
-                    href="#"
                   >
                     مشاوره
-                  </a>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => scrollToSection('education')}
+                    className="block text-gray-500 transition hover:text-accent"
+                  >
+                    آموزش
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => scrollToSection('hero')}
+                    className="block text-gray-500 transition hover:text-accent"
+                  >
+                    خانه
+                  </button>
                 </li>
               </ul>
             </nav>
