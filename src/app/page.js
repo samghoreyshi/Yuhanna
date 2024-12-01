@@ -20,7 +20,6 @@ export default function Home() {
       <section id="education">
         <Courses />
       </section>
-
       <section id="books">
         <Books />
       </section>

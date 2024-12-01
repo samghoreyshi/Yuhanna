@@ -154,6 +154,7 @@ export default function Hero() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                       </svg>
                     ),
+                    color: 'from-indigo-500 to-purple-500'
                   },
                 ].map((feature, i) => (
                   <div 
@@ -272,10 +273,13 @@ export default function Hero() {
           </div>
         </div>
       </section>
-     
+
+
       <section id="pension">
-        <Programs />
+        <Programs/>
       </section>
+     
+      
       
 
 
@@ -306,8 +310,7 @@ export default function Hero() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
-                      <path d="M22 11.08V12a10 10 0 01-5.93-9.14" />
-                      <polyline points="22 4 12 14.01 9 11.01" />
+                      <path d="M22 11.08V12a10 10 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 0118 0 9.003 9.003 0 012-21a10 10 0 01-8.646-3.646" />
                     </svg>
                   </div>
                   <div className="text-right">
@@ -405,7 +408,7 @@ export default function Hero() {
                 >
                   ثبت‌نام در آزمون
                   <svg className="w-5 h-5 mr-2 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </a>
                 <a
@@ -419,6 +422,77 @@ export default function Hero() {
           </div>
         </div>
       </section>
+
+      {/* UClub Marathon Section */}
+      <section id="uclub" className="relative overflow-hidden bg-blue-600 text-right" dir="rtl">
+        {/* Image with Overlay */}
+        <div className="absolute inset-y-0 left-0 w-full md:w-1/2">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-600/90 to-blue-600 z-10" />
+          <Image
+            src="/images/marathon.webp"
+            alt="Marathon runners"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-20 max-w-screen-xl mx-auto px-4 py-28 sm:px-6 lg:px-8">
+          <div className="ml-auto mr-0 md:mr-8 max-w-xl">
+            <span className="inline-flex items-center px-4 py-2 mb-6 rounded-full bg-white/10 text-white font-IranSans font-demiBold text-sm backdrop-blur-sm border border-white/20">
+              یوکلاب - باشگاه دونده‌ها
+              <svg className="w-5 h-5 mr-2 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </span>
+
+            <h2 className="text-4xl font-extraBold font-IranSans text-white sm:text-5xl leading-tight">
+              دومون نشه؟!
+              <span className="block text-blue-200 mt-8 leading-relaxed">اینجا قراره با دویدن اتفاقای خوب رقم بزنیم</span>
+            </h2>
+
+            <p className="mt-6 text-lg leading-relaxed text-blue-100 font-IranSans font-medium">
+              در باشگاه یوکلاب، ما معتقدیم که دویدن فقط یک ورزش نیست، بلکه یک سبک زندگی است. به جمع دونده‌های حرفه‌ای ما بپیوندید و در ماراتن‌های هیجان‌انگیز شرکت کنید.
+            </p>
+
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-start">
+              <button className="group relative inline-flex items-center justify-center px-8 py-3 text-base font-IranSans font-demiBold rounded-xl text-blue-600 bg-white hover:bg-blue-50 transition duration-300 overflow-hidden shadow-lg shadow-blue-900/20">
+                <span className="relative">
+                  ثبت‌نام در ماراتن
+                  <span className="absolute bottom-0 right-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                </span>
+              </button>
+              <button className="group relative inline-flex items-center justify-center px-8 py-3 text-base font-IranSans font-demiBold rounded-xl text-white border-2 border-white/20 hover:border-white/40 hover:bg-white/10 backdrop-blur-sm transition duration-300">
+                <span className="relative flex items-center">
+                  اطلاعات بیشتر
+                  <svg className="w-5 h-5 mr-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            {/* Stats */}
+            <div className="mt-16 grid grid-cols-3 gap-8 border-t border-white/10 pt-8">
+              <div className="text-center">
+                <p className="text-3xl font-black font-IranSans text-white">+۱۰۰۰</p>
+                <p className="mt-1 text-blue-200 font-IranSans font-demiBold">شرکت‌کننده</p>
+              </div>
+              <div className="text-center border-r border-l border-white/10">
+                <p className="text-3xl font-black font-IranSans text-white">۴۲</p>
+                <p className="mt-1 text-blue-200 font-IranSans font-demiBold">کیلومتر مسیر</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-black font-IranSans text-white">۵</p>
+                <p className="mt-1 text-blue-200 font-IranSans font-demiBold">سال سابقه</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
             {/* Bento Grid Section */}
             <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-5">
