@@ -72,11 +72,11 @@ export default function Courses() {
           دوره‌های <span className="text-accent font-extraBlack">آموزشی</span> ما
         </h2>
         
-        <div className="relative px-4 md:px-32"> 
+        <div className="relative px-2 md:px-2"> 
           {/* Navigation Buttons - Hidden on mobile */}
           <button 
             onClick={() => scroll('right')} 
-            className="hidden md:block absolute right-16 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-white transition-colors duration-300 text-accent hover:text-accent/80"
+            className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-white transition-colors duration-300 text-accent hover:text-accent/80"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -84,7 +84,7 @@ export default function Courses() {
           </button>
           <button 
             onClick={() => scroll('left')} 
-            className="hidden md:block absolute left-16 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-white transition-colors duration-300 text-accent hover:text-accent/80"
+            className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-white transition-colors duration-300 text-accent hover:text-accent/80"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -92,8 +92,8 @@ export default function Courses() {
           </button>
 
           {/* Gradient Overlays - Adjusted for mobile */}
-          <div className="absolute left-0 top-0 bottom-0 w-4 md:w-32 bg-gradient-to-r from-white to-transparent z-[1] pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-4 md:w-32 bg-gradient-to-l from-white to-transparent z-[1] pointer-events-none" />
+          {/* <div className="absolute left-0 top-0 bottom-0 w-4 md:w-16 bg-gradient-to-r from-white to-transparent z-[1] pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-4 md:w-16 bg-gradient-to-l from-white to-transparent z-[1] pointer-events-none" /> */}
 
           {/* Carousel Container */}
           <div 

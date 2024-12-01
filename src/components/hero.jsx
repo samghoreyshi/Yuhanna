@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Programs from "./programs";
 
 export default function Hero() {
   return (
@@ -94,104 +95,189 @@ export default function Hero() {
       </section>
      
       {/* Counseling Section */}
-      <section className="bg-gradient-to-br from-accent/5 to-accent/10 py-20">
-        <div className="mx-auto max-w-7xl px-5">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Content Side */}
-            <div className="direction-rtl space-y-8">
-              <div className="inline-block">
-                <span className="bg-accent/10 text-accent px-4 py-2 rounded-xl font-IranSans font-bold text-sm">
-                  مشاوره تخصصی کنکور
-                </span>
-              </div>
-              <h2 className="font-IranSans font-extraBold text-3xl sm:text-4xl leading-tight">
-                مشاوره‌ای متفاوت برای
-                <span className="text-accent font-extraBlack"> آینده‌ای درخشان</span>
-              </h2>
-              <p className="font-IranSans text-gray-600 leading-relaxed">
-                در یوحنا، مشاوره فقط یک گفتگوی ساده نیست. ما با استفاده از تکنولوژی‌های نوین و
-                روش‌های علمی، مسیر موفقیت شما را به دقت برنامه‌ریزی می‌کنیم.
-              </p>
-　　 　 　 　 {/* Features Grid */}
-              <div className="grid sm:grid-cols-2 gap-6 mt-8">
-                {/* Feature 1 */}
-                <div className="bg-white p-6 rounded-2xl shadow-sm">
-                  <div className="h-12 w-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                    </svg>
-                  </div>
-                  <h3 className="font-IranSans font-bold text-lg mb-2">برنامه‌ریزی هوشمند</h3>
-                  <p className="font-IranSans text-gray-600 text-sm">
-                    برنامه‌ای منحصر به فرد، متناسب با شرایط و اهداف شما
-                  </p>
-                </div>
-　 　 　 　 　 {/* Feature 2 */}
-                <div className="bg-white p-6 rounded-2xl shadow-sm">
-                  <div className="h-12 w-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="font-IranSans font-bold text-lg mb-2">پشتیبانی ۲۴/۷</h3>
-                  <p className="font-IranSans text-gray-600 text-sm">
-                    در هر ساعت از شبانه‌روز در کنار شما هستیم
-                  </p>
-                </div>
-　 　 　 　 　 {/* Feature 3 */}
-                <div className="bg-white p-6 rounded-2xl shadow-sm">
-                  <div className="h-12 w-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                  </div>
-                  <h3 className="font-IranSans font-bold text-lg mb-2">تضمین پیشرفت</h3>
-                  <p className="font-IranSans text-gray-600 text-sm">
-                    با روش‌های علمی و اصولی، پیشرفت شما را تضمین می‌کنیم
-                  </p>
-                </div>
-　 　 　 　 　 {/* Feature 4 */}
-                <div className="bg-white p-6 rounded-2xl shadow-sm">
-                  <div className="h-12 w-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <h3 className="font-IranSans font-bold text-lg mb-2">مشاوره انگیزشی</h3>
-                  <p className="font-IranSans text-gray-600 text-sm">
-                    کمک به حفظ انگیزه و تمرکز در طول مسیر آمادگی
-                  </p>
-                </div>
+      <section className="relative overflow-hidden bg-gradient-to-b from-accent/5 to-transparent">
+        {/* Decorative Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -right-1/4 -top-1/4 w-1/2 h-1/2 bg-accent/5 rounded-full blur-3xl" />
+          <div className="absolute -left-1/4 -bottom-1/4 w-1/2 h-1/2 bg-accent/5 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container mx-auto px-4 py-20 md:py-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content - Now on the right side for RTL */}
+            <div className="lg:order-2 space-y-8 text-right">
+              <div className="space-y-4">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extraBold font-IranSans text-gray-900 leading-tight">
+                  مشاوره تخصصی 
+                  <span className="text-accent block">کنکور و تحصیلی</span>
+                </h1>
+                <p className="text-lg md:text-xl text-gray-600 font-IranSans leading-relaxed">
+                  با بهترین مشاوران تحصیلی کشور به موفقیت برسید
+                </p>
               </div>
 
-              {/* CTA Button */}
-              <div className="pt-6">
-                <a
-                  href="#"
-                  className="font-IranSans inline-flex items-center rounded-2xl bg-accent px-8 py-4 font-semibold text-white hover:bg-blue-600 transition-all duration-300 ease-in-out"
-                >
-                  درخواست مشاوره رایگان
-                  <svg className="w-5 h-5 mr-2 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
+              {/* Features Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { 
+                    title: 'مشاوره آنلاین',
+                    desc: 'دسترسی ۲۴ ساعته به مشاوران',
+                    icon: (
+                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    title: 'برنامه شخصی',
+                    desc: 'متناسب با شرایط شما',
+                    icon: (
+                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    title: 'پشتیبانی مداوم',
+                    desc: 'همراهی در تمام مسیر',
+                    icon: (
+                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    title: 'تضمین پیشرفت',
+                    desc: 'نتیجه محور و کاربردی',
+                    icon: (
+                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                      </svg>
+                    ),
+                  },
+                ].map((feature, i) => (
+                  <div 
+                    key={i}
+                    className="bg-white/80 backdrop-blur-sm p-4 rounded-2xl border border-gray-100 hover:border-accent/20 transition-colors duration-300 group"
+                  >
+                    <div className="flex flex-row-reverse items-center gap-3 mb-2">
+                      <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                        {feature.icon}
+                      </div>
+                      <h3 className="font-IranSans font-bold text-gray-900">
+                        {feature.title}
+                      </h3>
+                    </div>
+                    <p className="font-IranSans text-sm text-gray-600">
+                      {feature.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap gap-4">
+                <button className="px-8 py-4 bg-accent text-white font-IranSans rounded-xl hover:bg-accent/90 transition-colors duration-300 shadow-lg shadow-accent/25 hover:shadow-accent/35">
+                  مشاوره رایگان
+                </button>
+                <button className="px-8 py-4 bg-white text-accent font-IranSans rounded-xl hover:bg-accent/5 transition-colors duration-300 border-2 border-accent/10 hover:border-accent/20">
+                  درباره ما
+                </button>
               </div>
             </div>
 
-            {/* Image Side */}
-            <div className="relative">
-              <div className="absolute -top-8 -right-8 w-32 h-32 bg-accent/10 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-accent/10 rounded-full blur-3xl"></div>
-              <img
-                src="/illus/cons.webp"
-                alt="مشاوره تخصصی"
-                className="w-full h-auto rounded-3xl  relative z-10"
-              />
+            {/* Image Section - Now on the left side for RTL */}
+            <div className="lg:order-1 relative">
+              <div className="absolute inset-0 bg-gradient-to-t from-accent/10 to-transparent rounded-[2rem] blur-2xl" />
+              <div className="relative bg-white p-4 rounded-[2rem] shadow-xl shadow-accent/5">
+                <div className="aspect-[4/3] rounded-[1.5rem] overflow-hidden">
+                  <img
+                    src="/images/counseling.webp"
+                    alt="مشاوره تحصیلی"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                
+                {/* Stats Overlay */}
+                <div className="absolute -bottom-20 right-1/2 translate-x-1/2 flex gap-4">
+                  {[
+                    { 
+                      value: '۸۵٪', 
+                      label: 'خواب راحت‌تر', 
+                      subtext: 'بدون استرس امتحان',
+                      icon: (
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                      ),
+                      color: 'from-indigo-500 to-purple-500'
+                    },
+                    { 
+                      value: '۲۰۰+', 
+                      label: 'لبخند در روز', 
+                      subtext: 'با برنامه‌ریزی درست',
+                      icon: (
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      ),
+                      color: 'from-amber-400 to-orange-500'
+                    },
+                    { 
+                      value: '۵۰۰۰+', 
+                      label: 'فنجان چای',
+                      subtext: 'همراه با مشاوره آنلاین',
+                      icon: (
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        </svg>
+                      ),
+                      color: 'from-teal-400 to-emerald-500'
+                    },
+                  ].map((stat, i) => (
+                    <div 
+                      key={i} 
+                      className="group relative bg-white p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 w-[180px]"
+                    >
+                      {/* Animated Background */}
+                      <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                      
+                      {/* Content */}
+                      <div className="relative flex flex-col items-center text-center gap-2 p-2">
+                        {/* Icon */}
+                        <div className="w-12 h-12 rounded-xl bg-accent/10 group-hover:bg-white/10 flex items-center justify-center text-accent group-hover:text-white transition-colors duration-300">
+                          {stat.icon}
+                        </div>
+                        
+                        {/* Text */}
+                        <div>
+                          <div className="font-IranSans font-bold text-2xl text-gray-900 group-hover:text-white transition-colors duration-300">
+                            {stat.value}
+                          </div>
+                          <div className="font-IranSans text-sm font-bold text-gray-800 group-hover:text-white transition-colors duration-300">
+                            {stat.label}
+                          </div>
+                          <div className="font-IranSans text-xs text-gray-600 group-hover:text-white/80 transition-colors duration-300 mt-1">
+                            {stat.subtext}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
      
+      {/* Programs Section */}
+      <Programs />
+      
       {/* Bento Grid Section */}
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-5">
@@ -376,7 +462,7 @@ export default function Hero() {
               <div className="space-y-6 relative before:absolute before:right-[17px] before:top-0 before:bottom-0 before:w-0.5 before:bg-accent/20">
                 {/* Feature 1 */}
                 <div className="relative pr-12">
-                  <div className="absolute right-0 top-0 h-9 w-9 rounded-full bg-accent/10 flex items-center justify-center">
+                  <div className="absolute right-0 top-0 h-9 w-9 rounded-full bg-accent/10 flex items-center justify-center mb-4">
                     <div className="h-3 w-3 rounded-full bg-accent"></div>
                   </div>
                   <h3 className="font-IranSans font-bold text-lg mb-2">طراحی سوالات استاندارد</h3>
@@ -387,7 +473,7 @@ export default function Hero() {
 
                 {/* Feature 2 */}
                 <div className="relative pr-12">
-                  <div className="absolute right-0 top-0 h-9 w-9 rounded-full bg-accent/10 flex items-center justify-center">
+                  <div className="absolute right-0 top-0 h-9 w-9 rounded-full bg-accent/10 flex items-center justify-center mb-4">
                     <div className="h-3 w-3 rounded-full bg-accent"></div>
                   </div>
                   <h3 className="font-IranSans font-bold text-lg mb-2">کارنامه تحلیلی پیشرفته</h3>
@@ -398,7 +484,7 @@ export default function Hero() {
 
                 {/* Feature 3 */}
                 <div className="relative pr-12">
-                  <div className="absolute right-0 top-0 h-9 w-9 rounded-full bg-accent/10 flex items-center justify-center">
+                  <div className="absolute right-0 top-0 h-9 w-9 rounded-full bg-accent/10 flex items-center justify-center mb-4">
                     <div className="h-3 w-3 rounded-full bg-accent"></div>
                   </div>
                   <h3 className="font-IranSans font-bold text-lg mb-2">رفع اشکال آنلاین</h3>
