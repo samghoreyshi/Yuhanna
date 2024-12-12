@@ -110,12 +110,15 @@ const Books = () => {
               viewport={{ once: true }}
               className="relative"
             >
+              {/* Background Blur */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/5 rounded-full blur-3xl"></div>
+              
+              {/* Image Container */}
               <div className="relative">
                 <img
-                  src="/illus/books.webp"
+                  src="/images/chemics.webp"
                   alt="کتاب های درسی"
-                  className="w-full h-auto rounded-3xl z-10 relative"
+                  className="w-full h-auto rounded-3xl relative z-10"
                 />
                 
                 {/* Floating Badge - Discount */}
@@ -123,7 +126,7 @@ const Books = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="absolute -right-4 top-8 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg"
+                  className="absolute -right-4 top-8 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg z-20"
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
@@ -141,7 +144,7 @@ const Books = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
-                  className="absolute -left-4 bottom-8 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg"
+                  className="absolute -left-4 bottom-8 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg z-20"
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">

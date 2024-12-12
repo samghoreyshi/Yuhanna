@@ -1,207 +1,155 @@
-"use client";
+import { useState, useEffect } from 'react';
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
-
-export default function Navbar() {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
+      setScrolled(window.scrollY > 0);
     };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [scrolled]);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      setIsOpen(false);
     }
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
-        scrolled ? "shadow-sm bg-white backdrop-blur-2xl" : "bg-white"
-      }`}
-    >
-      <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8 py-4 sm:py-4 lg:py-8">
-        <div className="flex flex-row-reverse flex-1 items-center justify-end md:justify-between">
-          <nav aria-label="Global" className="hidden md:block font-IranSans ">
-            <ul className="flex items-center gap-6 text-md">
-              <li>
-                <button
-                  onClick={() => scrollToSection('contact')}
-                  className="text-gray-500 transition hover:text-accent"
-                >
-                  {" "}
-                  تماس با ما{" "}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('about')}
-                  className="text-gray-500 transition hover:text-accent"
-                >
-                  {" "}
-                  درباره‌ما{" "}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('pension')}
-                  className="text-gray-500 transition hover:text-accent"
-                >
-                  {" "}
-                  پانسیون{" "}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('books')}
-                  className="text-gray-500 transition hover:text-accent"
-                >
-                  {" "}
-                 کتاب{" "}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('counseling')}
-                  className="text-gray-500 transition hover:text-accent"
-                >
-                  {" "}
-                  مشاوره{" "}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('education')}
-                  className="text-gray-500 transition hover:text-accent"
-                >
-                  {" "}
-                  آموزش{" "}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('hero')}
-                  className="text-gray-500 transition hover:text-accent"
-                >
-                  {" "}
-                  خانه{" "}
-                </button>
-              </li>
-            </ul>
-          </nav>
+    <nav className={`fixed top-4 left-1/2 -translate-x-1/2 right-auto w-[95%] max-w-7xl z-50 transition-all duration-300 rounded-2xl border ${
+      scrolled ? "bg-white/80 backdrop-blur-xl border-slate-200/50 shadow-lg shadow-slate-200/20" 
+               : "bg-white/50 backdrop-blur-md border-white/20"
+    }`}>
+      <div className="px-4 py-3">
+        <div className="flex items-center justify-between">
+          {/* CTA Button, Phone & Mobile Menu */}
+          <div className="flex items-center gap-3">
+            {/* Phone Number */}
+            <a 
+              href="tel:+989123456789" 
+              className="hidden sm:flex items-center gap-2 px-4 py-2.5 text-slate-600 hover:text-slate-900 
+                       rounded-xl transition-all duration-300 hover:bg-slate-100/50 group"
+            >
+              <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <span className="font-IranSans text-sm">۰۹۱۲۳۴۵۶۷۸۹</span>
+            </a>
 
-          <div className="flex items-center gap-4">
+            {/* CTA Button */}
+            <button
+              onClick={() => scrollToSection('counseling')}
+              className="bg-accent hover:bg-accent/90 text-white px-5 py-2.5 rounded-xl text-sm font-IranSans font-demiBold 
+                       transition-all duration-300 whitespace-nowrap shadow-lg shadow-accent/20 hover:shadow-accent/30
+                       relative group"
+            >
+              <span className="relative z-10">درخواست مشاوره</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-accent to-accent/90 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </button>
+
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="block rounded-xl bg-gray-200 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden"
+              className="md:hidden rounded-xl p-2.5 text-slate-600 hover:bg-slate-100/50 transition-colors relative group"
+              aria-label="Toggle menu"
             >
-              <span className="sr-only">Toggle menu</span>
+              <div className="absolute inset-0 bg-accent/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="size-5"
+                className="w-5 h-5 relative"
                 fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                strokeWidth="2"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                {isOpen ? (
+                  <path d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                )}
               </svg>
             </button>
-            <div className="sm:flex sm:gap-4">
-              <button
-                onClick={() => scrollToSection('counseling')}
-                className="block font-IranSans font-demiBold rounded-2xl bg-accent px-5 py-2.5 text-sm text-white transition hover:bg-blue-600"
-              >
-                درخواست مشاوره
-              </button>
-            </div>
-            <div className="sm:flex sm:gap-4">
-              <h2 className="hidden md:block text-2xl font-IranSans font-extraBold text-gray-500">۰۲۱-۲۸۱۱۱۱۹٥</h2>
-            </div>
           </div>
-        </div>
-        <a className="block text-accent" href="#">
-          <img src="/logo/logo.png" alt="Logo" width={100} height={100} />
-        </a>
-      </div>
 
-      {isOpen && (
-        <div className="md:hidden">
-          <div className=" space-y-4">
-            <nav className="font-IranSans border-b-gray-300 border-b shadow-md">
-              <ul className="flex flex-col space-y-4 text-right p-4">
-                <li>
-                  <button
-                    onClick={() => scrollToSection('contact')}
-                    className="block text-gray-500 transition hover:text-accent"
-                  >
-                    تماس با ما
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection('about')}
-                    className="block text-gray-500 transition hover:text-accent"
-                  >
-                    درباره‌ما
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection('pension')}
-                    className="block text-gray-500 transition hover:text-accent"
-                  >
-                    پانسیون
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection('counseling')}
-                    className="block text-gray-500 transition hover:text-accent"
-                  >
-                    مشاوره
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection('education')}
-                    className="block text-gray-500 transition hover:text-accent"
-                  >
-                    آموزش
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection('hero')}
-                    className="block text-gray-500 transition hover:text-accent"
-                  >
-                    خانه
-                  </button>
-                </li>
-              </ul>
-            </nav>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-1 bg-slate-100/50 rounded-xl p-1.5">
+            {[
+              ['تماس با ما', 'contact'],
+              ['نظرات', 'testimonials'],
+              ['خانه آموزش', 'educationHouse'],
+              ['مشاوره', 'counseling'],
+              ['درباره ما', 'about'],
+            ].map(([title, id]) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className="relative px-4 py-2 text-sm text-slate-600 hover:text-slate-900 rounded-lg transition-all duration-300 font-IranSans
+                         hover:bg-white hover:shadow-md hover:shadow-slate-200/20 group"
+              >
+                <span className="relative z-10">{title}</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-accent/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </button>
+            ))}
+          </div>
+
+          {/* Logo - Now on the right */}
+          <div className="flex-shrink-0">
+            <a href="#" className="block relative group">
+              <div className="absolute -inset-3 bg-accent/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <img 
+                src="/logo/logo.png" 
+                alt="Logo" 
+                className="h-14 w-14 object-contain relative"
+              />
+            </a>
           </div>
         </div>
-      )}
-    </header>
+
+        {/* Mobile Menu */}
+        <div
+          className={`md:hidden transition-all duration-300 overflow-hidden ${
+            isOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="py-2 space-y-1 border-t border-slate-200/50">
+            {[
+              ['درباره ما', 'about'],
+              ['مشاوره', 'counseling'],
+              ['خانه آموزش', 'educationHouse'],
+              ['نظرات', 'testimonials'],
+              ['تماس با ما', 'contact'],
+            ].map(([title, id]) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className="block w-full text-right px-4 py-3 text-sm text-slate-600 hover:text-slate-900 
+                         hover:bg-slate-50 rounded-xl transition-all duration-300 font-IranSans relative group"
+              >
+                <span className="relative z-10">{title}</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-accent/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </nav>
   );
-}
+};
+
+export default Navbar;

@@ -15,7 +15,7 @@ export default function Contact() {
 
         <div className="max-w-2xl mx-auto relative">
           {/* Decorative Elements */}
-          <div className="absolute -top-12 -right-12 w-24 h-24 bg-accent/5 rounded-full blur-2xl"></div>
+          {/* <div className="absolute -top-12 -right-12 w-24 h-24 bg-accent/5 rounded-full blur-2xl"></div> */}
           <div className="absolute -bottom-12 -left-12 w-24 h-24 bg-accent/5 rounded-full blur-2xl"></div>
 
           {/* Contact Form */}
