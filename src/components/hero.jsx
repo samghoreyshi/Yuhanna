@@ -1,19 +1,25 @@
 import Image from "next/image";
 import Programs from "./programs";
+import EducationHouse from './EducationHouse';
+import Counseling from './Counseling';
+import Gallery from './Gallery';
+import Features from "./Features";
+import Events from './Events';
+import Books from './books';
 
 export default function Hero() {
   return (
     <>
-      <header className="h-[calc(100vh)] sm:py-20 sm:bg-[url('/illus/pers-grid.webp')] bg-cover bg-center">
+      <header className="h-[calc(100vh)] sm:py-20 sm:bg-[url('/illus/pers-grid.webp')] bg-cover bg-center overflow-hidden">
         {/* Hero Container */}
-        <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-5 py-16 md:px-10 md:py-20">
           {/* Component */}
           <div className="grid items-center justify-items-start gap-8 sm:gap-20 lg:grid-cols-2">
             {/* Hero Image */}
             <img
               src="/illus/hero-illus.webp"
               alt=""
-              className="inline-block h-full w-full max-w-2xl"
+              className="inline-block w-full max-w-full lg:max-w-2xl"
             />
             {/* Hero Content */}
             <div className="flex flex-col direction-rtl ">
@@ -50,239 +56,16 @@ export default function Hero() {
           </div>
         </div>
       </header>
-      <section id="features" className="bg-white">
-        <div className="flex flex-col justify-center items-center gap-10 py-28">
-          <h1 className="font-IranSans mx-10 font-extraBold sm:text-center text-2xl text-right leading-relaxed direction-rtl">
-            می‌دونیم که گوشتون از این حرفا پُره، ولی ما
-            فقط اهل حرف و{" "}
-            <span className="font-extraBlack text-accent">شعار</span> نیستیم!
-          </h1>
-          <div className="grid sm:grid-cols-3 gap-5 mx-10 sm:mx-40">
-            <span className="flex flex-col w-full h-full font-IranSans bg-white border border-gray-300 direction-rtl p-10 gap-5 rounded-3xl shadow-lg">
-              <img className="" src="/illus/feat-3.webp" alt="" />
-              <h2 className="font-extraBlack">همیشه یک قدم جلوتر باشید</h2>
-              <p className="text-gray-500">
-                در یوحنا، هدف ما این است که شما به صورت پیوسته و هدفمند درس
-                بخوانید. برای رسیدن به این هدف، ما سیستم نظارت دقیقی طراحی
-                کرده‌ایم که از ابتدا تا انتهای مسیر همراه شماست.
-              </p>
-            </span>
-            <span className="flex flex-col w-full h-full font-IranSans bg-white border border-gray-300 direction-rtl p-10 gap-5 rounded-3xl shadow-lg">
-              <img className="" src="/illus/feat-2.webp" alt="" />
-              <h2 className="font-extraBlack">
-                محیطی آرام و حرفه‌ای برای بهترین بهره‌وری از زمان مطالعه شما!
-              </h2>
-              <p className="text-gray-500">
-                حواس‌پرتی و اتلاف وقت، بزرگ‌ترین دشمنان موفقیت در درس خواندن
-                هستند. ما در یوحنا فضایی صمیمانه و گرم، همراه با نظم و سخت‌گیری
-                لازم، ایجاد کرده‌ایم تا شما در محیطی آرام و اختصاصی به مطالعه
-                بپردازید.
-              </p>
-            </span>
-            <span className="flex flex-col w-full h-full font-IranSans bg-white border border-gray-300 direction-rtl p-10 gap-5 rounded-3xl shadow-lg">
-              <img src="/illus/feat-1.webp" alt="" />
-              <h2 className="font-extraBlack">
-                یوحنا به شما کمک می‌کند با باورهای نادرست خداحافظی کنید!
-              </h2>
-              <p className="text-gray-500">
-                ما معتقدیم که موفقیت در کنکور صرفاً به پشتکار و تلاش شما بستگی
-                ندارد، بلکه به استفاده صحیح از دانش، برنامه‌ریزی دقیق و روش‌های
-                مطالعه علمی نیاز دارد.
-              </p>
-            </span>
-          </div>
-        </div>
-      </section>
-     
-      {/* Counseling Section */}
-      <section id="counseling" className="relative overflow-hidden bg-gradient-to-b from-accent/5 to-transparent">
-        {/* Decorative Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -right-1/4 -top-1/4 w-1/2 h-1/2 bg-accent/5 rounded-full blur-3xl" />
-          <div className="absolute -left-1/4 -bottom-1/4 w-1/2 h-1/2 bg-accent/5 rounded-full blur-3xl" />
-        </div>
 
-        <div className="container mx-auto px-4 py-20 md:py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Text Content - Now on the right side for RTL */}
-            <div className="lg:order-2 space-y-8 text-right">
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extraBold font-IranSans text-gray-900 leading-tight">
-                  مشاوره تخصصی 
-                  <span className="text-accent block">کنکور و تحصیلی</span>
-                </h1>
-                <p className="text-lg md:text-xl text-gray-600 font-IranSans leading-relaxed">
-                  با بهترین مشاوران تحصیلی کشور به موفقیت برسید
-                </p>
-              </div>
-
-              {/* Features Grid */}
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { 
-                    title: 'مشاوره آنلاین',
-                    desc: 'دسترسی ۲۴ ساعته به مشاوران',
-                    icon: (
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                      </svg>
-                    ),
-                  },
-                  {
-                    title: 'برنامه شخصی',
-                    desc: 'متناسب با شرایط شما',
-                    icon: (
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                      </svg>
-                    ),
-                  },
-                  {
-                    title: 'پشتیبانی مداوم',
-                    desc: 'همراهی در تمام مسیر',
-                    icon: (
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    ),
-                  },
-                  {
-                    title: 'تضمین پیشرفت',
-                    desc: 'نتیجه محور و کاربردی',
-                    icon: (
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                      </svg>
-                    ),
-                    color: 'from-indigo-500 to-purple-500'
-                  },
-                ].map((feature, i) => (
-                  <div 
-                    key={i}
-                    className="bg-white/80 backdrop-blur-sm p-4 rounded-2xl border border-gray-100 hover:border-accent/20 transition-colors duration-300 group"
-                  >
-                    <div className="flex flex-row-reverse items-center gap-3 mb-2">
-                      <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-colors duration-300">
-                        {feature.icon}
-                      </div>
-                      <h3 className="font-IranSans font-bold text-gray-900">
-                        {feature.title}
-                      </h3>
-                    </div>
-                    <p className="font-IranSans text-sm text-gray-600">
-                      {feature.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4">
-                <button className="px-8 py-4 bg-accent text-white font-IranSans rounded-xl hover:bg-accent/90 transition-colors duration-300 shadow-lg shadow-accent/25 hover:shadow-accent/35">
-                  مشاوره رایگان
-                </button>
-                <button className="px-8 py-4 bg-white text-accent font-IranSans rounded-xl hover:bg-accent/5 transition-colors duration-300 border-2 border-accent/10 hover:border-accent/20">
-                  درباره ما
-                </button>
-              </div>
-            </div>
-
-            {/* Image Section - Now on the left side for RTL */}
-            <div className="lg:order-1 relative">
-              <div className="absolute inset-0 bg-gradient-to-t from-accent/10 to-transparent rounded-[2rem] blur-2xl" />
-              <div className="relative bg-white p-4 rounded-[2rem] shadow-xl shadow-accent/5">
-                <div className="aspect-[4/3] rounded-[1.5rem] overflow-hidden">
-                  <img
-                    src="/images/counseling.webp"
-                    alt="مشاوره تحصیلی"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                
-                {/* Stats Overlay */}
-                <div className="relative z-20 mx-auto px-4 -mt-24 sm:-mt-16 mb-8">
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    {[
-                      { 
-                        value: '۸۵٪', 
-                        label: 'خواب راحت‌تر', 
-                        subtext: 'بدون استرس امتحان',
-                        icon: (
-                          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                          </svg>
-                        ),
-                        color: 'from-indigo-500 to-purple-500'
-                      },
-                      { 
-                        value: '۲۰۰+', 
-                        label: 'دانش‌آموز موفق',
-                        subtext: 'قبولی در برترین دانشگاه‌ها',
-                        icon: (
-                          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        ),
-                        color: 'from-amber-400 to-orange-500'
-                      },
-                      { 
-                        value: '۸۰٪', 
-                        label: 'صرفه جویی در زمان',
-                        subtext: 'مطالعه هدفمند و بهینه',
-                        icon: (
-                          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        ),
-                        color: 'from-teal-400 to-emerald-500'
-                      },
-                    ].map((stat, i) => (
-                      <div 
-                        key={i} 
-                        className="group relative w-[280px] sm:w-[200px] bg-white p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                      >
-                        {/* Animated Background */}
-                        <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                        
-                        {/* Content */}
-                        <div className="relative flex flex-col items-center text-center gap-2">
-                          {/* Icon */}
-                          <div className="w-12 h-12 rounded-xl bg-accent/10 group-hover:bg-white/10 flex items-center justify-center text-accent group-hover:text-white transition-colors duration-300">
-                            {stat.icon}
-                          </div>
-                          
-                          {/* Text */}
-                          <div>
-                            <div className="font-IranSans font-bold text-2xl text-gray-900 group-hover:text-white transition-colors duration-300">
-                              {stat.value}
-                            </div>
-                            <div className="font-IranSans text-sm font-bold text-gray-800 group-hover:text-white transition-colors duration-300">
-                              {stat.label}
-                            </div>
-                            <div className="font-IranSans text-xs text-gray-600 group-hover:text-white/80 transition-colors duration-300 mt-1">
-                              {stat.subtext}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      {/* Unified Counseling Section */}
+      <Counseling />
 
       <section id="pension">
-        <Programs/>
+        <Programs />
       </section>
-     
-      
-      
 
-
+      {/* Education House Section */}
+      <EducationHouse />
       {/* Exam Section */}
       <section className="bg-white py-24 overflow-hidden">
         <div className="mx-auto max-w-7xl px-5">
@@ -297,64 +80,64 @@ export default function Hero() {
                   className="w-full h-auto rounded-3xl  z-10 relative"
                 />
                 {/* Floating Stats */}
-              <div className="absolute -right-4 md:-right-12 top-8 md:top-16 bg-white rounded-2xl md:rounded-3xl p-3 md:p-4 shadow-lg">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 md:w-10 h-8 md:h-10 bg-accent/10 rounded-xl md:rounded-2xl flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-4 md:w-5 h-4 md:h-5 text-accent"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M22 11.08V12a10 10 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 0118 0 9.003 9.003 0 012-21a10 10 0 01-8.646-3.646" />
-                    </svg>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-xs md:text-sm text-gray-600 font-IranSans">قبولی در کنکور</p>
-                    <p className="text-sm md:text-base font-bold font-IranSans">۹۸٪</p>
+                <div className="absolute -right-2 sm:-right-4 md:-right-12 top-8 md:top-16 bg-white rounded-2xl md:rounded-3xl p-3 md:p-4 shadow-lg">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 md:w-10 h-8 md:h-10 bg-accent/10 rounded-xl md:rounded-2xl flex items-center justify-center text-white">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-4 md:w-5 h-4 md:h-5 text-accent"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                      </svg>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xs md:text-sm text-gray-600 font-IranSans">قبولی در کنکور</p>
+                      <p className="text-sm md:text-base font-bold font-IranSans">۹۸٪</p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Floating Badge */}
-              <div className="absolute -left-4 md:-left-12 bottom-8 md:bottom-16 bg-white rounded-2xl md:rounded-3xl p-3 md:p-4 shadow-lg">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 md:w-10 h-8 md:h-10 bg-accent/10 rounded-xl md:rounded-2xl flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-4 md:w-5 h-4 md:h-5 text-accent"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <circle cx="12" cy="8" r="7" />
-                      <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
-                    </svg>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-xs md:text-sm text-gray-600 font-IranSans">رتبه برتر</p>
-                    <p className="text-sm md:text-base font-bold font-IranSans">+۱۵۰</p>
+                {/* Floating Badge */}
+                <div className="absolute -left-2 sm:-left-4 md:-left-12 bottom-8 md:bottom-16 bg-white rounded-2xl md:rounded-3xl p-3 md:p-4 shadow-lg">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 md:w-10 h-8 md:h-10 bg-accent/10 rounded-xl md:rounded-2xl flex items-center justify-center text-white">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-4 md:w-5 h-4 md:h-5 text-accent"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <circle cx="12" cy="8" r="7" />
+                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                      </svg>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xs md:text-sm text-gray-600 font-IranSans">رتبه برتر</p>
+                      <p className="text-sm md:text-base font-bold font-IranSans">+۱۵۰</p>
+                    </div>
                   </div>
                 </div>
-              </div>
               </div>
             </div>
 
             {/* Content Side */}
             <div className="direction-rtl space-y-8 order-1 lg:order-2">
               <div className="inline-block">
-                <span className="bg-accent/10 text-accent px-4 py-2 rounded-xl font-IranSans font-bold text-sm">
+                <span className="bg-accent/10 text-accent px-4 py-2 rounded-xl font-IranSans font-bold text-sm inline-block mb-4">
                   آزمون‌های آزمایشی استاندارد
                 </span>
               </div>
-              <h2 className="font-IranSans font-extraBold text-3xl sm:text-4xl leading-tight">
+              <h2 className="font-IranSans font-extraBold text-3xl">
                 آزمون‌های <span className="text-accent font-extrabold">هدفمند</span> برای
                 <br />
                 سنجش دقیق پیشرفت شما
@@ -423,173 +206,15 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* UClub Marathon Section */}
-      <section id="uclub" className="relative overflow-hidden bg-blue-600 text-right" dir="rtl">
-        {/* Image with Overlay */}
-        <div className="absolute inset-y-0 left-0 w-full md:w-1/2">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-600/90 to-blue-600 z-10" />
-          <Image
-            src="/images/marathon.webp"
-            alt="Marathon runners"
-            fill
-            className="object-cover object-center"
-            priority
-          />
-        </div>
-
-        {/* Content */}
-        <div className="relative z-20 max-w-screen-xl mx-auto px-4 py-28 sm:px-6 lg:px-8">
-          <div className="ml-auto mr-0 md:mr-8 max-w-xl">
-            <span className="inline-flex items-center px-4 py-2 mb-6 rounded-full bg-white/10 text-white font-IranSans font-demiBold text-sm backdrop-blur-sm border border-white/20">
-              یوکلاب - باشگاه دونده‌ها
-              <svg className="w-5 h-5 mr-2 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </span>
-
-            <h2 className="text-4xl font-extraBold font-IranSans text-white sm:text-5xl leading-tight">
-              دومون نشه؟!
-              <span className="block text-blue-200 mt-8 leading-relaxed">اینجا قراره با دویدن اتفاقای خوب رقم بزنیم</span>
-            </h2>
-
-            <p className="mt-6 text-lg leading-relaxed text-blue-100 font-IranSans font-medium">
-              در باشگاه یوکلاب، ما معتقدیم که دویدن فقط یک ورزش نیست، بلکه یک سبک زندگی است. به جمع دونده‌های حرفه‌ای ما بپیوندید و در ماراتن‌های هیجان‌انگیز شرکت کنید.
-            </p>
-
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-start">
-              <button className="group relative inline-flex items-center justify-center px-8 py-3 text-base font-IranSans font-demiBold rounded-xl text-blue-600 bg-white hover:bg-blue-50 transition duration-300 overflow-hidden shadow-lg shadow-blue-900/20">
-                <span className="relative">
-                  ثبت‌نام در ماراتن
-                  <span className="absolute bottom-0 right-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                </span>
-              </button>
-              <button className="group relative inline-flex items-center justify-center px-8 py-3 text-base font-IranSans font-demiBold rounded-xl text-white border-2 border-white/20 hover:border-white/40 hover:bg-white/10 backdrop-blur-sm transition duration-300">
-                <span className="relative flex items-center">
-                  اطلاعات بیشتر
-                  <svg className="w-5 h-5 mr-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </span>
-              </button>
-            </div>
-
-            {/* Stats */}
-            <div className="mt-16 grid grid-cols-3 gap-8 border-t border-white/10 pt-8">
-              <div className="text-center">
-                <p className="text-3xl font-black font-IranSans text-white">+۱۰۰۰</p>
-                <p className="mt-1 text-blue-200 font-IranSans font-demiBold">شرکت‌کننده</p>
-              </div>
-              <div className="text-center border-r border-l border-white/10">
-                <p className="text-3xl font-black font-IranSans text-white">۴۲</p>
-                <p className="mt-1 text-blue-200 font-IranSans font-demiBold">کیلومتر مسیر</p>
-              </div>
-              <div className="text-center">
-                <p className="text-3xl font-black font-IranSans text-white">۵</p>
-                <p className="mt-1 text-blue-200 font-IranSans font-demiBold">سال سابقه</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Books Section */}
+      <Books />
 
       {/* Gallery Section */}
-            {/* Bento Grid Section */}
-            <section className="bg-white py-24">
-        <div className="mx-auto max-w-7xl px-5">
-          <div className="text-center mb-16">
-            <span className="bg-accent/10 text-accent px-4 py-2 rounded-xl font-IranSans font-bold text-sm inline-block mb-4">
-              گالری تصاویر
-            </span>
-            <h2 className="font-IranSans font-extraBold text-3xl">
-              لحظات <span className="text-accent font-extraBlack">ماندگار</span> در یوحنا
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[240px] gap-4 direction-rtl">
-            {/* Large Feature Image */}
-            <div className="relative col-span-1 sm:col-span-2 row-span-2 overflow-hidden rounded-3xl group">
-              <img
-                src="/images/gallery/h-5.webp"
-                alt="کلاس درس"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-                <div className="absolute bottom-6 right-6 text-white">
-                  <h3 className="font-IranSans font-bold text-xl mb-2">فضای آموزشی مدرن</h3>
-                  <p className="font-IranSans text-sm text-gray-200">محیطی ایده‌آل برای یادگیری</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Regular Grid Items */}
-            <div className="relative overflow-hidden rounded-3xl group">
-              <img
-                src="/images/gallery/h-6.webp"
-                alt="مشاوره"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-                <div className="absolute bottom-4 right-4 text-white">
-                  <h3 className="font-IranSans font-bold">جلسات مشاوره</h3>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative overflow-hidden rounded-3xl group">
-              <img
-                src="/images/gallery/h-4.webp"
-                alt="کتابخانه"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-                <div className="absolute bottom-4 right-4 text-white">
-                  <h3 className="font-IranSans font-bold">کتابخانه تخصصی</h3>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative overflow-hidden rounded-3xl group">
-              <img
-                src="/images/gallery/h-3.webp"
-                alt="آزمون"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-                <div className="absolute bottom-4 right-4 text-white">
-                  <h3 className="font-IranSans font-bold">سالن آزمون</h3>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative overflow-hidden rounded-3xl group">
-              <img
-                src="/images/gallery/h-2.webp"
-                alt="کلاس"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-                <div className="absolute bottom-4 right-4 text-white">
-                  <h3 className="font-IranSans font-bold">کلاس‌های رفع اشکال</h3>
-                </div>
-              </div>
-            </div>
-
-            {/* Wide Image */}
-            <div className="relative col-span-1 sm:col-span-2 overflow-hidden rounded-3xl group">
-              <img
-                src="/images/gallery/h-1.webp"
-                alt="فضای مطالعه"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-                <div className="absolute bottom-4 right-4 text-white">
-                  <h3 className="font-IranSans font-bold">سالن مطالعه اختصاصی</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Gallery />
+      {/* Events Section */}
+      <Events />
+      {/* Features Section */}
+      <Features />
     </>
   );
 }

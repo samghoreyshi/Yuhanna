@@ -17,12 +17,12 @@ export default function Home() {
       <section id="hero">
         <Hero />
       </section>
-      <section id="education">
+      {/* <section id="education">
         <Courses />
-      </section>
-      <section id="books">
+      </section> */}
+      {/* <section id="books">
         <Books />
-      </section>
+      </section> */}
       <section id="about">
         <WhyChooseUs />
       </section>

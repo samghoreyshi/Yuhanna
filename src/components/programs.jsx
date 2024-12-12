@@ -1,13 +1,48 @@
 'use client';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Programs() {
   const [activeTab, setActiveTab] = useState('حضوری');
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const fadeInVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
   const programs = {
     'حضوری': {
       title: 'پانسیون حضوری',
-      description: 'محیط مطالعاتی حرفه‌ای با امکانات کامل و مشاوران متخصص',
+      description: 'پرتی حواس و هرز رفتن وقت همیشه بزرگترین سدهای درست درس خوندن بوده و هست. ما در خانه مطالعه یوحنا با چند ترفند حساب‌شده، چاره‌ای برای این مسئله پیدا کرده‌ایم: یه فضای مطالعه که به اندازه اتاق خودتون گرم، آشنا و خودمونیه و به اندازه یه کتابخونه آرومه و یه برنامه‌ریزی درست و حساب‌شده داره. اینجا می‌تونید راحت و درست درس بخونید.',
       features: [
         {
           title: 'محیط مطالعه اختصاصی',
@@ -55,7 +90,7 @@ export default function Programs() {
     },
     'آنلاین': {
       title: 'پانسیون آنلاین',
-      description: 'تجربه یادگیری حرفه‌ای از هر نقطه‌ای که هستید',
+      description: 'اين رو هم بدونید که بدون نگرانی از ترافیک و تلف شدن وقت‌تون, می‌تونید تو پانسیون آنلاین یوحنا اونم از تو خونه و اتاق خودتون به شکل وبینار شرکت کنید. اینجوری پشتیبان‌های ماء کنارتون هستند تا از وقت و انرژی‌تون» بهترین بهره رو ببرید.',
       features: [
         {
           title: 'پلتفرم اختصاصی آموزش',
@@ -107,96 +142,180 @@ export default function Programs() {
   const activeProgram = programs[activeTab];
 
   return (
-    <section className="py-24 bg-white" dir="rtl">
+    <section className="py-24 bg-white font-IranSans overflow-hidden" dir="rtl">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black font-IranSans mb-6">
-            پانسیون یوحنا
-          </h2>
-          <p className="text-gray-600 font-IranSans text-lg leading-relaxed">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+          className="max-w-3xl mx-auto text-center mb-16"
+        >
+          <motion.div 
+            initial={{ scale: 0.5, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="inline-block mb-6"
+          >
+            <div className="bg-accent/10 backdrop-blur-xl border border-accent/20 rounded-2xl p-2">
+              <div className="bg-white/50 rounded-xl px-6 py-2">
+                <span className="font-bold text-accent text-lg">خانه مطالعه</span>
+              </div>
+            </div>
+          </motion.div>
+          
+          <motion.h2 
+            variants={itemVariants}
+            className="text-4xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight mb-8"
+          >
+            پیشرفت
+            <div className="relative inline-block">
+              <span className="relative z-10 text-accent mr-4">تضمینی</span>
+              <motion.div
+                initial={{ width: "0%" }}
+                whileInView={{ width: "100%" }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="absolute bottom-2 left-0 h-4 bg-accent/10 -z-10 rounded-full"
+              ></motion.div>
+            </div>
+          </motion.h2>
+          
+          <motion.p 
+            variants={itemVariants}
+            className="text-xl text-gray-600 font-medium leading-relaxed"
+          >
             انتخاب کنید، پیشرفت کنید، موفق شوید!
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Program Selector */}
-        <div className="flex justify-center gap-4 mb-16">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex justify-center gap-4 mb-16"
+        >
           {Object.keys(programs).map((program) => (
-            <button
+            <motion.button
               key={program}
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => setActiveTab(program)}
-              className={`px-8 py-3 rounded-full font-IranSans text-lg transition-all duration-300
+              className={`px-8 py-3 rounded-full font-IranSans text-lg transition-all duration-300 relative
                 ${activeTab === program 
-                  ? 'bg-accent text-white shadow-lg shadow-accent/20 scale-105' 
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+                  ? 'bg-gradient-to-r from-accent to-accent/80 text-white shadow-lg shadow-accent/20' 
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 before:absolute before:inset-0 before:rounded-full before:border-2 before:border-transparent before:bg-[length:200%_100%] before:bg-gradient-to-r before:from-transparent before:via-accent/30 before:to-transparent before:animate-shimmer'}`}
             >
               پانسیون {program}
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Active Program Content */}
-        <div className="max-w-7xl mx-auto">
+        <motion.div 
+          key={activeTab}
+          initial="hidden"
+          animate="visible"
+          variants={fadeInVariants}
+          className="max-w-7xl mx-auto"
+        >
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Content */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-3xl font-bold font-IranSans mb-4">
+            <motion.div 
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <motion.div variants={itemVariants}>
+                <h3 className="text-3xl font-black bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent mb-4">
                   {activeProgram.title}
                 </h3>
-                <p className="text-gray-600 font-IranSans text-lg">
+                <p className="text-gray-600 text-lg leading-relaxed">
                   {activeProgram.description}
                 </p>
-              </div>
+              </motion.div>
 
               {/* Features */}
               <div className="grid sm:grid-cols-2 gap-6">
                 {activeProgram.features.map((feature, index) => (
-                  <div key={index} className="group">
+                  <motion.div 
+                    key={index}
+                    variants={itemVariants}
+                    className="group"
+                  >
                     <div className="flex gap-4 items-start">
-                      <div className="shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent
-                        transition-transform duration-300 group-hover:scale-110">
+                      <motion.div 
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        className="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-r from-accent/10 to-accent/5 
+                          flex items-center justify-center text-accent transition-all duration-300"
+                      >
                         {feature.icon}
-                      </div>
+                      </motion.div>
                       <div>
-                        <h4 className="font-IranSans font-bold text-gray-900 mb-1">
+                        <h4 className="font-bold text-gray-900 mb-1">
                           {feature.title}
                         </h4>
-                        <p className="font-IranSans text-sm text-gray-600">
+                        <p className="text-sm text-gray-600">
                           {feature.description}
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
               {/* Stats */}
-              <div className="flex justify-between items-center py-6 px-8 bg-gray-50 rounded-2xl">
+              <motion.div 
+                variants={itemVariants}
+                className="flex justify-between items-center py-6 px-8 bg-gradient-to-r from-accent/5 to-accent/10 rounded-3xl backdrop-blur-lg"
+              >
                 {activeProgram.stats.map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-2xl font-bold text-accent mb-1">
+                  <motion.div 
+                    key={index}
+                    whileHover={{ y: -5 }}
+                    className="text-center"
+                  >
+                    <motion.div 
+                      initial={{ scale: 0.5 }}
+                      whileInView={{ scale: 1 }}
+                      className="text-2xl font-black bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent mb-1"
+                    >
                       {stat.value}
-                    </div>
-                    <div className="text-sm text-gray-600 font-IranSans">
+                    </motion.div>
+                    <div className="text-sm text-gray-600">
                       {stat.label}
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Image */}
-            <div className="relative">
-              <div className="absolute inset-0 bg-accent/10 rounded-[2rem] transform rotate-6"></div>
-              <img
+            <motion.div 
+              variants={itemVariants}
+              className="relative"
+            >
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="absolute inset-0 bg-gradient-to-r from-accent/10 to-accent/5 rounded-[2rem] transform rotate-6"
+              ></motion.div>
+              <motion.img
                 src={activeProgram.image}
                 alt={activeProgram.title}
-                className="relative rounded-[2rem] shadow-xl transform transition-transform duration-500 hover:scale-105"
+                className="relative rounded-[2rem] shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
               />
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
