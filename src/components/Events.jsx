@@ -62,7 +62,7 @@ const Events = () => {
           <div className="relative">
             <div className="relative z-10">
               <img
-                src="/images/english.webp"
+                src="/images/marathon.webp"
                 alt="رویدادهای آموزشی"
                 className="rounded-3xl w-full h-auto shadow-xl transform hover:scale-[1.02] transition-transform duration-500"
               />

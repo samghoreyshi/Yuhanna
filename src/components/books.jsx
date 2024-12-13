@@ -116,7 +116,7 @@ const Books = () => {
               {/* Image Container */}
               <div className="relative">
                 <img
-                  src="/images/chemics.webp"
+                  src="/images/books.webp"
                   alt="کتاب های درسی"
                   className="w-full h-auto rounded-3xl relative z-10"
                 />
