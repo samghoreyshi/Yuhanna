@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Header = () => {
   return (
-    <header className="min-h-screen relative overflow-hidden font-IranSans" dir="rtl">
+    <header id="home" className="min-h-screen relative overflow-hidden font-IranSans" dir="rtl">
       {/* Grid Background */}
       <div className="absolute inset-0 bg-slate-50">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
@@ -35,7 +35,7 @@ const Header = () => {
             >
               <div className="bg-gradient-to-r from-accent/10 to-accent/5 backdrop-blur-xl border border-accent/20 rounded-2xl p-1.5">
                 <div className="bg-white/50 rounded-xl px-4 py-1.5">
-                  <span className="font-bold text-accent text-sm">موسسه آموزشی یوحنا</span>
+                  <span className="font-bold text-accent text-sm">خانه یوحنا</span>
                 </div>
               </div>
             </motion.div>
@@ -52,6 +52,7 @@ const Header = () => {
                   className="absolute bottom-2 left-0 h-4 bg-accent/10 -z-10 rounded-full"
                 ></motion.div>
               </div>{" "}
+
               باز میشه!
             </h1>
 
@@ -86,7 +87,7 @@ const Header = () => {
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 mt-12 max-w-2xl mx-auto lg:mr-0">
-              {[
+              {[/* eslint-disable indent */
                 { value: "۱۰۰۰+", label: "دانش‌آموز موفق" },
                 { value: "۹۸٪", label: "رضایت والدین" },
                 { value: "۱۵+", label: "سال تجربه" }
@@ -131,4 +132,4 @@ const Header = () => {
   );
 };
 
-export default Header; 
+export default Header;

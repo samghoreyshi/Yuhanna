@@ -1,15 +1,19 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -23,20 +27,36 @@ const Navbar = () => {
       const elementPosition = elementRect - bodyRect;
       const offsetPosition = elementPosition - offset;
 
+      // First update the active section
+      setActiveSection(sectionId);
+      
+      // Then scroll to the section
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
       });
+      
+      // Close mobile menu if open
       setIsOpen(false);
+      
+      console.log('Clicked section:', sectionId);
+      console.log('Active section set to:', sectionId);
+    } else {
+      console.error('Section not found:', sectionId);
     }
   };
 
   const menuItems = [
-    ["درباره ما", "about"],
-    ["مشاوره", "counseling"],
-    ["خانه آموزش", "educationHouse"],
-    ["نظرات", "testimonials"],
     ["تماس با ما", "contact"],
+    ["نظرات", "testimonials"],
+    ["درباره ما", "about"],
+    ["رویداد", "events"],
+    ["آزمون", "exams"],
+    ["کتاب", "books"],
+    ["خانه آموزش", "educationHouse"],
+    ["خانه مطالعه", "studyHouse"],
+    ["خانه مشاوره", "counseling"],
+    ["صفحه نخست", "home"],
   ];
 
   const containerVariants = {
@@ -119,25 +139,33 @@ const Navbar = () => {
                   </div>
                 </motion.button>
 
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => scrollToSection("counseling")}
-                  className="relative overflow-hidden bg-gradient-to-br from-accent to-accent/80 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-sm font-IranSans font-demiBold shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all duration-300"
-                >
-                  <span className="relative z-10">درخواست مشاوره</span>
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0"
-                    animate={{
-                      x: ["-200%", "200%"],
-                    }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 2,
-                      ease: "linear",
-                    }}
-                  />
-                </motion.button>
+                <div className="hidden lg:flex items-center gap-4">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => scrollToSection("counseling")}
+                    className="relative overflow-hidden bg-gradient-to-br from-accent to-accent/80 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-sm font-IranSans font-demiBold shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all duration-300"
+                  >
+                    <span className="relative z-10">درخواست مشاوره</span>
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0"
+                      animate={{
+                        x: ["-200%", "200%"],
+                      }}
+                      transition={{
+                        repeat: Infinity,
+                        duration: 2,
+                        ease: "linear",
+                      }}
+                    />
+                  </motion.button>
+                  <a
+                    href="tel:۰۲۱-۲۸۱۱۱۱۹۵"
+                    className="text-gray-600 hover:text-blue-600 transition-colors duration-200 font-IranSans text-base font-medium"
+                  >
+                    ۰۲۱-۲۸۱۱۱۱۹۵
+                  </a>
+                </div>
               </div>
 
               {/* Center: Navigation */}
@@ -147,21 +175,31 @@ const Navbar = () => {
                     key={id}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    onClick={() => scrollToSection(id)}
-                    className="group relative px-4 py-2 text-gray-600 hover:text-blue-600 font-IranSans text-sm transition-colors duration-300"
+                    onClick={() => {
+                      console.log('Before click - Active section:', activeSection);
+                      scrollToSection(id);
+                      console.log('After click - Active section:', activeSection);
+                    }}
+                    className={`group relative px-4 py-2 font-IranSans text-sm transition-colors duration-300 ${
+                      activeSection === id 
+                        ? "text-blue-600" 
+                        : "text-gray-600 hover:text-blue-600"
+                    }`}
                   >
                     <span className="relative">
                       {title}
-                      <motion.span
-                        initial={{ scaleX: 0 }}
-                        whileHover={{ scaleX: 1 }}
-                        transition={{ duration: 0.3 }}
-                        className="absolute -bottom-1 right-0 w-full h-0.5 bg-gradient-to-l from-blue-500 to-blue-600 origin-right"
+                      <span 
+                        className={`absolute -bottom-1 right-0 w-full h-0.5 bg-gradient-to-l from-blue-500 to-blue-600 origin-right transition-transform duration-300 ${
+                          activeSection === id 
+                            ? "scale-x-100" 
+                            : "scale-x-0 group-hover:scale-x-100"
+                        }`} 
                       />
                     </span>
                     <motion.div
                       initial={{ opacity: 0 }}
                       whileHover={{ opacity: 1 }}
+                      animate={{ opacity: activeSection === id ? 1 : 0 }}
                       transition={{ duration: 0.2 }}
                       className="absolute inset-0 -z-10 rounded-xl bg-blue-50/50"
                     />
@@ -169,20 +207,23 @@ const Navbar = () => {
                 ))}
               </div>
 
-              {/* Right: Logo */}
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="flex-shrink-0 cursor-pointer relative group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300" />
-                <div className="relative bg-gradient-to-br from-white/80 to-white/50 p-2.5 rounded-2xl border border-white/20 shadow-lg shadow-accent/5 group-hover:shadow-accent/10 transition-all duration-300">
-                  <img
-                    src="/logo/logo.png"
-                    alt="Logo"
-                    className="h-9 w-9 sm:h-10 sm:w-10 object-contain"
-                  />
-                </div>
-              </motion.div>
+              {/* Right: Logo and Title */}
+              <div className="flex items-center gap-2">
+                <span className="lg:hidden text-xl font-IranSans font-bold text-accent">خانه یوحنا</span>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="flex-shrink-0 cursor-pointer relative group"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300" />
+                  <div className="relative bg-gradient-to-br from-white/80 to-white/50 p-2.5 rounded-2xl border border-white/20 shadow-lg shadow-accent/5 group-hover:shadow-accent/10 transition-all duration-300">
+                    <img
+                      src="/logo/Logo-U.webp"
+                      alt="Logo"
+                      className="h-9 w-9 sm:h-10 sm:w-10 object-contain"
+                    />
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -219,26 +260,66 @@ const Navbar = () => {
                         damping: 20,
                       }}
                       whileTap={{ scale: 0.98 }}
-                      onClick={() => scrollToSection(id)}
-                      className="group flex items-center justify-end w-full py-3.5 text-gray-600 font-IranSans relative overflow-hidden rounded-xl hover:bg-gray-50/80 transition-colors duration-200"
+                      onClick={() => {
+                        console.log('Mobile Before click - Active section:', activeSection);
+                        scrollToSection(id);
+                        console.log('Mobile After click - Active section:', activeSection);
+                      }}
+                      className={`group flex items-center justify-end w-full py-3.5 font-IranSans relative overflow-hidden rounded-xl hover:bg-gray-50/80 transition-colors duration-200 ${
+                        activeSection === id 
+                          ? "text-blue-600" 
+                          : "text-gray-600"
+                      }`}
                     >
                       <span className="relative z-10 px-4 text-base transition-colors duration-200 group-hover:text-blue-600">
                         {title}
-                        <motion.span
-                          initial={{ scaleX: 0 }}
-                          whileHover={{ scaleX: 1 }}
-                          transition={{ duration: 0.3 }}
-                          className="absolute -bottom-1 right-0 w-full h-0.5 bg-gradient-to-l from-blue-500 to-blue-600 origin-right"
+                        <span 
+                          className={`absolute -bottom-1 right-0 w-full h-0.5 bg-gradient-to-l from-blue-500 to-blue-600 origin-right transition-transform duration-300 ${
+                            activeSection === id 
+                              ? "scale-x-100" 
+                              : "scale-x-0 group-hover:scale-x-100"
+                          }`}
                         />
                       </span>
                       <motion.div
-                        initial={{ scale: 0 }}
-                        whileHover={{ scale: 1 }}
+                        initial={{ width: 0 }}
+                        animate={{ width: activeSection === id ? "100%" : 0 }}
                         transition={{ type: "spring", damping: 15 }}
-                        className="absolute right-0 w-1 h-full bg-blue-500/20 group-hover:bg-blue-500 transition-colors"
+                        className="absolute right-0 h-full bg-blue-500/10 transition-all duration-300"
                       />
                     </motion.button>
                   ))}
+                  
+                  {/* Mobile Consultation Button and Phone */}
+                  <div className="mt-4 space-y-3">
+                    <motion.button
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: menuItems.length * 0.1 }}
+                      onClick={() => scrollToSection("counseling")}
+                      className="w-full relative overflow-hidden bg-gradient-to-br from-accent to-accent/80 text-white px-4 py-3 rounded-xl text-base font-IranSans font-demiBold shadow-lg shadow-accent/20"
+                    >
+                      <span className="relative z-10">درخواست مشاوره</span>
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0"
+                        animate={{
+                          x: ["-200%", "200%"],
+                        }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: 2,
+                          ease: "linear",
+                        }}
+                      />
+                    </motion.button>
+                    
+                    <a
+                      href="tel:۰۲۱-۲۸۱۱۱۱۹۵"
+                      className="block w-full text-center mb-5 text-gray-600 py-2 font-IranSans text-base font-medium"
+                    >
+                      ۰۲۱-۲۸۱۱۱۱۹۵
+                    </a>
+                  </div>
                 </div>
 
                 {/* Additional Mobile Menu Content */}

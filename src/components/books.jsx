@@ -52,6 +52,7 @@ const Books = () => {
                       transition={{ duration: 0.8, delay: 0.2 }}
                     />
                   </span>{" "}
+
                   شخص خود شماست!
                 </h2>
 
@@ -79,9 +80,9 @@ const Books = () => {
                   >
                     <a
                       href="#"
-                      className="font-IranSans inline-flex items-center rounded-2xl bg-accent px-8 py-3 font-semibold text-white hover:bg-blue-600 transition-all duration-300 ease-in-out"
+                      className="font-IranSans inline-flex items-center rounded-2xl bg-accent px-4 sm:px-8 py-3 font-semibold text-white hover:bg-blue-600 transition-all duration-300 ease-in-out whitespace-nowrap text-sm sm:text-base"
                     >
-                      مشاوره اصلاح منابع
+                      مشاوره منابع
                       <svg className="w-5 h-5 mr-2 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -93,9 +94,9 @@ const Books = () => {
                   >
                     <a
                       href="#"
-                      className="font-IranSans inline-flex items-center rounded-2xl bg-gray-100 border-2 border-gray-200 px-8 py-3 font-semibold hover:border-accent text-gray-800 transition-all duration-300 ease-in-out"
+                      className="font-IranSans inline-flex items-center rounded-2xl bg-gray-100 border-2 border-gray-200 px-4 sm:px-8 py-3 font-semibold hover:border-accent text-gray-800 transition-all duration-300 ease-in-out whitespace-nowrap text-sm sm:text-base"
                     >
-                      مشاهده لیست کتاب‌ها
+                      لیست کتاب‌ها
                     </a>
                   </motion.div>
                 </div>
@@ -112,7 +113,7 @@ const Books = () => {
             >
               {/* Background Blur */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/5 rounded-full blur-3xl"></div>
-              
+
               {/* Image Container */}
               <div className="relative">
                 <img
@@ -120,7 +121,7 @@ const Books = () => {
                   alt="کتاب های درسی"
                   className="w-full h-auto rounded-3xl relative z-10"
                 />
-                
+
                 {/* Floating Badge - Discount */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
