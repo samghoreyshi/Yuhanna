@@ -32,7 +32,7 @@ const UnderConstruction = () => {
               در حال ساخت و بروزرسانی
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              ما در حال کار بر روی نسخه جدید وبسایت هستیم. به زودی با امکانات جدید در خدمت شما خواهیم بود!
+            وبسایت خانه یوحنا در حال توسعه و به‌روزرسانی است. به زودی آماده خدمت‌رسانی به شما خواهیم بود.
             </p>
             <div className="flex justify-center space-x-4 flex-row-reverse">
               <div className="animate-pulse w-3 h-3 bg-accent rounded-full"></div>
