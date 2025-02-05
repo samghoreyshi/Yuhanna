@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, Fragment } from "react";
+import React, { useState, useEffect, useRef, Fragment } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
@@ -16,10 +16,10 @@ import {
   HiOutlineArrowLeft,
   HiOutlineX,
   HiOutlineInformationCircle,
-  HiOutlineCalendar
+  HiOutlineCalendar,
 } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, Transition } from '@headlessui/react';
+import { Menu, Transition } from "@headlessui/react";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -37,20 +37,57 @@ export default function Navbar() {
     ["اخبار", "/news"],
   ];
 
+  // Store the component reference (not an instantiated element) for the icon.
   const eventItems = [
-    ["همه رویدادها", "مشاهده تمامی رویداد‌های یوحنا", "/events", <HiOutlineViewGrid className="w-5 h-5 text-blue-600" />, 'blue'],
-    ["اردو امتحانات", "مشاهده تمامی رویداد‌های آنلاین یوحنا", "/events/ordu-emtahanat", <HiOutlineViewGrid className="w-5 h-5 text-blue-600" />, 'teal'],
-    ["اردو قرنطینه", "درباره اردو قرنظینه بخوانید", "/events/ordu-gharantine", <HiOutlineViewGrid className="w-5 h-5 text-blue-600" />, 'emerald'],
-    ["اردو نوروزی", "مشاهده تمامی کارگاه‌های یوحنا", "/events/ordu-nowruzi", <HiOutlineViewGrid className="w-5 h-5 text-blue-600" />, 'purple'],
-    ["همایش استراتژی اردو نوروزی", "مشاهده تمامی همایش‌های یوحنا", "/events/conferences-nowruzi", <HiOutlineViewGrid className="w-5 h-5 text-blue-600" />, 'pink'],
-    ["تصاویر یوحنا", "مشاهده تمامی همایش‌های یوحنا", "/gallery", <HiOutlineViewGrid className="w-5 h-5 text-blue-600" />, 'pink'],
+    [
+      "همه رویدادها",
+      "مشاهده تمامی رویداد‌های یوحنا",
+      "/events",
+      HiOutlineViewGrid,
+      "blue",
+    ],
+    [
+      "اردو امتحانات",
+      "مشاهده تمامی رویداد‌های آنلاین یوحنا",
+      "/events/ordu-emtahanat",
+      HiOutlineViewGrid,
+      "teal",
+    ],
+    [
+      "اردو قرنطینه",
+      "درباره اردو قرنظینه بخوانید",
+      "/events/ordu-gharantine",
+      HiOutlineViewGrid,
+      "emerald",
+    ],
+    [
+      "اردو نوروزی",
+      "مشاهده تمامی کارگاه‌های یوحنا",
+      "/events/ordu-nowruzi",
+      HiOutlineViewGrid,
+      "purple",
+    ],
+    [
+      "همایش استراتژی اردو نوروزی",
+      "مشاهده تمامی همایش‌های یوحنا",
+      "/events/conferences-nowruzi",
+      HiOutlineViewGrid,
+      "pink",
+    ],
+    [
+      "تصاویر یوحنا",
+      "مشاهده تمامی همایش‌های یوحنا",
+      "/gallery",
+      HiOutlineViewGrid,
+      "pink",
+    ],
   ];
 
   const navItems = [
-    ["صفحه نخست", "/", <HiOutlineHome className="w-6 h-6 text-blue-600" />],
-    ["پرسش و پاسخ", "/forum", <HiOutlineChat className="w-6 h-6 text-blue-600" />],
-    ["مقالات", "/blog", <HiOutlineViewGrid className="w-6 h-6 text-blue-600" />],
-    ["اخبار", "/news", <HiOutlineViewGrid className="w-6 h-6 text-blue-600" />],
+    ["صفحه نخست", "/", HiOutlineHome],
+    ["پرسش و پاسخ", "/forum", HiOutlineChat],
+    ["مقالات", "/blog", HiOutlineViewGrid],
+    ["اخبار", "/news", HiOutlineViewGrid],
   ];
 
   useEffect(() => {
@@ -75,7 +112,10 @@ export default function Navbar() {
   // Click outside handler for the desktop events dropdown.
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (eventsDropdownRef.current && !eventsDropdownRef.current.contains(event.target)) {
+      if (
+        eventsDropdownRef.current &&
+        !eventsDropdownRef.current.contains(event.target)
+      ) {
         setIsEventsOpen(false);
       }
     };
@@ -118,7 +158,9 @@ export default function Navbar() {
                   className="flex items-center gap-3 p-3 rounded-xl hover:bg-blue-50/30 transition-colors w-full"
                 >
                   <HiOutlineCalendar className="w-5 h-5 text-blue-600" />
-                  <span className="text-base font-medium text-gray-800">رویدادها</span>
+                  <span className="text-base font-medium text-gray-800">
+                    رویدادها
+                  </span>
                   <HiChevronDown
                     className={`w-4 h-4 text-gray-500 ml-auto transition-transform ${
                       isMobileEventsOpen ? "rotate-180" : ""
@@ -134,20 +176,24 @@ export default function Navbar() {
                       exit={{ opacity: 0, height: 0 }}
                       className="pl-8 space-y-2 mt-1"
                     >
-                      {eventItems.map(([title, description, path, icon, color]) => (
-                        <Link
-                          key={path}
-                          href={path}
-                          className="flex items-center gap-3 p-2 text-sm text-gray-700 hover:bg-blue-50/20 rounded-lg"
-                          onClick={() => {
-                            setIsMobileMenuOpen(false);
-                            setIsMobileEventsOpen(false);
-                          }}
-                        >
-                          <span className={`w-2 h-2 rounded-full bg-${color}-500`} />
-                          {title}
-                        </Link>
-                      ))}
+                      {eventItems.map(
+                        ([title, description, path, Icon, color]) => (
+                          <Link
+                            key={path}
+                            href={path}
+                            className="flex items-center gap-3 p-2 text-sm text-gray-700 hover:bg-blue-50/20 rounded-lg"
+                            onClick={() => {
+                              setIsMobileMenuOpen(false);
+                              setIsMobileEventsOpen(false);
+                            }}
+                          >
+                            <span
+                              className={`w-2 h-2 rounded-full bg-${color}-500`}
+                            />
+                            {title}
+                          </Link>
+                        )
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -155,15 +201,17 @@ export default function Navbar() {
 
               {navItems
                 .filter(([title]) => title !== "رویدادها")
-                .map(([title, path, icon]) => (
+                .map(([title, path, Icon]) => (
                   <Link
                     key={path}
                     href={path}
                     className="flex items-center gap-3 p-3 rounded-xl hover:bg-blue-50/30 transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    {icon}
-                    <span className="text-base font-medium text-gray-800">{title}</span>
+                    {Icon && <Icon className="w-6 h-6 text-blue-600" />}
+                    <span className="text-base font-medium text-gray-800">
+                      {title}
+                    </span>
                   </Link>
                 ))}
             </div>
@@ -305,7 +353,7 @@ export default function Navbar() {
                   transition={{ duration: 0.2 }}
                 >
                   {eventItems.map(
-                    ([title, description, path, icon, color]) => (
+                    ([title, description, path, Icon, color]) => (
                       <Link
                         key={path}
                         href={path}
@@ -323,7 +371,7 @@ export default function Navbar() {
                               : "bg-blue-100/30"
                           } group-hover:bg-${color}-100/50 transition-colors`}
                         >
-                          {icon}
+                          {Icon && <Icon className="w-5 h-5 text-blue-600" />}
                         </div>
                         <div className="flex-1">
                           <h4 className="text-md font-medium text-blue-800">
@@ -387,7 +435,9 @@ export default function Navbar() {
                   <div>
                     <Menu.Button className="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-50 text-blue-600 hover:bg-blue-100 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50">
                       <HiOutlineUser className="w-5 h-5" />
-                      <span className="font-medium text-base">{user.username}</span>
+                      <span className="font-medium text-base">
+                        {user.username}
+                      </span>
                       <HiChevronDown
                         className="w-4 h-4 -mr-1 text-blue-400 ui-open:rotate-180 transition-transform"
                         aria-hidden="true"
@@ -511,7 +561,8 @@ export default function Navbar() {
         </div>
       </header>
       {/* Render mobile menu via portal so that its fixed position is relative to document.body */}
-      {typeof window !== "undefined" && createPortal(mobileMenu, document.body)}
+      {typeof window !== "undefined" &&
+        createPortal(mobileMenu, document.body)}
     </>
   );
 }
