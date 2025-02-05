@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { ClockIcon } from '@heroicons/react/24/outline';
 import NewsPageClient from '@/components/NewsPageClient'; // Fixed import path
@@ -53,13 +52,9 @@ export default function NewsPage() {
     return (
       <div className="min-h-screen bg-white/95 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 py-24">
-          {/* Rotating Logo */}
+          {/* Rotating Logo (static version without animation) */}
           <div className="flex justify-center mb-16">
-            <motion.div
-              animate={{ rotate: 360, scale: [1, 1.2, 1] }}
-              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-              className="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl shadow-lg"
-            />
+            <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl shadow-lg" />
           </div>
 
           {/* Content Skeleton */}
@@ -95,33 +90,24 @@ export default function NewsPage() {
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-[size:24px_24px] bg-center opacity-[0.03]" />
 
       {/* Decorative Elements */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="absolute -top-32 -left-48 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl"
-      />
-      <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 0.3, x: 0 }}
-        className="absolute top-1/3 right-0 w-64 h-64 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full blur-2xl rotate-45"
-      />
+      <div className="absolute -top-32 -left-48 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl" />
+      <div className="absolute top-1/3 right-0 w-64 h-64 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full blur-2xl rotate-45 opacity-30" />
 
       {/* Grid Background */}
-      <div className="absolute inset-0 bg-[#0066FF]/[0.03]" style={{
-        backgroundImage: `linear-gradient(#0066FF10 1px, transparent 1px), linear-gradient(to right, #0066FF10 1px, transparent 1px)`,
-        backgroundSize: '24px 24px'
-      }}></div>
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `linear-gradient(#0066FF10 1px, transparent 1px), linear-gradient(to right, #0066FF10 1px, transparent 1px)`,
+          backgroundSize: '24px 24px'
+        }}
+      ></div>
       <div className="max-w-7xl mx-auto px-4 py-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-8">
             {/* Featured Article */}
             {filteredNews.length > 0 && (
-              <motion.article
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 shadow-forum-card hover:shadow-forum-card-hover border border-[#e0e7ff] transition-all duration-300 group relative mb-5"
-              >
+              <article className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 shadow-forum-card hover:shadow-forum-card-hover border border-[#e0e7ff] transition-all duration-300 group relative mb-5">
                 <Link href={`/news/${filteredNews[0].Slug}`} className="absolute inset-0 z-10" />
                 {filteredNews[0].CoverImage && (
                   <div className="relative w-full h-64 rounded-2xl overflow-hidden mb-4">
@@ -152,20 +138,17 @@ export default function NewsPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
-              </motion.article>
+              </article>
             )}
 
             {/* Recent Articles Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {filteredNews.slice(1).map((news, index) => (
-                <motion.article
+                <article
                   key={news.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  style={{ transitionDelay: `${index * 0.1}s` }}
                   className="bg-gradient-to-br from-gray-100 to-white rounded-2xl overflow-hidden p-6 shadow-forum-card hover:shadow-forum-card-hover border border-[#e0e7ff] transition-all duration-300 group relative"
                 >
-
                   <Link href={`/news/${news.Slug}`} className="absolute inset-0 z-10" />
                   {news.CoverImage && (
                     <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
@@ -177,7 +160,6 @@ export default function NewsPage() {
                       />
                     </div>
                   )}
-
                   <div className="flex items-center gap-2 text-sm mb-3">
                     <span className="bg-gradient-to-br from-gray-100 to-white text-blue-800 px-3 py-1 rounded-full text-xs font-medium">اخبار جدید</span>
                     <span className="text-gray-400">•</span>
@@ -188,12 +170,9 @@ export default function NewsPage() {
                   <h2 className="text-base font-medium text-gray-900 leading-tight group-hover:text-blue-600 transition-colors">
                     {news.Title}
                   </h2>
-
-                </motion.article>
+                </article>
               ))}
-
             </div>
-
           </div>
 
           {/* Sidebar */}
@@ -225,7 +204,6 @@ export default function NewsPage() {
                       </div>
                     </div>
                   </div>
-
                 </div>
 
                 {/* Suggested News Grid */}
@@ -233,7 +211,7 @@ export default function NewsPage() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-6 pb-4 border-b border-blue-50">پیشنهادهای ویژه</h3>
                   <div className="grid grid-cols-1 gap-5">
                     {filteredNews.slice(0, 4).map((news) => (
-                      <motion.article
+                      <article
                         key={news.id}
                         className="group relative bg-white rounded-xl p-4 shadow-sm hover:shadow-lg border-2 border-blue-50 hover:border-blue-100 transition-all duration-300"
                       >
@@ -257,7 +235,7 @@ export default function NewsPage() {
                             {new Date(news.publishedAt).toLocaleDateString('fa-IR')}
                           </span>
                         </div>
-                      </motion.article>
+                      </article>
                     ))}
                   </div>
                 </div>
@@ -266,7 +244,7 @@ export default function NewsPage() {
           </div>
         </div>
       </div>
-      <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-purple-200 to-blue-200 rounded-full opacity-20 group-hover:opacity-30 transition-opacity" />
+      <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-purple-200 to-blue-200 rounded-full opacity-20 transition-opacity" />
       {filteredNews.length === 0 && !isSearching && (
         <div className="text-center py-8 text-gray-500 text-sm">
           موردی یافت نشد
