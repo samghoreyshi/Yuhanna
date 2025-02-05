@@ -1,4 +1,8 @@
 import "./globals.css";
+import { Providers } from '@/components/providers/Providers';
+import Navbar from '@/components/navbar';
+import Footer from '@/components/footer';
+import { Toaster } from 'react-hot-toast';
 
 export const metadata = {
 
@@ -11,12 +15,6 @@ export const metadata = {
     icon: '/favicon-new.ico',
 
   },
-  themeColor: '#3B82F6',
-  manifest: '/manifest.json',
-  appleWebApp: {
-    statusBarStyle: 'default',
-    title: 'خانه یوحنا',
-  },
 
 };
 
@@ -24,18 +22,20 @@ export default function RootLayout({ children }) {
 
   return (
 
-    <html lang="fa">
+    <html lang="fa" dir="rtl">
 
       <head>
-        <meta name="theme-color" content="#3B82F6" />
-        <meta name="msapplication-navbutton-color" content="#3B82F6" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="#3B82F6" />
+
+        <link rel="icon" href="/favicon.ico" />
       </head>
 
       <body>
-
-        {children}
-
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+          <Toaster />
+        </Providers>
       </body>
 
     </html>

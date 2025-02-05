@@ -1,6 +1,7 @@
 import Header from './Header';
 import ServicesGrid from '@/components/ServicesGrid';
-import LatestNews from '@/components/LatestNews';
+
+
 
 
 export default function Hero() {
@@ -8,8 +9,7 @@ export default function Hero() {
     <>
       <section id="home">
         <Header />
-        <ServicesGrid />
-        <LatestNews />
+        {/* <ServicesGrid /> */}
       </section>
 
     </>

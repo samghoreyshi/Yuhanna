@@ -10,7 +10,7 @@ const ServicesGrid = () => {
       ),
       href: "/counseling",
       featured: true,
-      illustration: "/illustrations/counseling.webp",
+      illustration: "/illus/counseling.webp",
       cta: "رزرو مشاوره"
     },
     {
@@ -22,7 +22,7 @@ const ServicesGrid = () => {
         </svg>
       ),
       href: "/education-house",
-      illustration: "/illustrations/education.webp",
+      illustration: "/illus/education.webp",
       cta: "مشاهده دوره‌ها"
     },
     {
@@ -34,7 +34,7 @@ const ServicesGrid = () => {
         </svg>
       ),
       href: "/study-house",
-      illustration: "/illustrations/study.webp",
+      illustration: "/illus/study.webp",
       cta: "ثبت‌نام"
     },
     {
@@ -46,7 +46,7 @@ const ServicesGrid = () => {
         </svg>
       ),
       href: "/books",
-      illustration: "/illustrations/books.webp",
+      illustration: "/illus/books.webp",
       cta: "مشاهده کتاب‌ها"
     },
     {
@@ -58,7 +58,7 @@ const ServicesGrid = () => {
         </svg>
       ),
       href: "/exams",
-      illustration: "/illustrations/exam.webp",
+      illustration: "/illus/exam.webp",
       cta: "ثبت‌نام آزمون"
     },
     {
@@ -70,7 +70,7 @@ const ServicesGrid = () => {
         </svg>
       ),
       href: "/events",
-      illustration: "/illustrations/events.webp",
+      illustration: "/illus/events.webp",
       cta: "مشاهده رویدادها"
     }
   ];
@@ -80,51 +80,46 @@ const ServicesGrid = () => {
   const regularServices = services.filter(service => !service.featured);
 
   return (
-    <section className="py-12 bg-gray-50" dir="rtl">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Featured Card */}
+    <section className="py-12 bg-gradient-to-b from-gray-50 to-white" dir="rtl">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="flex flex-nowrap gap-4 overflow-x-auto pb-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-x-visible scrollbar-hide">
           <a
             href={featuredService.href}
-            className="bg-white rounded-2xl p-6 transition-all duration-300 hover:shadow-xl group relative overflow-hidden border border-gray-100 flex flex-col h-[420px]"
+            className="group relative flex flex-col bg-white rounded-2xl p-5 transition-all duration-300 hover:shadow-lg border border-gray-100 hover:-translate-y-1 shadow-sm flex-shrink-0 w-[280px] md:w-auto"
           >
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_100%_100%,#3b82f6_0.5px,transparent_1px)] bg-[length:16px_16px]"></div>
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             
-            {/* Content */}
-            <div className="relative flex flex-col h-full">
-              {/* Header */}
-              <div className="flex items-start mb-4">
-                <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
+            <div className="relative flex flex-col h-[400px]">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                   {featuredService.icon}
                 </div>
-                <div className="text-justify flex-1 mr-4">
-                  <h3 className="font-IranSans text-xl font-black text-gray-800 mb-2">
-                    {featuredService.title}
-                  </h3>
-                  <p className="font-IranSans text-sm text-gray-500 leading-6 text-justify">
-                    {featuredService.description}
-                  </p>
-                </div>
+                <h3 className="font-IranSans text-lg font-black text-gray-800 mt-2">
+                  {featuredService.title}
+                </h3>
               </div>
 
-              {/* Illustration */}
-              <div className="flex-grow flex items-center justify-center py-4">
-                <div className="w-full h-40 relative">
+              <p className="font-IranSans text-sm text-gray-600 leading-6 text-justify mb-4 line-clamp-3">
+                {featuredService.description}
+              </p>
+
+              <div className="flex-1 flex items-center justify-center">
+                <div className="relative w-full h-[180px] flex items-center justify-center">
                   <img
                     src={featuredService.illustration}
                     alt={featuredService.title}
-                    className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-300"
+                    className="max-w-[200px] max-h-[180px] w-auto h-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               </div>
 
-              {/* CTA */}
-              <div className="flex items-center justify-end mt-auto pt-4 border-t border-gray-100">
-                <span className="font-IranSans text-blue-600 text-sm ml-2">{featuredService.cta}</span>
-                <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center transform -translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-blue-600">
+              <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                <span className="font-IranSans font-medium text-blue-600 text-sm">
+                  {featuredService.cta}
+                </span>
+                <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center transform group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 text-blue-600">
                   <svg
-                    className="w-4 h-4"
+                    className="w-4 h-4 rotate-180"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -141,50 +136,45 @@ const ServicesGrid = () => {
             </div>
           </a>
 
-          {/* Regular Cards */}
           {regularServices.map((service, index) => (
             <a
               key={index}
               href={service.href}
-              className="bg-white rounded-2xl p-6 transition-all duration-300 hover:shadow-xl group relative overflow-hidden border border-gray-100 flex flex-col h-[420px]"
+              className="group relative flex flex-col bg-white rounded-2xl p-5 transition-all duration-300 hover:shadow-lg border border-gray-100 hover:-translate-y-1 shadow-sm flex-shrink-0 w-[280px] md:w-auto"
             >
-              {/* Background Pattern */}
-              <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_100%_100%,#3b82f6_0.5px,transparent_1px)] bg-[length:16px_16px]"></div>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
-              {/* Content */}
-              <div className="relative flex flex-col h-full">
-                {/* Header */}
-                <div className="flex items-start mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
+              <div className="relative flex flex-col h-[400px]">
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                     {service.icon}
                   </div>
-                  <div className="text-justify flex-1 mr-4">
-                    <h3 className="font-IranSans text-xl font-black text-gray-800 mb-2">
-                      {service.title}
-                    </h3>
-                    <p className="font-IranSans text-sm text-gray-500 leading-6 text-justify">
-                      {service.description}
-                    </p>
-                  </div>
+                  <h3 className="font-IranSans text-lg font-black text-gray-800 mt-2">
+                    {service.title}
+                  </h3>
                 </div>
 
-                {/* Illustration */}
-                <div className="flex-grow flex items-center justify-center py-4">
-                  <div className="w-full h-40 relative">
+                <p className="font-IranSans text-sm text-gray-600 leading-6 text-justify mb-4 line-clamp-3">
+                  {service.description}
+                </p>
+
+                <div className="flex-1 flex items-center justify-center">
+                  <div className="relative w-full h-[180px] flex items-center justify-center">
                     <img
                       src={service.illustration}
                       alt={service.title}
-                      className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-300"
+                      className="max-w-[200px] max-h-[180px] w-auto h-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 </div>
 
-                {/* CTA */}
-                <div className="flex items-center justify-end mt-auto pt-4 border-t border-gray-100">
-                  <span className="font-IranSans text-blue-600 text-sm ml-2">{service.cta}</span>
-                  <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center transform -translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-blue-600">
+                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <span className="font-IranSans font-medium text-blue-600 text-sm">
+                    {service.cta}
+                  </span>
+                  <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center transform group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 text-blue-600">
                     <svg
-                      className="w-4 h-4"
+                      className="w-4 h-4 rotate-180"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"

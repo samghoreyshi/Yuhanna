@@ -4,20 +4,22 @@ import Navbar from "../components/navbar";
 import Hero from "../components/hero";
 import Footer from "../components/footer";
 import UnderConstruction from '@/components/UnderConstruction'
-
+import ServicesSections from '@/components/ServicesSections';
+import Testimonials from "@/components/testimonials";
+import Newsletter from '@/components/Newsletter';
+import ImageCarousel from '@/components/ImageCarousel';
 
 export default function Home() {
-
   return (
     <main className="min-h-screen bg-white">
-      {/* <Navbar />
       <section id="hero">
         <Hero />
       </section>
-      <Footer /> */}
-      <UnderConstruction />
-
-
-    </main >
+      <ImageCarousel />
+      <ServicesSections />
+      <Testimonials />
+      <Newsletter />
+      {/* <UnderConstruction /> */}
+    </main>
   );
 }
