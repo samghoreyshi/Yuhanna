@@ -48,7 +48,7 @@ export default function Counseling() {
             {/* Image Container */}
             <div className='w-full lg:max-w-[50%] xl:max-w-[600px] aspect-square md:aspect-[4/5] lg:aspect-square'>
                 <ImageWithPlaceholder
-                    src="/images/Counseling.webp"
+                    src="/images/counseling.webp"
                     className="w-full h-full object-cover rounded-lg shadow-sm"
                     alt="Counseling illustration"
                 />
