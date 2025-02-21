@@ -285,7 +285,7 @@ export default function Navbar() {
                     alt="Logo"
                     width={130}
                     height={130}
-                    className="w-full h-auto transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>
               </Link>

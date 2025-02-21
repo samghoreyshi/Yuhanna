@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'custom-xl': '1302px',
+      },
       fontFamily: {
         IranSans: ["IranSans", "sans-serif"],
       },
@@ -18,8 +21,9 @@ module.exports = {
       },
       colors: {
         primary: "#F8F3E9",
-        secondary: '#F9F9F9',
-        accent: '#2563EB',
+        secondary: '#00232D',
+        textSecondary: '#497886',
+        accent: '#0CAEDD',
       },
       textDirection: {
         rtl: 'rtl',

@@ -31,9 +31,9 @@ export default function RootLayout({ children }) {
 
       <body>
         <Providers>
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
-          <Footer />
+          {/* <Footer /> */}
           <Toaster />
         </Providers>
       </body>
