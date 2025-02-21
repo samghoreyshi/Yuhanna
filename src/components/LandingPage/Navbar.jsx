@@ -114,7 +114,7 @@ export default function Navbar() {
                 {/* Logo */}
                 <div>
                     <Image
-                        src="/logo/Logo.png"
+                        src="/logo/logo.png"
                         width={120}
                         height={90}
                         alt="لوگو خانه یوحنا"
@@ -217,7 +217,7 @@ export default function Navbar() {
             <div className="flex min-[1090px]:hidden items-center justify-between px-4 py-4">
                 <div>
                     <Image
-                        src="/logo/Logo.png"
+                        src="/logo/logo.png"
                         width={120}
                         height={90}
                         alt="لوگو خانه یوحنا"
