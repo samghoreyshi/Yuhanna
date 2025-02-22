@@ -31,18 +31,26 @@ export default function Pension() {
                     <TagsButton
 
                         title='فضای حرفه‌ای'
-                        background='bg-[#EAD2FF]'
-                        BGradinetFrom='from-[#7E25A7]'
-                        BGradientTo='to-[#E8C1FF]'
-                        TextColor='text-[#531059]'
+                        background='bg-blue-50'
+                        BGradinetFrom='from-blue-400'
+                        BGradientTo='to-blue-100'
+                        TextColor='text-blue-900'
+                    />
+                    <TagsButton
+
+                        title='تجهیزات  رفاهی'
+                        background='bg-blue-50'
+                        BGradinetFrom='from-blue-400'
+                        BGradientTo='to-blue-100'
+                        TextColor='text-blue-900'
                     />
                     <TagsButton
 
                         title='امن و آرام'
-                        background='bg-[#DEFFD2]'
-                        BGradinetFrom='from-[#45800A]'
-                        BGradientTo='to-[#CCFFC1]'
-                        TextColor='text-[#24570C]'
+                        background='bg-blue-50'
+                        BGradinetFrom='from-blue-400'
+                        BGradientTo='to-blue-100'
+                        TextColor='text-blue-900'
                     />
                     <TagsButton
                         title='ثبت نام پانسیون'

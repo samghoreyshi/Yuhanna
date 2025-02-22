@@ -18,7 +18,7 @@ export default function BentoGallery() {
                         <div key={index} className='mb-4 h-[250px] break-inside-avoid'>
                             <ImageWithPlaceholder
                                 src={src}
-                                className="w-full object-cover rounded-lg"
+                                className="w-full object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
                                 alt="Hero illustration"
                             />
                         </div>

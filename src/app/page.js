@@ -25,7 +25,6 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <Navbar />
-      <HeroBanner />
       
       <div id="study-home">
         <StudySection />
@@ -55,7 +54,11 @@ export default function Home() {
       <div id="book-exam">
         <BookExam />
       </div>
+      {/* <HeroBanner /> */}
+      <div id="Footer">
+
       <Footer />
+      </div>
     </main>
   );
 }

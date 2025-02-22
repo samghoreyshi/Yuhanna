@@ -116,7 +116,7 @@ export default function Navbar() {
                     <Image
                         src="/logo/logo.png"
                         width={120}
-                        height={90}
+                        height={10}
                         alt="لوگو خانه یوحنا"
                     />
                 </div>
@@ -175,7 +175,7 @@ export default function Navbar() {
                                                     />
                                                 </span>
                                                 <span className="group flex flex-col justify-between items-start hover:text-accent transition-all duration-300">
-                                                    <h4 className="font-extrabold whitespace-nowrap text-secondary group-hover:text-accent transition-all duration-300">
+                                                    <h4 className="font-extrabold text-sm whitespace-nowrap text-secondary group-hover:text-accent transition-all duration-300">
                                                         {subItem.title}
                                                     </h4>
                                                     <p className="text-right text-xs text-[#497886] w-full whitespace-nowrap">
@@ -336,7 +336,7 @@ export default function Navbar() {
                                                 />
                                             </span>
                                             <span className="group flex flex-col justify-between items-start hover:text-accent transition-all duration-300">
-                                                <h4 className="font-extrabold whitespace-nowrap text-secondary group-hover:text-accent transition-all duration-300">
+                                                <h4 className="font-extrabold text-sm whitespace-nowrap text-secondary group-hover:text-accent transition-all duration-300">
                                                     {subItem.title}
                                                 </h4>
                                                 <p className="text-right text-xs text-[#497886] w-full whitespace-nowrap">

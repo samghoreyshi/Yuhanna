@@ -22,18 +22,18 @@ export default function Counseling() {
                     <TagsButton
 
                         title='مشاوره لایف استایل'
-                        background='bg-orange-100'
-                        BGradinetFrom='from-orange-400'
-                        BGradientTo='to-orange-100'
-                        TextColor='text-orange-900'
+                        background='bg-blue-50'
+                        BGradinetFrom='from-blue-400'
+                        BGradientTo='to-blue-100'
+                        TextColor='text-blue-900'
                     />
                     <TagsButton
 
                         title='مشاوره تحصیلی'
-                        background='bg-[#FFD2EE]'
-                        BGradinetFrom='from-[#DD0C78]'
-                        BGradientTo='to-[#FFC1E3]'
-                        TextColor='text-[#9D144B]'
+                        background='bg-blue-50'
+                        BGradinetFrom='from-blue-400'
+                        BGradientTo='to-blue-100'
+                        TextColor='text-blue-900'
                     />
                     <TagsButton
                         title='درخواست مشاوره'

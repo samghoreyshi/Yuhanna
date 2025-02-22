@@ -22,18 +22,18 @@ export default function Education() {
                     <TagsButton
 
                         title='کارگاه های آموزشی'
-                        background='bg-orange-100'
-                        BGradinetFrom='from-orange-400'
-                        BGradientTo='to-orange-100'
-                        TextColor='text-orange-900'
+                        background='bg-blue-50'
+                        BGradinetFrom='from-blue-400'
+                        BGradientTo='to-blue-100'
+                        TextColor='text-blue-900'
                     />
                     <TagsButton
 
                         title='آنالیز مهارت های شما'
-                        background='bg-[#DEFFD2]'
-                        BGradinetFrom='from-[#45800A]'
-                        BGradientTo='to-[#CCFFC1]'
-                        TextColor='text-[#24570C]'
+                        background='bg-blue-50'
+                        BGradinetFrom='from-blue-400'
+                        BGradientTo='to-blue-100'
+                        TextColor='text-blue-900'
                     />
                     <TagsButton
                         title='ثبت نام در دوره ‌ها'
