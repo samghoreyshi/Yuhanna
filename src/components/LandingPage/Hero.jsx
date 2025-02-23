@@ -74,7 +74,7 @@ export default function Hero() {
                         <SButton title='خانه مشاوره' background='bg-blue-50' BGradinetFrom='from-blue-400' BGradientTo='to-blue-100' TextColor='text-blue-900' scrollTo='consulting' />
                         <SButton title='خانه مطالعه' background='bg-[#FFD2EE]' BGradinetFrom='from-[#DD0C78]' BGradientTo='to-[#FFC1E3]' TextColor='text-[#9D144B]' scrollTo='pension' />
                         <SButton title='خانه آموزش' background='bg-orange-100' BGradinetFrom='from-orange-400' BGradinetTo='to-orange-100' TextColor='text-orange-900' scrollTo='education-home' />
-                        <SButton title='آزمون' background='bg-[#DEFFD2]' BGradinetFrom='from-[#45800A]' BGradientTo='to-[#CCFFC1]' TextColor='text-[#24570C]' scrollTo='book-exam' />
+                        <SButton title='آزمون' background='bg-[#DEFFD2]' BGradinetFrom='from-[#45800A]' BGradientTo='to-[#CCFFC1]' TextColor='text-[#24570C]' scrollTo='azmoon' />
                         <SButton title='کتاب' background='bg-[#EAD2FF]' BGradinetFrom='from-[#7E25A7]' BGradinetTo='to-[#E8C1FF]' TextColor='text-[#531059]' scrollTo='book-exam' />
                     </div>
                 </div>
@@ -90,14 +90,14 @@ export default function Hero() {
                 transition={{ duration: 0.4, ease: 'easeOut' }}
                 // Disable pointer events when hidden
                 style={{ pointerEvents: isSticky && !isHidden ? 'auto' : 'none' }}
-                className="fixed z-50 bottom-0 bg-gradient-to-t from-white to-white/0 py-5 left-0 w-full flex justify-center items-center"
+                className="fixed z-40 bottom-0 bg-gradient-to-t from-white to-white/0 py-5 left-0 w-full flex justify-center items-center"
             >
                 <div className="p-[1px] mt-4 shadow-xl bg-gradient-to-l from-accent to-gray-200 rounded-xl w-fit mx-auto">
                     <div className="flex flex-row sm:flex-nowrap sm:gap-2 gap-1 justify-center items-center bg-white rounded-xl p-3">
                         <SButton title="خانه مشاوره" background="bg-blue-50" BGradinetFrom="from-blue-400" BGradientTo="to-blue-100" TextColor="text-blue-900" scrollTo="consulting" />
                         <SButton title="خانه مطالعه" background="bg-[#FFD2EE]" BGradinetFrom="from-[#DD0C78]" BGradientTo="to-[#FFC1E3]" TextColor="text-[#9D144B]" scrollTo="pension" />
                         <SButton title="خانه آموزش" background="bg-orange-100" BGradinetFrom="from-orange-400" BGradientTo="to-orange-100" TextColor="text-orange-900" scrollTo="education-home" />
-                        <SButton title="آزمون" background="bg-[#DEFFD2]" BGradinetFrom="from-[#45800A]" BGradientTo="to-[#CCFFC1]" TextColor="text-[#24570C]" scrollTo="book-exam" />
+                        <SButton title="آزمون" background="bg-[#DEFFD2]" BGradinetFrom="from-[#45800A]" BGradientTo="to-[#CCFFC1]" TextColor="text-[#24570C]" scrollTo="azmoon" />
                         <SButton title="کتاب" background="bg-[#EAD2FF]" BGradinetFrom="from-[#7E25A7]" BGradinetTo="to-[#E8C1FF]" TextColor="text-[#531059]" scrollTo="book-exam" />
                     </div>
                 </div>

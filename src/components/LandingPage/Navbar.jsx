@@ -51,6 +51,20 @@ export default function Navbar() {
             iconPath: null,
         },
         {
+            id: 7,
+            title: "اخبار",
+            subMenu: false,
+            icon: false,
+            iconPath: null,
+        },
+        {
+            id: 8,
+            title: "مقالات",
+            subMenu: false,
+            icon: false,
+            iconPath: null,
+        },
+        {
             id: 3,
             title: "هوش‌مصنوعی",
             subMenu: false,
@@ -279,12 +293,10 @@ export default function Navbar() {
 
             {/* Mobile Menu with smooth animation: Visible only below 1090px */}
             <div
-                className={`absolute rounded-b-lg overflow-y-scroll h-dvh left-0 right-0 shadow-lg bg-white backdrop-blur-md z-40 p-4 transform transition-all duration-300 min-[1090px]:hidden ${mobileMenuOpen
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 -translate-y-2 pointer-events-none"
+                className={`absolute rounded-b-lg z-50 overflow-y-auto max-h-[calc(100vh-64px)] left-0 right-0 shadow-lg bg-white backdrop-blur-md z-40 p-4 transform transition-all duration-300 min-[1090px]:hidden ${mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
                     }`}
             >
-                <ul className="px-10 flex flex-col gap-2">
+                <ul className="px-10 overflow-y-scroll  flex flex-col gap-2">
                     {MenuItems.map((item) => (
                         <li key={item.id} className="border-b last:border-none text-textSecondary border-gray-100 py-2">
                             {item.subMenu ? (
@@ -320,7 +332,7 @@ export default function Navbar() {
                             {/* Mobile dropdown submenu with smooth animation */}
                             {item.subMenu && (
                                 <ul
-                                    className={`overflow-hidden flex flex-col gap-5 transition-all duration-300 pl-4 ${openDropdown === item.id
+                                    className={`overflow-hidden  flex flex-col gap-5 transition-all duration-300 pl-4 ${openDropdown === item.id
                                         ? "max-h-90 py-10 opacity-100"
                                         : "max-h-0 opacity-0"
                                         }`}
