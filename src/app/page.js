@@ -59,7 +59,7 @@ export default function Home() {
       <div id="Footer">
 
       <Footer />
-      <Modal/>
+      {/* <Modal/> */}
       </div>
     </main>
   );
