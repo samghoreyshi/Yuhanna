@@ -92,7 +92,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-100">
           <p className="text-center font-IranSans text-sm text-gray-500">
-            تمام حقوق مادی و معنوی این وبسایت متعلق به خانه یوحنا می‌باشد © {new Date().getFullYear()}
+            تمام حقوق مادی و معنوی این وبسایت متعلق به خانه یوحنا می‌باشد © {new Date().getFullYear()} | طراحی و توسعه توسط <span className="text-accent">Sam.Ghoreyshi</span>
           </p>
         </div>
       </div>

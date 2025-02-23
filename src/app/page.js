@@ -19,6 +19,7 @@ import Ticker from '@/components/LandingPage/Testing'
 import Navbar from '@/components/LandingPage/Navbar'
 import EventBanner from '@/components/LandingPage/EventBanner'
 import BentoGallery from '@/components/LandingPage/BentoGallery'
+import Modal from '@/components/LandingPage/Modal'
 
 
 export default function Home() {
@@ -58,6 +59,7 @@ export default function Home() {
       <div id="Footer">
 
       <Footer />
+      <Modal/>
       </div>
     </main>
   );
