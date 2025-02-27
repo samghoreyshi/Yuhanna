@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import TagsButton from '@/components/LandingPage/Tags'
+
 
 export default function Navbar() {
     const [openDropdown, setOpenDropdown] = useState(null);
@@ -124,7 +126,7 @@ export default function Navbar() {
                 }`}
         >
             {/* Desktop Navbar: Visible only on screens 1090px and above */}
-            <div className="hidden transition-all duration-300 min-[1090px]:flex custom-xl:px-32 gap-5 items-center justify-between px-5 py-8 h-[64px]">
+            <div className="hidden transition-all duration-300 min-[1090px]:flex px-32  gap-5 items-center justify-between  py-8 h-[64px]">
                 {/* Logo */}
                 <div>
                     <Image
@@ -189,7 +191,7 @@ export default function Navbar() {
                                                     />
                                                 </span>
                                                 <span className="group flex flex-col justify-between items-start hover:text-accent transition-all duration-300">
-                                                    <h4 className="font-extrabold text-sm whitespace-nowrap text-secondary group-hover:text-accent transition-all duration-300">
+                                                    <h4 className="font-extrabold text-sm whitespace-nowrap text-[#497886] group-hover:text-accent transition-all duration-300">
                                                         {subItem.title}
                                                     </h4>
                                                     <p className="text-right text-xs text-[#497886] w-full whitespace-nowrap">
@@ -204,25 +206,22 @@ export default function Navbar() {
                         ))}
                     </ul>
                     <div className="flex items-center justify-between gap-2">
-                        <button className="p-2 border-2 flex gap-2 items-center justify-between border-accent text-accent rounded-md">
-                            تماس با ما ۲۸۱۱۱۱۸۵-۰۲۱
-                            <span>
-                                <Image
-                                    src="/icons/navbar/phone.svg"
-                                    alt="تلفن خانه یوحنا، تماس بگیرید"
-                                    width={24}
-                                    height={24}
-                                />
-                            </span>
+                        <TagsButton
 
-                        </button>
-                        <button className="border-2 border-[#0E84A7] rounded-md bg-accent text-white">
-                            <div className="bg-gradient-to-t from-[#0E84A7] to-accent rounded-md">
-                                <div className="bg-gradient-to-b from-accent to-[#0E84A7] p-2 rounded-md">
-                                    ورود | ثبت نام
-                                </div>
-                            </div>
-                        </button>
+                            title="تماس با ما ۲۸۱۱۱۱۸۵-۰۲۱"
+                            background='bg-blue-50'
+                            BGradinetFrom='from-blue-400'
+                            BGradientTo='to-blue-100'
+                            TextColor='text-blue-900'
+                        />
+                        <TagsButton
+
+                            title="ورود | ثبت نام"
+                            background='bg-blue-50'
+                            BGradinetFrom='from-blue-400'
+                            BGradientTo='to-blue-100'
+                            TextColor='text-blue-900'
+                        />
                     </div>
                 </div>
             </div>
@@ -293,10 +292,10 @@ export default function Navbar() {
 
             {/* Mobile Menu with smooth animation: Visible only below 1090px */}
             <div
-                className={`absolute rounded-b-lg z-50 overflow-y-auto max-h-[calc(100vh-64px)] left-0 right-0 shadow-lg bg-white backdrop-blur-md z-40 p-4 transform transition-all duration-300 min-[1090px]:hidden ${mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
+                className={`absolute rounded-b-lg z-50 overflow-y-auto h-dvh left-0 right-0 shadow-lg bg-white backdrop-blur-md  p-4 transform transition-all duration-300 min-[1090px]:hidden ${mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
                     }`}
             >
-                <ul className="px-10 overflow-y-scroll  flex flex-col gap-2">
+                <ul className="px-10 overflow-y-autoflex flex-col gap-2">
                     {MenuItems.map((item) => (
                         <li key={item.id} className="border-b last:border-none text-textSecondary border-gray-100 py-2">
                             {item.subMenu ? (
@@ -348,7 +347,7 @@ export default function Navbar() {
                                                 />
                                             </span>
                                             <span className="group flex flex-col justify-between items-start hover:text-accent transition-all duration-300">
-                                                <h4 className="font-extrabold text-sm whitespace-nowrap text-secondary group-hover:text-accent transition-all duration-300">
+                                                <h4 className="font-extrabold text-sm whitespace-nowrap text-[#497886] group-hover:text-accent transition-all duration-300">
                                                     {subItem.title}
                                                 </h4>
                                                 <p className="text-right text-xs text-[#497886] w-full whitespace-nowrap">

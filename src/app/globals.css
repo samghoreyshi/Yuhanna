@@ -125,19 +125,17 @@ body {
 }
 
 .animate-shimmer {
-  /* Adjust the duration and easing as you like */
   animation: shimmer 1.5s infinite linear;
 
-  /* Use a subtle gradient with closer color stops for a smoother effect */
+  /* Replace gray with transparent */
   background: linear-gradient(
     to right,
-    #f6f7f8 0%,
-    #edeef1 20%,
-    #f6f7f8 40%,
-    #f6f7f8 100%
+    transparent 0%,
+    #E9F8FC 20%,
+    transparent 50%,
+    transparent 0%
   );
 
-  /* Make the background size a percentage so it scales better */
   background-size: 200% 100%;
 }
 

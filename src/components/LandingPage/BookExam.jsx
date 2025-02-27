@@ -24,7 +24,7 @@ export default function BookExam() {
                         className='flex flex-col h-full min-h-[550px] items-start justify-between gap-2 sm:gap-5 bg-gradient-to-b from-accent/20 to-white p-5 rounded-lg border border-[#AFDDEB] shadow-[inset_0_0_1px_2px_rgba(255,255,255,0.8)]'
                     >
                         {/* Image */}
-                        <div className="bg-blue-50 w-full h-[250px] relative">
+                        <div className="bg-blue-50 w-full h-[330px] relative">
                             <ImageWithPlaceholder
                                 src={item.ImagePath}
                                 alt="Hero illustration"

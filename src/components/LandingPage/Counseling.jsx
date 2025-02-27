@@ -10,7 +10,7 @@ export default function Counseling() {
                     خانه <span className='text-accent'>مشاوره</span>
                 </span>
 
-                <span className='font-extraBold text-xl md:text-2xl lg:text-3xl'>
+                <span className='font-extraBold text-[#497886] text-xl md:text-2xl lg:text-3xl'>
                     یک مشاور خوب راه رو برات باز میکنه...
                 </span>
 

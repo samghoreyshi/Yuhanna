@@ -14,7 +14,7 @@ export default function Pension() {
                     خانه <span className='text-accent'>مطالعه</span>
                 </span>
 
-                <span className='font-extraBold text-secondary text-xl md:text-2xl lg:text-3xl'>
+                <span className='font-extraBold text-[#497886] text-lg md:text-2xl lg:text-3xl'>
                     یک فضای حرفه‌ای ذهنتو منسجم میکنه...
                 </span>
 

@@ -42,8 +42,8 @@ const ImageCarousel = () => {
   }
 
   return (
-    <section className="w-full bg-gray-50">
-      <div className="w-full">
+    <section className="w-full  bg-gray-50">
+      <div className="w-full  overflow-hidden">
         <Swiper
           modules={[Autoplay, Navigation, Pagination]}
           spaceBetween={0}
@@ -59,21 +59,14 @@ const ImageCarousel = () => {
         >
           {slides.map((slide) => (
             <SwiperSlide key={slide.id}>
-              <Link href={`/${slide.Link}`} className="block relative aspect-[3/1] md:aspect-[4/1] w-full">
+              <Link href={`/${slide.Link}`} className="block relative   sm:h-[500px] w-full">
                 <ImageWithPlaceholder
-                  src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${slide.SlideImage?.formats?.large?.url || slide.SlideImage?.url}`}
+                  src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${slide.SlideImage?.url}`}
                   alt={slide.Title}
-                  className="object-cover"
+                  className="w-full h-auto  rounded-lg object-contain sm:object-cover object-center"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 90vw"
                 />
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 
-                {/* Title Overlay */}
-                <div className="absolute bottom-0 right-0 p-4 md:p-6 w-full">
-                  <h2 className="text-white text-lg md:text-2xl font-bold drop-shadow-lg max-w-2xl">
-                    {slide.Title}
-                  </h2>
-                </div>
               </Link>
             </SwiperSlide>
           ))}

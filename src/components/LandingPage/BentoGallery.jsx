@@ -29,7 +29,7 @@ export default function BentoGallery() {
           ))}
         </div>
         {/* White gradient overlay on the right */}
-        <div className="pointer-events-none absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-white to-transparent" />
+        <div className="pointer-events-none absolute top-0 right-0 w-12 h-full bg-gradient-to-l from-white via-transparent to-transparent" />
       </div>
 
       {/* Desktop layout: maintain original column layout */}
