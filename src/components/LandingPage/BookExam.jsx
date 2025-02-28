@@ -15,7 +15,7 @@ export default function BookExam() {
 
 
     return (
-        <section className='px-8 md:px-32 lg:px-64 sm:py-8'>
+        <section className='px-8 md:px-10 lg:px-64 sm:py-8'>
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-5'>
                 {CardsData.map(item => (
                     <div

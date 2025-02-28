@@ -3,7 +3,7 @@ import TagsButton from '@/components/LandingPage/Tags'
 
 export default function Education() {
     return (
-        <section className="w-full px-8 sm:px-8 lg:px-32 xl:px-64 sm:py-12 flex flex-col lg:flex-row justify-between gap-8 lg:gap-12 xl:gap-20 items-center">
+        <section className="w-full px-8 sm:px-32 lg:px-32 xl:px-64 sm:py-12 flex flex-col lg:flex-row justify-between gap-8 lg:gap-12 xl:gap-20 items-center">
             {/* Text Content */}
             <div className='w-full lg:max-w-[50%] xl:max-w-[600px] flex flex-col justify-center gap-4 md:gap-6'>
                 <span className='text-4xl sm:text-5xl md:text-6xl font-extraBlack pb-4 w-fit border-b border-accent'>
@@ -46,10 +46,10 @@ export default function Education() {
             </div>
 
             {/* Image Container */}
-            <div className='w-full lg:max-w-[50%] xl:max-w-[600px] aspect-square md:aspect-[4/5] lg:aspect-square'>
+            <div className='w-full lg:max-w-[50%] overflow-visible  xl:max-w-[600px] aspect-square md:aspect-[4/5] lg:aspect-square'>
                 <ImageWithPlaceholder
                     src="/images/Educator.webp"
-                    className="w-full h-full object-cover rounded-lg shadow-sm"
+                    className="w-full overflow-visible h-full object-contain rounded-lg shadow-sm"
                     alt="Counseling illustration"
                 />
             </div>

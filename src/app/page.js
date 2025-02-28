@@ -20,6 +20,7 @@ import Navbar from '@/components/LandingPage/Navbar'
 import EventBanner from '@/components/LandingPage/EventBanner'
 import BentoGallery from '@/components/LandingPage/BentoGallery'
 import Modal from '@/components/LandingPage/Modal'
+import CounselingReq from "@/components/LandingPage/CounselingReq";
 
 
 export default function Home() {
@@ -31,6 +32,8 @@ export default function Home() {
       <div id="study-home">
         <StudySection />
       </div>
+
+      <CounselingReq/>
 
       <div id="consulting">
         <Counseling />

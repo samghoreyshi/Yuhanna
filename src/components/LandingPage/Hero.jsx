@@ -48,7 +48,7 @@ export default function Hero() {
 
     return (
         <>
-            <section className="relative  overflow-visible  px-8 pt-5  md:px-32 lg:px-64 flex flex-col justify-center items-center bg-gradient-to-b from-accent/10 via-white to-white ">
+            <section className="relative  overflow-visible  px-8 pt-5  md:px-24 lg:px-64 flex flex-col justify-center items-center bg-gradient-to-b from-accent/10 via-white to-white ">
                 {/* Grid Background Overlay */}
                 <div className="absolute inset-0 pointer-events-none z-0">
                     <div
@@ -62,7 +62,7 @@ export default function Hero() {
 
                 {/* Content */}
                 <div className="relative z-10 w-full flex flex-col gap-2 justify-center">
-                    <h1 className="text-[clamp(16px,7vw,55px)] sm:text-center text-black font-extrabold leading-relaxed text-center">
+                    <h1 className=" text-[clamp(16px,7vw,55px)] sm:text-[clamp(16px,5vw,55px)] sm:text-center text-black font-extrabold leading-relaxed text-center">
                         کورترین گره زندگیت هم،
                         <br className="hidden md:block" />
                         فقط با دستای <span className="relative text-accent">خودت</span> باز میشه!

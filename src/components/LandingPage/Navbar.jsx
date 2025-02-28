@@ -67,13 +67,6 @@ export default function Navbar() {
             iconPath: null,
         },
         {
-            id: 3,
-            title: "هوش‌مصنوعی",
-            subMenu: false,
-            icon: true,
-            iconPath: "/icons/navbar/snowflake.svg",
-        },
-        {
             id: 4,
             title: "رویدادها",
             subMenu: true,
