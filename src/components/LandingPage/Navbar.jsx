@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import TagsButton from '@/components/LandingPage/Tags'
+import RButton from '@/components/LandingPage/R-Button'
 
 
 export default function Navbar() {
@@ -115,7 +115,7 @@ export default function Navbar() {
     return (
         <nav
             ref={navRef}
-            className={`sticky top-0 z-50 transition-all  duration-300 shadow-sm ${isScrolled ? "backdrop-blur-lg bg-white" : "bg-white"
+            className={`sticky top-0 z-50 transition-all   duration-300 shadow-sm ${isScrolled ? "backdrop-blur-lg bg-white " : "bg-white"
                 }`}
         >
             {/* Desktop Navbar: Visible only on screens 1090px and above */}
@@ -199,22 +199,22 @@ export default function Navbar() {
                         ))}
                     </ul>
                     <div className="flex items-center justify-between gap-2">
-                        <TagsButton
+                        <a href="tel:02128111195" className="flex gap-3 items-center justify-between p-2 rounded-md text-accent px-4">
+                            تماس با ما ۲۸۱۱۱۱۹۵-۰۲۱
+                            <span>
+                                <Image
+                                    src="/icons/navbar/phone.svg"
+                                    alt="تلفن خانه یوحنا، تماس بگیرید"
+                                    width={24}
+                                    height={24}
+                                />
+                            </span>
+                        </a>
+                        <button className="relative text-sm group overflow-hidden bg-accent hover:-translate-y-1 transition-all duration-500 p-2 rounded-md text-white px-4">
+                            ورود | ثبت نام
+                            <span className="absolute top-0 -left-10 w-1/3 h-full bg-gradient-to-r from-transparent via-white/30 blur-sm to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:[animation:Bshimmer_0.5s_ease-in-out]"></span>
+                        </button>
 
-                            title="تماس با ما ۲۸۱۱۱۱۸۵-۰۲۱"
-                            background='bg-blue-50'
-                            BGradinetFrom='from-blue-400'
-                            BGradientTo='to-blue-100'
-                            TextColor='text-blue-900'
-                        />
-                        <TagsButton
-
-                            title="ورود | ثبت نام"
-                            background='bg-blue-50'
-                            BGradinetFrom='from-blue-400'
-                            BGradientTo='to-blue-100'
-                            TextColor='text-blue-900'
-                        />
                     </div>
                 </div>
             </div>
@@ -231,17 +231,17 @@ export default function Navbar() {
                 </div>
                 <div className="flex gap-2">
                     <div className="flex items-center justify-between gap-2">
-                        <button className="flex gap-1 items-center text-[12px] whitespace-nowrap p-1 border border-accent text-accent rounded-md">
-                            تماس با ما ۲۸۱۱۱۱۸۵-۰۲۱
+                        <a href="tel:02128111195" className="flex gap-3 items-center justify-between p-2 rounded-md text-accent px-4">
+                            تماس با ما ۲۸۱۱۱۱۹۵-۰۲۱
                             <span>
                                 <Image
                                     src="/icons/navbar/phone.svg"
                                     alt="تلفن خانه یوحنا، تماس بگیرید"
-                                    width={14}
-                                    height={14}
+                                    width={24}
+                                    height={24}
                                 />
                             </span>
-                        </button>
+                        </a>
                     </div>
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

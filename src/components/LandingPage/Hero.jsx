@@ -48,9 +48,9 @@ export default function Hero() {
 
     return (
         <>
-            <section className="relative  overflow-visible  px-8 pt-5  md:px-24 lg:px-64 flex flex-col justify-center items-center bg-gradient-to-b from-accent/10 via-white to-white ">
+            <section className="relative  overflow-visible  px-8 pt-8  md:px-24 lg:px-64 flex flex-col justify-center items-center bg-gradient-to-b from-accent/10 via-white to-white ">
                 {/* Grid Background Overlay */}
-                <div className="absolute inset-0 pointer-events-none z-0">
+                {/* <div className="absolute inset-0 pointer-events-none z-0">
                     <div
                         className="w-full h-full bg-[linear-gradient(rgba(0,0,0,0.1)_1px,transparent_1px),linear-gradient(to_right,rgba(0,0,0,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-30"
                         style={{
@@ -58,11 +58,16 @@ export default function Hero() {
                             WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))"
                         }}
                     />
-                </div>
+                </div> */}
 
                 {/* Content */}
+
+                {/* <div className='bg-gradient-to-t shadow-md mb-5 cursor-pointer from-[#E4F9FF] to-white p-2 rounded-full text-[#497886] text-sm text-center border border-[#9BCCDB] z-10'>
+                    به خانواده یوحنا بپیوندید
+                    <span className='mr-2 bg-[#e7f5ff] px-3 rounded-full border border-[#96CEF2] text-[#10708C]'>ثبت نام</span>
+                </div> */}
                 <div className="relative z-10 w-full flex flex-col gap-2 justify-center">
-                    <h1 className=" text-[clamp(16px,7vw,55px)] sm:text-[clamp(16px,5vw,55px)] sm:text-center text-black font-extrabold leading-relaxed text-center">
+                    <h1 className=" text-[clamp(16px,7vw,55px)] sm:text-[clamp(16px,5vw,55px)] sm:text-center text-secondary font-extrabold leading-relaxed text-center">
                         کورترین گره زندگیت هم،
                         <br className="hidden md:block" />
                         فقط با دستای <span className="relative text-accent">خودت</span> باز میشه!

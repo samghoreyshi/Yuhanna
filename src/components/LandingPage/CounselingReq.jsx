@@ -8,11 +8,8 @@ export default function CounselingReq() {
     const [phoneNumber, setPhoneNumber] = useState("");
     const [status, setStatus] = useState("");
 
-    // تنظیمات API پیامکی
-    const SMS_API_URL = "https://api.payamakapi.ir/api/v1/SMS/Send";
-    const API_KEY = "a2c2693f-8edc-4f0b-9152-0e650dc2c425.845411d4-0cef-49ba-adaf-f8f2f460408a"; // کلید اختصاصی خودتون رو اینجا قرار بدید
-    const SENDER_NUMBER = "10004625"; // شماره فرستنده (شماره اختصاصی پنل پیامکی)
-
+    const SENDER_NUMBER = "500091456654104"; // شماره فرستنده (شماره اختصاصی پنل پیامکی)
+    
     const handleInput = (e) => {
         const value = e.target.value;
         const numericValue = value.replace(/[^0-9]/g, '').slice(0, 11);
@@ -108,9 +105,9 @@ export default function CounselingReq() {
 
     return (
         <>
-            <section className="px-8 pt-5 md:px-32 lg:px-64 flex flex-col justify-center gap-5 items-center mb-24">
+            <section className="px-8 pt-5 md:px-32 lg:px-64 flex flex-col justify-center gap-5 items-center">
                 <div className="relative z-10 w-full flex flex-col gap-2 justify-center">
-                    <h1 className="text-[clamp(16px,7vw,32px)] sm:text-center text-black font-extrabold leading-relaxed text-center">
+                    <h1 className="text-[clamp(16px,7vw,32px)] sm:text-center text-secondary font-extrabold leading-relaxed text-center">
                         به کمک و<span className="relative text-accent"> مشاوره </span> نیاز داری؟!
                     </h1>
                     <p className="text-[clamp(12px,3vw,16px)] text-[#497886] max-w-md text-center mx-auto">
@@ -122,7 +119,7 @@ export default function CounselingReq() {
                         value={phoneNumber}
                         onChange={handleInput}
                         type="tel"
-                        placeholder="۰۹XXXXXXXXX"
+                        placeholder="۰۹XXXXXXXXX | شماره همراهتو وارد کن!"
                         maxLength={11}
                         required
                     />
@@ -137,10 +134,10 @@ export default function CounselingReq() {
                     </div>
                 </div>
                 <div>
-                    {status === 'loading' && <p>در حال ثبت درخواست...</p>}
-                    {status === 'success' && <p>شماره با موفقیت ثبت شد!</p>}
-                    {status === 'error' && <p>خطا در ثبت شماره. دوباره تلاش کنید.</p>}
-                    {status === 'duplicate' && <p>درخواست شما در مرحله پیگیری است.</p>}
+                    {status === 'loading' && <p className='bg-[#DEFFD2]  text-[#24570C] p-1 px-2 rounded-full text-sm'>در حال ثبت درخواست...</p>}
+                    {status === 'success' && <p className='bg-[#DEFFD2]  text-[#24570C] p-1 px-2 rounded-full text-sm'>شماره با موفقیت ثبت شد!</p>}
+                    {status === 'error' && <p className='bg-[#DEFFD2] text-[#24570C] p-1 px-2 rounded-full text-sm'>خطا در ثبت شماره. دوباره تلاش کنید.</p>}
+                    {status === 'duplicate' && <p className='bg-[#DEFFD2] text-[#24570C] p-1 px-2 rounded-full text-sm'>درخواست شما در مرحله پیگیری است.</p>}
                 </div>
             </section>
         </>

@@ -21,12 +21,11 @@ import EventBanner from '@/components/LandingPage/EventBanner'
 import BentoGallery from '@/components/LandingPage/BentoGallery'
 import Modal from '@/components/LandingPage/Modal'
 import CounselingReq from "@/components/LandingPage/CounselingReq";
-
+import BentoGrid from "@/components/LandingPage/BentoGrid";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
-      <Navbar />
       {/* <ImageCarousel/> */}
       
       <div id="study-home">
@@ -34,6 +33,7 @@ export default function Home() {
       </div>
 
       <CounselingReq/>
+      <BentoGrid/>
 
       <div id="consulting">
         <Counseling />
@@ -62,7 +62,6 @@ export default function Home() {
       {/* <HeroBanner /> */}
       <div id="Footer">
 
-      <Footer />
       {/* <Modal/> */}
       </div>
     </main>

@@ -1,7 +1,8 @@
 import "./globals.css";
 import { Providers } from '@/components/providers/Providers';
-import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
+import Navbar from '@/components/LandingPage/Navbar'
+
 import { Toaster } from 'react-hot-toast';
 
 export const metadata = {
@@ -31,9 +32,9 @@ export default function RootLayout({ children }) {
 
       <body>
         <Providers>
-          {/* <Navbar /> */}
+          <Navbar />
           {children}
-          {/* <Footer /> */}
+          <Footer />
           <Toaster />
         </Providers>
       </body>

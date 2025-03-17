@@ -87,7 +87,7 @@ export default function EventClient({ params }) {
     <div className="min-h-screen bg-gradient-to-br from-blue-100 via-white to-indigo-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Back to Events Button */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
@@ -102,7 +102,7 @@ export default function EventClient({ params }) {
             <HiOutlineArrowRight className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" />
             <span className="font-IranSans text-sm">بازگشت به رویدادها</span>
           </Link>
-        </motion.div>
+        </motion.div> */}
 
         {/* Event Card */}
         <motion.div
@@ -127,12 +127,12 @@ export default function EventClient({ params }) {
           <div className="p-6 sm:p-8">
             <div className="flex flex-wrap gap-4 mb-6">
               {/* Date */}
-              <div className="flex items-center gap-2 text-gray-600">
+              {/* <div className="flex items-center gap-2 text-gray-600">
                 <HiOutlineCalendar className="w-5 h-5" />
                 <span className="font-IranSans text-sm">
                   {new Date(event.StartDate).toLocaleDateString('fa-IR')}
                 </span>
-              </div>
+              </div> */}
 
               {/* Location */}
               {event.Location && (

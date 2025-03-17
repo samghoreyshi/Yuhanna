@@ -147,3 +147,13 @@ body {
     transform: rotate(360deg);
   }
 }
+
+
+@keyframes Bshimmer {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(500%);
+  }
+}
