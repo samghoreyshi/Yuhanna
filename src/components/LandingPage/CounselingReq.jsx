@@ -119,7 +119,7 @@ export default function CounselingReq() {
                         value={phoneNumber}
                         onChange={handleInput}
                         type="tel"
-                        placeholder="۰۹XXXXXXXXX | شماره همراهتو وارد کن!"
+                        placeholder="شماره همراهتو وارد کن!"
                         maxLength={11}
                         required
                     />

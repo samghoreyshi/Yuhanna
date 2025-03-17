@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function BentoGrid() {
   return (
     <>
-      <section className="px-8 pl-0 pt-5 md:px-32 lg:px-64 flex flex-col justify-center gap-10 items-center mb-24 ">
+      <section className="px-8  pt-5 md:px-32 lg:px-64 flex flex-col justify-center gap-10 items-center mb-24 ">
         <div className="relative z-10 w-full flex flex-col gap-2 justify-center">
           <h1 className="text-[clamp(16px,7vw,32px)] sm:text-center text-secondary font-extrabold leading-relaxed text-center">
             در رویداد‌های<span className="relative text-accent"> یوحنا</span> شرکت کن، یک قدم جلو باش!
@@ -12,11 +12,11 @@ export default function BentoGrid() {
         </div>
 
         {/* Horizontal scroll container on mobile */}
-        <div className="w-full overflow-x-auto md:overflow-visible ">
+        <div className="w-full pl-0 py-5 pr- overflow-x-auto md:overflow-visible ">
           <div className="flex gap-5 items-center md:justify-center">
             {/* Card 1 */}
             <Link href="/events/ordu-emtehanat" passHref>
-              <div className="relative cursor-pointer group w-[260px] h-[260px] inline-block bg-gradient-to-t from-accent/10 to-white border border-[#9EC3CE] rounded-md p-1 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+              <div className="relative cursor-pointer group w-[260px] h-[260px] inline-block bg-gradient-to-t from-accent/10 to-white border border-[#9EC3CE] rounded-md p-1 shadow-lg transform transition duration-300 hover:scale-105">
                 <ImageWithPlaceholder
                   src="/images/BentoGrid/b-1.webp"
                   className="w-full h-full object-cover object-center rounded-md"
@@ -35,7 +35,7 @@ export default function BentoGrid() {
 
             {/* Card 2 */}
             <Link href="/events/ordu-nowruzi" passHref>
-              <div className="relative cursor-pointer group w-[260px] h-[260px] inline-block bg-gradient-to-t from-accent/10 to-white border border-[#9EC3CE] rounded-md p-1 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+              <div className="relative cursor-pointer group w-[260px] h-[260px] inline-block bg-gradient-to-t from-accent/10 to-white border border-[#9EC3CE] rounded-md p-1 shadow-lg transform transition duration-300 hover:scale-105">
                 <ImageWithPlaceholder
                   src="/images/BentoGrid/b-2.webp"
                   className="w-full h-full object-cover object-center rounded-md"
@@ -52,7 +52,7 @@ export default function BentoGrid() {
 
             {/* Card 3 */}
             <Link href="/events/ordu-gharantine" passHref>
-              <div className="relative cursor-pointer group w-[260px] h-[260px] inline-block bg-gradient-to-t from-accent/10 to-white border border-[#9EC3CE] rounded-md p-1 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+              <div className="relative cursor-pointer group w-[260px] h-[260px] inline-block bg-gradient-to-t from-accent/10 to-white border border-[#9EC3CE] rounded-md p-1 shadow-lg transform transition duration-300 hover:scale-105">
                 <ImageWithPlaceholder
                   src="/images/BentoGrid/b-3.webp"
                   className="w-full h-full object-cover object-center rounded-md"

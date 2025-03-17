@@ -123,7 +123,7 @@ export default function Navbar() {
                 {/* Logo */}
                 <div>
                     <Image
-                        src="/logo/logo.png"
+                        src="/logo/Logo-U.webp"
                         width={120}
                         height={10}
                         alt="لوگو خانه یوحنا"
@@ -223,7 +223,7 @@ export default function Navbar() {
             <div className="flex min-[1090px]:hidden items-center justify-between px-4 py-4">
                 <div>
                     <Image
-                        src="/logo/logo.png"
+                        src="/logo/Logo-U.webp"
                         width={120}
                         height={90}
                         alt="لوگو خانه یوحنا"
@@ -231,14 +231,14 @@ export default function Navbar() {
                 </div>
                 <div className="flex gap-2">
                     <div className="flex items-center justify-between gap-2">
-                        <a href="tel:02128111195" className="flex gap-3 items-center justify-between p-2 rounded-md text-accent px-4">
+                        <a href="tel:02128111195" className="flex whitespace-nowrap text-sm items-center gap-2 justify-between p-2 rounded-md text-accent px-4">
                             تماس با ما ۲۸۱۱۱۱۹۵-۰۲۱
                             <span>
                                 <Image
                                     src="/icons/navbar/phone.svg"
                                     alt="تلفن خانه یوحنا، تماس بگیرید"
-                                    width={24}
-                                    height={24}
+                                    width={80}
+                                    height={54}
                                 />
                             </span>
                         </a>
