@@ -221,9 +221,9 @@ export default function Navbar() {
                     <div className="flex gap-10">
                         {/* Logo */}
                         <div className="flex-shrink-0">
-                            <a href="/">
+                            <Link href="/">
                                 <NextImage src="/logo/Logo-U.webp" width={110} height={35} alt="لوگو خانه یوحنا" priority />
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Navigation Links (FIXED POSITIONING) */}
@@ -293,9 +293,9 @@ export default function Navbar() {
             <div className="flex min-[1090px]:hidden items-center justify-between px-4 py-3 h-16">
                 {/* Mobile Logo */}
                 <div>
-                    <a href="/">
+                    <Link href="/">
                         <NextImage src="/logo/Logo-U.webp" width={100} height={32} alt="لوگو خانه یوحنا" priority />
-                    </a>
+                    </Link>
                 </div>
                 {/* Mobile Actions */}
                 <div className="flex items-center gap-2">
@@ -330,7 +330,7 @@ export default function Navbar() {
                                     </div>
                                 ) : (
                                     // Regular Mobile Link Item
-                                    <a
+                                    <Link
                                         href={item.href || '#'}
                                         className={`block py-3 px-2 transition-colors duration-200 rounded-md ${isActive
                                             ? 'text-accent bg-accent/10 font-semibold' // Active styles
@@ -339,7 +339,7 @@ export default function Navbar() {
                                         onClick={() => setMobileMenuOpen(false)} // Close menu on click
                                     >
                                         {item.title}
-                                    </a>
+                                    </Link>
                                 )}
                             </li>
                         );
