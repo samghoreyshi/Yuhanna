@@ -95,8 +95,8 @@ export default function Navbar() {
         {
             id: 4, title: "رویدادها", href: "#", subMenu: true, icon: true, iconPath: "/icons/navbar/arrow-down.svg", subMenuItems: [
                 { id: 41, title: "اردو نوروزی", subTitle: "نوروز یک وقفه طلایی!", href: "/events/ordu-nowruzi", icon: "/icons/navbar/dropdown/nowruz.svg", },
-                { id: 42, title: "اردو قرنطینه", subTitle: "آمادگی برای روزای سخت!", href: "/events/isolate", icon: "/icons/navbar/dropdown/isolate.svg", },
-                { id: 43, title: "اردو امتحانات", subTitle: "یک قدم جلوتر باش!", href: "/events/ordu-gharantine", icon: "/icons/navbar/dropdown/exams.svg", },
+                { id: 42, title: "اردو قرنطینه", subTitle: "آمادگی برای روزای سخت!", href: "/events/ordu-gharantine", icon: "/icons/navbar/dropdown/isolate.svg", },
+                { id: 43, title: "اردو امتحانات", subTitle: "یک قدم جلوتر باش!", href: "/events/ordu-emtehanat", icon: "/icons/navbar/dropdown/exams.svg", },
             ]
         },
         { id: 5, title: "درباره‌ما", href: "/about", subMenu: false, icon: false, iconPath: null, },

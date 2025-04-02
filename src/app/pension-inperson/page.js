@@ -147,7 +147,7 @@ export default function Pension() {
                                     sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                                 />
                                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                <p className="absolute bottom-2 right-2 text-white text-xs bg-black/50 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">{item.alt}</p>
+                                {/* <p className="absolute bottom-2 right-2 text-white text-xs bg-black/50 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">{item.alt}</p> */}
                             </div>
                         ))}
                     </div>
