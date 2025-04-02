@@ -4,7 +4,6 @@ import { useAuth } from '@/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { HiOutlineChatAlt2, HiChevronLeft, HiOutlineClock, HiOutlineExclamation } from 'react-icons/hi';
-import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import Link from 'next/link';
 

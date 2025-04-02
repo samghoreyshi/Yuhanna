@@ -1,5 +1,4 @@
 import RegisterForm from '@/components/auth/RegisterForm';
-import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 
 export default function RegisterPage() {
