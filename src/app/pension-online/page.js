@@ -46,7 +46,7 @@ export default function PensionOnline() {
     // --- Single Image Data ---
     // Define the single image you want to display
     const singleImageData = {
-        src: '/images/pension/p-online.webp', // Choose the desired image path
+        src: '/images/Pension/p-online.webp', // Choose the desired image path
         alt: 'دانش‌آموز در حال مطالعه در محیط یوحنا', // Update alt text
     };
 
@@ -92,7 +92,7 @@ export default function PensionOnline() {
                     <div className="relative w-full max-w-xl lg:max-w-none mx-auto lg:mx-0 flex justify-center lg:justify-start">
                         <div className="w-full aspect-square relative z-10 rounded-2xl shadow-xl shadow-slate-900/10 overflow-hidden border border-slate-200/50">
                             <ImageWithPlaceholder
-                                src="/images/pension/p-hero.webp" // This image source seems specific? Keep if correct.
+                                src="/images/Pension/p-hero.webp" // This image source seems specific? Keep if correct.
                                 className="w-full h-full object-cover"
                                 alt="تصویر گرافیکی مرتبط با آموزش و موفقیت در یوحنا"
                                 sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 45vw"
