@@ -53,7 +53,7 @@ export default function Pension() {
     return (
         <>
             {/* === Hero Section === */}
-            <section className='relative flex flex-col lg:flex-row justify-center items-center pt-16 pb-12 md:pt-24 md:pb-20 lg:pt-28 lg:pb-24 overflow-hidden bg-white'>
+            <section className='relative flex flex-col lg:flex-row justify-center items-center pt-5 pb-12 md:pt-24 md:pb-20 lg:pt-28 lg:pb-24 overflow-hidden bg-white'>
                 {/* ... blurred elements ... */}
                 <div className="absolute -top-20 -left-40 w-[40rem] h-[40rem] bg-gradient-to-br from-accent/15 to-transparent blur-3xl opacity-60 pointer-events-none z-0" aria-hidden="true"></div>
                 <div className="absolute -bottom-20 -right-20 w-[30rem] h-[30rem] bg-gradient-to-tl from-blue-100/30 to-transparent blur-3xl opacity-50 pointer-events-none z-0" aria-hidden="true"></div>
@@ -76,7 +76,7 @@ export default function Pension() {
                             <br className="hidden md:block" />
                             <span className="relative text-accent inline-block px-1">حضوری</span> خانه یوحــــنا
                         </h1>
-                        <p className="text-[clamp(15px,3vw,18px)] text-slate-600 max-w-2xl text-justify leading-relaxed mb-8">
+                        <p className="text-[clamp(15px,3vw,18px)] text-slate-600 max-w-2xl md:text-justify leading-relaxed mb-8">
                             اگر به دنبال یک محیط <span className="font-semibold text-slate-700">آرام، منظم و پرانرژی</span> برای مطالعه و آمادگی کنکور هستید، پانسیون مطالعاتی حضوری ما بهترین انتخاب برای شماست!
                             اینجا، شما در یک فضای <span className="font-semibold text-slate-700">اختصاصی و حرفه‌ای</span> بدون حواس‌پرتی، می‌توانید با تمرکز کامل درس بخوانید.
                             با <span className="font-semibold text-slate-700">برنامه‌ریزی و نظارت روزانه</span>، مدیریت زمان و سیستم‌های هوشمند، بهره‌وری شما به حداکثر می‌رسد.

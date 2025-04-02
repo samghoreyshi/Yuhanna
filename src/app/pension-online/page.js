@@ -53,7 +53,7 @@ export default function PensionOnline() {
     return (
         <>
             {/* === Hero Section === */}
-            <section className='relative flex flex-col lg:flex-row justify-center items-center pt-16 pb-12 md:pt-24 md:pb-20 lg:pt-28 lg:pb-24 overflow-hidden bg-white'>
+            <section className='relative flex flex-col lg:flex-row justify-center items-center pt-5 pb-12 md:pt-24 md:pb-20 lg:pt-28 lg:pb-24 overflow-hidden bg-white'>
                 {/* Blurred Elements */}
                 <div className="absolute -top-20 -left-40 w-[40rem] h-[40rem] bg-gradient-to-br from-accent/15 to-transparent blur-3xl opacity-60 pointer-events-none z-0" aria-hidden="true"></div>
                 <div className="absolute -bottom-20 -right-20 w-[30rem] h-[30rem] bg-gradient-to-tl from-blue-100/30 to-transparent blur-3xl opacity-50 pointer-events-none z-0" aria-hidden="true"></div>
@@ -72,11 +72,11 @@ export default function PensionOnline() {
                     {/* Text Content */}
                     <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-right">
                         <h1 className="text-[clamp(28px,7vw,50px)] sm:text-[clamp(32px,5vw,40px)] text-secondary font-extrabold leading-tight sm:leading-tight mb-6">
-                            کورترین گره زندگیت هم،
+                            پانسیون
                             <br className="hidden md:block" />
-                            فقط با دستای <span className="relative text-accent inline-block px-1">خودت</span> باز میشه!
+                            <span className="relative text-accent inline-block px-1">آنلاین</span> خانه یوحــــنا
                         </h1>
-                        <p className="text-[clamp(15px,3vw,18px)] text-justify text-slate-600 max-w-2xl leading-relaxed mb-8">
+                        <p className="text-[clamp(15px,3vw,18px)] text-center md:text-justify text-slate-600 max-w-2xl leading-relaxed mb-8">
                             اگر به دنبال یک <span className="font-semibold text-slate-700">محیط مطالعاتی آنلاین</span> برای تمرکز و پیشرفت در کنکور هستید، پانسیون آنلاین ما بهترین انتخاب برای شماست!
                             اینجا، شما در یک <span className="font-semibold text-slate-700">اتاق مطالعه مجازی</span> در Google Meet، همراه با سایر دانش‌آموزان پرتلاش، به مطالعه می‌پردازید.
                             با <span className="font-semibold text-slate-700">نظارت مستمر، برنامه‌ریزی روزانه و تکنیک‌های مدیریت زمان</span>، بهره‌وری خود را به حداکثر برسانید.
