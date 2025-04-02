@@ -4,7 +4,6 @@ import Footer from '@/components/footer';
 export default function RegisterPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-      <Navbar />
       
       {/* Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

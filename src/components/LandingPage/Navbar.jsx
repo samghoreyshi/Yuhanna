@@ -123,7 +123,7 @@ export default function Navbar() {
 
     const renderSubMenuItem = (subItem) => (
         <li key={subItem.id}>
-            <a href={subItem.href || '#'} className="flex items-center gap-3 p-2 group rounded-lg hover:bg-accent/10 transition-colors duration-200">
+            <Link href={subItem.href || "#"} className="flex items-center gap-3 p-2 group rounded-lg hover:bg-accent/10 transition-colors duration-200">
                 <span className="flex items-center justify-center flex-shrink-0 w-[48px] h-[48px] p-2 bg-accent/10 rounded-full group-hover:bg-accent/10 transition-colors duration-200">
                     {/* Use NextImage for submenu item icons */}
                     <NextImage
@@ -134,10 +134,14 @@ export default function Navbar() {
                     />
                 </span>
                 <span className="flex flex-col items-start">
-                    <h4 className="font-semibold text-sm whitespace-nowrap text-gray-700 group-hover:text-accent transition-colors duration-200">{subItem.title}</h4>
-                    <p className="text-xs text-gray-500 w-full whitespace-nowrap group-hover:text-gray-600 transition-colors duration-200">{subItem.subTitle}</p>
+                    <h4 className="font-semibold text-sm whitespace-nowrap text-gray-700 group-hover:text-accent transition-colors duration-200">
+                        {subItem.title}
+                    </h4>
+                    <p className="text-xs text-gray-500 w-full whitespace-nowrap group-hover:text-gray-600 transition-colors duration-200">
+                        {subItem.subTitle}
+                    </p>
                 </span>
-            </a>
+            </Link>
         </li>
     );
     // --- End Helper Functions ---
