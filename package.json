@@ -17,6 +17,7 @@
     "@strapi/blocks-react-renderer": "^1.0.2",
     "@svgr/webpack": "^8.1.0",
     "framer-motion": "^10.16.0",
+    "heroicons": "^2.2.0",
     "lodash.debounce": "^4.0.8",
     "lucide-react": "^0.474.0",
     "nanoid": "^5.0.9",

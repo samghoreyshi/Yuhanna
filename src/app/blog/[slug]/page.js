@@ -5,9 +5,18 @@ import ImageWithPlaceholder from '@/components/ImageWithPlaceholder';
 
 async function getArticle(slug) {
   try {
-    console.log('Fetching article with slug:', slug);
+    console.log('Fetching article with slug or id:', slug);
+    
+    // Check if slug is a number (ID) or string (slug)
+    const isId = !isNaN(slug);
+    
+    // Construct the appropriate query based on whether we have a slug or ID
+    const queryParam = isId 
+      ? `filters[id][$eq]=${slug}` 
+      : `filters[Slug][$eq]=${slug}`;
+    
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/articles?filters[Slug][$eq]=${slug}&populate=*`,
+      `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/articles?${queryParam}&populate=*`,
       { cache: 'no-store' }
     );
     const { data } = await res.json();
@@ -68,12 +77,13 @@ export default async function BlogPost({ params }) {
   
   if (!post) {
     return (
-      <div className="min-h-screen relative overflow-hidden font-IranSans bg-slate-50 flex items-center justify-center" dir="rtl">
-        <div className="text-center">
+      <div className="min-h-screen relative overflow-hidden font-IranSans bg-slate-50/70 flex items-center justify-center animate-fadeIn" dir="rtl">
+        <div className="text-center p-8 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm max-w-md mx-auto">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">
             مقاله مورد نظر یافت نشد
           </h1>
-          <Link href="/blog" className="text-accent hover:text-accent/80 inline-flex items-center gap-2">
+          <p className="text-gray-600 mb-6">متاسفانه مقاله‌ای که به دنبال آن هستید در سیستم ما موجود نیست.</p>
+          <Link href="/blog" className="text-accent hover:text-accent/80 inline-flex items-center gap-2 transition-all duration-200 hover:gap-3">
             <HiOutlineArrowRight className="w-5 h-5" />
             بازگشت به صفحه مقالات
           </Link>
@@ -86,11 +96,11 @@ export default async function BlogPost({ params }) {
   const date = new Date(PostDate).toLocaleDateString('fa-IR');
 
   return (
-    <div className="min-h-screen relative overflow-hidden font-IranSans bg-slate-50 " dir="rtl">
+    <div className="min-h-screen relative overflow-hidden font-IranSans bg-slate-50/70 animate-fadeIn" dir="rtl">
       {/* Grid Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080801a_1px,transparent_1px),linear-gradient(to_bottom,#8080801a_1px,transparent_1px)] bg-[size:34px_34px]"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-white/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0caedd0a_1px,transparent_1px),linear-gradient(to_bottom,#0caedd0a_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/60 to-transparent"></div>
       </div>
 
       {/* Background Gradients */}
@@ -99,10 +109,10 @@ export default async function BlogPost({ params }) {
         <div className="absolute bottom-0 left-0 w-[50rem] h-[50rem] bg-purple-500/20 rounded-full filter blur-[120px] transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
 
-      <div className="container mx-auto px-4 py-12 relative z-10">
+      <div className="container mx-auto px-4 py-16 relative z-10 max-w-5xl">
         {/* Back to Blog */}
-        <div className="mb-8">
-          <Link href="/blog" className="text-blue-600 hover:text-blue-700 inline-flex items-center gap-2">
+        <div className="mb-10">
+          <Link href="/blog" className="text-accent hover:text-accent/80 inline-flex items-center gap-2 transition-colors duration-200">
             <HiOutlineArrowRight className="w-5 h-5" />
             بازگشت به صفحه مقالات
           </Link>
@@ -124,11 +134,11 @@ export default async function BlogPost({ params }) {
             </div>
           )}
 
-          <h1 className="text-4xl font-black text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
             {Title}
           </h1>
 
-          <div className="flex items-center gap-6 text-gray-600 mb-8">
+          <div className="flex items-center gap-6 text-gray-600 mb-10">
             <div className="flex items-center gap-2">
               <HiOutlineUser className="w-5 h-5" />
               <span>{Author}</span>
@@ -141,12 +151,12 @@ export default async function BlogPost({ params }) {
 
           {/* Cover Image */}
           {CoverImage && (
-            <div className="relative w-full md:h-[500px] object-cover rounded-lg my-8">
+            <div className="relative w-full md:h-[500px] object-cover rounded-xl shadow-sm my-10 overflow-hidden">
               <ImageWithPlaceholder
                 src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${CoverImage.url}`}
                 alt={Title}
                 fill
-                className="w-full md:h-[500px] object-cover rounded-lg my-8"
+                className="w-full md:h-[500px] object-cover rounded-xl my-8 transition-transform duration-700 hover:scale-105"
               />
             </div>
           )}

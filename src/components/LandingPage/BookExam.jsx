@@ -15,27 +15,27 @@ export default function BookExam() {
 
 
     return (
-        <section className='px-8 md:px-10 lg:px-64 sm:py-8'>
-            <div className='grid grid-cols-1 sm:grid-cols-2 gap-5'>
+        <section className='px-8 md:px-10 lg:px-64 sm:py-8  '>
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-5 '>
                 {CardsData.map(item => (
                     <div
                         key={item.id}
                         id={item.docId}
-                        className='flex flex-col h-full min-h-[550px] items-start justify-between gap-2 sm:gap-5 bg-gradient-to-b from-accent/20 to-white p-5 rounded-lg border border-[#AFDDEB] shadow-[inset_0_0_1px_2px_rgba(255,255,255,0.8)]'
+                        className='flex flex-col h-full mx-auto max-w-lg min-h-[550px] items-start justify-between gap-2 sm:gap-5 bg-gradient-to-b from-accent/20 to-white p-5 rounded-lg border border-[#AFDDEB] shadow-[inset_0_0_1px_2px_rgba(255,255,255,0.8)]'
                     >
                         {/* Image */}
-                        <div className="bg-blue-50 w-full h-[330px] relative">
+                        <div className=" w-full h-[470px] relative">
                             <ImageWithPlaceholder
                                 src={item.ImagePath}
                                 alt="Hero illustration"
                                 fill
-                                className="object-cover rounded-md object-center"
+                                className="object-contain rounded-md object-center"
                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 90vw"
                             />
                         </div>
 
                         {/* Title */}
-                        <h3 className='font-extraBold text-xl md:text-2xl lg:text-3xl text-secondary'>
+                        <h3 className='font-extraBold text-xl md:text-2xl lg:text-4xl text-accent'>
                             {item.title}
                         </h3>
 

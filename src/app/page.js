@@ -1,6 +1,6 @@
 import Image from "next/image";
 import react from "react";
-import Navbar1 from "../components/navbar";
+
 import Hero from "../components/hero";
 import Footer from "../components/footer";
 import UnderConstruction from '@/components/UnderConstruction'
@@ -22,6 +22,10 @@ import BentoGallery from '@/components/LandingPage/BentoGallery'
 import Modal from '@/components/LandingPage/Modal'
 import CounselingReq from "@/components/LandingPage/CounselingReq";
 import BentoGrid from "@/components/LandingPage/BentoGrid";
+import CTA from "@/components/LandingPage/CTA";
+import FeaturesSection from "@/components/LandingPage/Features";
+
+
 
 export default function Home() {
   return (
@@ -32,7 +36,7 @@ export default function Home() {
         <StudySection />
       </div>
 
-      <CounselingReq/>
+      {/* <CounselingReq/> */}
       <BentoGrid/>
 
       <div id="consulting">
@@ -54,11 +58,12 @@ export default function Home() {
         <Education />
       </div>
 
-      <Divider />
 
       <div id="book-exam">
         <BookExam />
       </div>
+      <FeaturesSection/>
+      <CTA/>
       {/* <HeroBanner /> */}
       <div id="Footer">
 

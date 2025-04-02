@@ -18,16 +18,16 @@ export default function BlogCard({ post }) {
   const imageUrl = post.CoverImage?.formats?.small?.url || post.CoverImage?.url || '';
 
   return (
-    <Link href={`/blog/${post.Slug}`} className="block">
-      <article className="bg-white rounded-lg overflow-hidden border border-gray-100 hover:border-blue-200 transition-all hover:shadow-md group">
+    <Link href={`/blog/${post.Slug || post.id}`} className="block group">
+      <article className="h-full bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all border border-gray-100 group-hover:border-accent/20">
         {/* Image */}
         {imageUrl && (
-          <div className="relative h-48 overflow-hidden">
+          <div className="relative h-44 overflow-hidden">
             <Image
               src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${imageUrl}`}
               alt={post.Title}
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
         )}
@@ -36,10 +36,10 @@ export default function BlogCard({ post }) {
         <div className="p-4">
           {/* Tags */}
           <div className="flex gap-2 mb-2 flex-wrap">
-            {post.Tags?.map((tag) => (
+            {post.Tags?.slice(0, 2).map((tag) => (
               <span
                 key={tag.id}
-                className="text-xs px-2 py-1 rounded-full bg-blue-50 text-blue-600"
+                className="text-xs px-2 py-0.5 rounded-md bg-gray-50 text-gray-600"
               >
                 {tag.Tag}
               </span>
@@ -47,7 +47,7 @@ export default function BlogCard({ post }) {
           </div>
 
           {/* Title */}
-          <h2 className="text-lg font-bold text-gray-800 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
+          <h2 className="text-lg font-medium text-gray-900 mb-2 line-clamp-2 group-hover:text-accent transition-colors">
             {post.Title}
           </h2>
 
@@ -57,9 +57,13 @@ export default function BlogCard({ post }) {
           </p>
 
           {/* Meta */}
-          <div className="flex items-center justify-between text-xs text-gray-500">
-            <span>{post.Author}</span>
-            <time dateTime={post.PostDate}>{date}</time>
+          <div className="flex justify-between items-center text-xs text-gray-500 pt-2 border-t border-gray-50">
+            <time dateTime={post.PostDate}>
+              {date}
+            </time>
+            <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity">
+              ادامه مطلب
+            </span>
           </div>
         </div>
       </article>

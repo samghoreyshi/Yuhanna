@@ -1,74 +1,72 @@
+"use client";
+
 import ImageWithPlaceholder from '@/components/ImageWithPlaceholder';
 import Link from 'next/link';
 
+const cardData = [
+  { id: 1, href: '/events/ordu-emtehanat', imgSrc: '/images/BentoGrid/b-1.webp', title: 'اردو امتحانات', description: 'آمادگی برای آزمون‌ها' },
+  { id: 4, href: '/events/ordu-gharantine', imgSrc: '/images/BentoGrid/b-4.webp', title: 'برنامه مطالعاتی', description: 'تدوین برنامه اختصاصی برای شما' },
+  { id: 2, href: '/events/ordu-nowruzi', imgSrc: '/images/BentoGrid/b-2.webp', title: 'اردو نوروزی', description: 'جشن و آموزش در تعطیلات' },
+  { id: 5, href: '/events/ordu-gharantine', imgSrc: '/images/BentoGrid/b-5.webp', title: 'مشاوره', description: 'مشاوره تحصیلی و سبک زندگی' },
+  { id: 3, href: '/events/ordu-gharantine', imgSrc: '/images/BentoGrid/b-3.webp', title: 'اردو قرنطینه', description: 'یادگیری متمرکز' },
+  { id: 5, href: '/events/ordu-gharantine', imgSrc: '/images/BentoGrid/b-6.webp', title: 'اصلاح منابع', description: 'منابع مطالعاتی خود را بهینه کنید' },
+];
+
 export default function BentoGrid() {
   return (
-    <>
-      <section className="px-8  pt-5 md:px-32 lg:px-64 flex flex-col justify-center gap-10 items-center mb-24 ">
-        <div className="relative z-10 w-full flex flex-col gap-2 justify-center">
-          <h1 className="text-[clamp(16px,7vw,32px)] sm:text-center text-secondary font-extrabold leading-relaxed text-center">
-            در رویداد‌های<span className="relative text-accent"> یوحنا</span> شرکت کن، یک قدم جلو باش!
-          </h1>
-        </div>
-
-        {/* Horizontal scroll container on mobile */}
-        <div className="w-full pl-0 py-5 pr- overflow-x-auto md:overflow-visible ">
-          <div className="flex gap-5 items-center md:justify-center">
-            {/* Card 1 */}
-            <Link href="/events/ordu-emtehanat" passHref>
-              <div className="relative cursor-pointer group w-[260px] h-[260px] inline-block bg-gradient-to-t from-accent/10 to-white border border-[#9EC3CE] rounded-md p-1 shadow-lg transform transition duration-300 hover:scale-105">
-                <ImageWithPlaceholder
-                  src="/images/BentoGrid/b-1.webp"
-                  className="w-full h-full object-cover object-center rounded-md"
-                  alt="Hero illustration"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 90vw"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 rounded-md"></div>
-                {/* Always-visible RTL Title with decorative element on hover */}
-                <div className="absolute bottom-4 right-4 flex items-center text-sm text-white font-bold" dir="rtl">
-                  <span className="transition-all duration-300 ml-2 opacity-0 w-0 group-hover:opacity-100 group-hover:w-4 h-0.5 bg-white"></span>
-                  <span>اردو امتحانات</span>
+    <section className="flex flex-col justify-center overflow-visible gap-5 items-center mb-10">
+      <div className="w-full overflow-visible relative">
+        <div className="flex gap-2 items-center justify-center animate-marquee-wrapper">
+          <div className="flex gap-2 items-center animate-marquee overflow-visible py-5">
+            {[...cardData, ...cardData, ...cardData].map(({ id, href, imgSrc, title, description }, index) => (
+              <Link key={id + '-' + index} href={href} passHref>
+                <div className="relative cursor-pointer group w-[360px] h-[360px] inline-block bg-gradient-to-t from-accent/10 to-white border border-[#9EC3CE] rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:scale-105">
+                  <ImageWithPlaceholder
+                    src={imgSrc}
+                    className="w-full h-full object-cover object-center"
+                    alt={title}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 90vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 transition duration-300"></div>
+                  <div className="absolute bottom-6 right-6 flex flex-col items-start text-white" dir="rtl">
+                    <span className="text-xl font-semibold mb-1">{title}</span>
+                    <span className="text-sm opacity-80">{description}</span>
+                  </div>
                 </div>
-              </div>
-            </Link>
-
-            {/* Card 2 */}
-            <Link href="/events/ordu-nowruzi" passHref>
-              <div className="relative cursor-pointer group w-[260px] h-[260px] inline-block bg-gradient-to-t from-accent/10 to-white border border-[#9EC3CE] rounded-md p-1 shadow-lg transform transition duration-300 hover:scale-105">
-                <ImageWithPlaceholder
-                  src="/images/BentoGrid/b-2.webp"
-                  className="w-full h-full object-cover object-center rounded-md"
-                  alt="Hero illustration"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 90vw"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 rounded-md"></div>
-                <div className="absolute bottom-4 right-4 flex items-center text-sm text-white font-bold" dir="rtl">
-                  <span className="transition-all duration-300 ml-2 opacity-0 w-0 group-hover:opacity-100 group-hover:w-4 h-0.5 bg-white"></span>
-                  <span>اردو نوروزی</span>
-                </div>
-              </div>
-            </Link>
-
-            {/* Card 3 */}
-            <Link href="/events/ordu-gharantine" passHref>
-              <div className="relative cursor-pointer group w-[260px] h-[260px] inline-block bg-gradient-to-t from-accent/10 to-white border border-[#9EC3CE] rounded-md p-1 shadow-lg transform transition duration-300 hover:scale-105">
-                <ImageWithPlaceholder
-                  src="/images/BentoGrid/b-3.webp"
-                  className="w-full h-full object-cover object-center rounded-md"
-                  alt="Hero illustration"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 90vw"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 rounded-md"></div>
-                <div className="absolute bottom-4 right-4 flex items-center text-sm text-white font-bold" dir="rtl">
-                  <span className="transition-all duration-300 ml-2 opacity-0 w-0 group-hover:opacity-100 group-hover:w-4 h-0.5 bg-white"></span>
-                  <span>اردو قرنطینه</span>
-                </div>
-              </div>
-            </Link>
+              </Link>
+            ))}
           </div>
         </div>
-      </section>
-    </>
+      </div>
+
+      <style jsx>{`
+        @keyframes marquee {
+          from { transform: translateX(0); }
+          to { transform: translateX(-33.33%); }
+        }
+
+        .animate-marquee-wrapper {
+          display: flex;
+          width: 100%;
+          overflow: hidden;
+          white-space: nowrap;
+          position: relative;
+        }
+
+        .animate-marquee {
+          display: flex;
+          width: max-content;
+          animation: marquee 25s linear infinite;
+        }
+
+        @media (max-width: 768px) {
+          .animate-marquee-wrapper {
+            width: 100vw;
+            overflow: hidden;
+            position: relative;
+          }
+        }
+      `}</style>
+    </section>
   );
 }
