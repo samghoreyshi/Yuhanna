@@ -20,7 +20,7 @@ export default function BentoGrid() {
           <div className="flex gap-2 items-center animate-marquee overflow-visible py-5">
             {[...cardData, ...cardData, ...cardData].map(({ id, href, imgSrc, title, description }, index) => (
               <Link key={id + '-' + index} href={href} passHref>
-                <div className="relative cursor-pointer group w-[360px] h-[360px] inline-block bg-gradient-to-t from-accent/10 to-white border border-[#9EC3CE] rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:scale-105">
+                <div className="relative cursor-pointer group w-[160px] h-[160px] md:w-[360px] md:h-[360px]  inline-block bg-gradient-to-t from-accent/10 to-white border border-[#9EC3CE] rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:scale-105">
                   <ImageWithPlaceholder
                     src={imgSrc}
                     className="w-full h-full object-cover object-center"
@@ -28,9 +28,9 @@ export default function BentoGrid() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 90vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 transition duration-300"></div>
-                  <div className="absolute bottom-6 right-6 flex flex-col items-start text-white" dir="rtl">
-                    <span className="text-xl font-semibold mb-1">{title}</span>
-                    <span className="text-sm opacity-80">{description}</span>
+                  <div className="absolute bottom-2 right-3 md:bottom-6 md:right-6 flex flex-col items-start text-white" dir="rtl">
+                    <span className=" text-sm md:text-xl font-semibold mb-1">{title}</span>
+                    <span className="hidden md:block text-sm  opacity-80">{description}</span>
                   </div>
                 </div>
               </Link>

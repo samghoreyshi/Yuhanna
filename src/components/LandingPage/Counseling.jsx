@@ -30,7 +30,7 @@ export default function CounselingDetailedClean() {
     return (
         // Section: Added subtle pattern via style prop (or use Tailwind config/CSS)
         <section
-            className="w-full px-6 sm:px-12 md:px-20 lg:px-28 xl:px-48 py-20 lg:py-28 bg-white"
+            className="w-full px-6 sm:px-12 md:px-20 lg:px-28 xl:px-48  py-5 md:py-20  lg:py-28 bg-white"
             style={backgroundPatternStyle} // Apply the subtle background pattern
         >
             <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row justify-between gap-12 lg:gap-16 xl:gap-24 items-center">
@@ -47,7 +47,7 @@ export default function CounselingDetailedClean() {
                         یک مشاور خوب راه رو برات باز میکنه...
                     </h2>
                     {/* Paragraph: Clear, readable text */}
-                    <p className='w-full text-justify text-base text-slate-600 leading-relaxed mt-4'>
+                    <p className='w-full text-justify text-[clamp(12px,3vw,18px)] text-slate-600 leading-relaxed mt-4'>
                         در خانه مشاوره، ما با استفاده از روش‌های علمی و به‌روز، به شما کمک می‌کنیم تا استعدادها و علایق واقعی خود را کشف کنید. از برنامه‌ریزی درسی شخصی‌سازی‌شده و آموزش مهارت‌های کلیدی مطالعه گرفته تا مدیریت استرس و آمادگی برای انتخاب رشته، ما در هر قدم همراه شما هستیم تا با اطمینان و آرامش به سوی اهداف‌تان حرکت کنید.
                     </p>
 

@@ -30,7 +30,7 @@ export default function CounselingDetailedClean() {
     return (
         // Section: Added subtle pattern via style prop (or use Tailwind config/CSS)
         <section
-            className="w-full px-6 sm:px-12 md:px-20 lg:px-28 xl:px-48 py-20 lg:py-28 bg-white"
+            className="w-full px-6 sm:px-12 md:px-20 lg:px-28 xl:px-48  py-5 md:py-20 lg:py-28 bg-white"
             style={backgroundPatternStyle} // Apply the subtle background pattern
         >
             <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row justify-between gap-12 lg:gap-16 xl:gap-24 items-center">
@@ -47,7 +47,7 @@ export default function CounselingDetailedClean() {
                         یک معلم خوب بهت انگیزه میده...
                     </h2>
                     {/* Paragraph: Clear, readable text */}
-                    <p className='w-full text-justify text-base text-slate-600 leading-relaxed mt-4'>
+                    <p className='w-full text-justify text-[clamp(12px,3vw,18px)] text-slate-600 leading-relaxed mt-4'>
                         خانه آموزش، بر خلاف چیزی که ممکنه از اسمش برداشت کنید، صرفاً یه برنامه کلاس هفتگی و ماهیانه روتین و از پیش تعیین‌شده نیست، بلکه مجموعه‌ای از کارگاه‌های آموزشی دقیق، منظم و متنوعه که منحصراً تکنیک شما برنامه‌ریزی میشه و ماه به ماه. اینجا بعد از تعیین سطح اولیه (که ناگفته پیداست با روش و آزمون‌های علمی و توسط ما آنالیز سطح دانش)، هدفتون بر اساس میزان مهارتتون تو هر سطح به برنامه آموزشی شخصی براتون چیده میشه تا برای بخش‌هایی که مهارت کمتری در اونها دارید، زمان بیشتری داشته باشید. با این روش، نه تعداد جلسه‌های کلاس متناسب با نیاز خود شما تعیین شده تا حضورتون در کلاس‌هایی که اونها رو بلد دارین، زمان و انرژی صرفه‌جویی کنه، پشتیبانی هم در همه مراحل، عملکردتون رو گیلد و بعد از هر جلسه آموزشی با آزمون‌های QT به دقت تحلیل و پیگیری می‌کنه تا بفهمیم کجا نیاز به صرف وقت و انرژی بیشتری دارید و هم بتونیم در اون قسمت‌ها پیشرفتتون سرعت بیشتری بدیم. کلاس‌ها کارگاه‌محور، تا کمترین توجه روی جزئیات مباحث هر درس تمرکز کنید و برای باقی قسمت‌ها ذهن بازتری داشته باشید.                    </p>
 
                     {/* Subtle Separator */}
