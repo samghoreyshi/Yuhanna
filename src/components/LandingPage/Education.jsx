@@ -55,7 +55,7 @@ export default function CounselingDetailedClean() {
                     <hr className="w-1/3 mx-auto sm:mx-0 my-6 border-t border-slate-300/70" />
 
                     {/* ---- Tags & CTA Area - Enhanced for Better Balance ---- */}
-                    <div className='flex flex-col sm:flex-row items-center justify-start gap-x-5 gap-y-4 mt-4 flex-wrap'>
+                    <div className='flex flex-col sm:flex-row items-start justify-start gap-x-5 gap-y-4 mt-4 flex-wrap'>
                         {/* ---- Primary CTA Button ---- */}
                         <button className='group inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-accent rounded-lg shadow-sm transition-all duration-300 ease-in-out hover:bg-gradient-to-br hover:from-accent hover:to-blue-600 hover:shadow-md hover:translate-y-[-1px] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent'>
                             <span className="flex items-center">
