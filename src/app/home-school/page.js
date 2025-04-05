@@ -386,9 +386,9 @@ export default function Homeschooling() {
                     {/* Text Content */}
                     <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-right">
                         <h1 className="text-[clamp(28px,7vw,50px)] sm:text-[clamp(32px,5vw,40px)] text-secondary font-extrabold leading-tight sm:leading-tight mb-6">
-                            هـــــوم اِسکـــول
-                            <br className="hidden md:block" />
-                            آموزش در <span className="relative text-accent inline-block px-1">محیط دلخواه</span> شما
+                             هـــــوم اِسکـــول       
+                            <br className="block" />
+                              آموزش در <span className="relative mt-2 text-accent inline-block px-1">محیط دلخواه</span> شما
                         </h1>
                         <p className="text-[clamp(15px,3vw,18px)] text-slate-600 max-w-2xl text-center md:text-justify leading-relaxed mb-8">
                             کلاس‌های آموزشی <span className="font-semibold text-slate-700">انعطاف‌پذیر</span> در محل موردنظر شما (آنلاین یا حضوری)، با برنامه درسی <span className="font-semibold text-slate-700">شخصی‌سازی‌شده</span> و امکان شرکت در امتحانات مدارس تعیین‌شده برای دریافت مدرک رسمی. بهترین مسیر برای شکوفایی استعدادهای فرزندتان را با یوحنا تجربه کنید.
