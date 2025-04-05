@@ -1,4 +1,5 @@
 import ImageWithPlaceholder from '@/components/ImageWithPlaceholder'
+import Link from "next/link"
 // Using outline icons again
 // import { AcademicCapIcon, SparklesIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
 
@@ -55,7 +56,7 @@ export default function CounselingDetailedClean() {
 
                     {/* ---- Tags & CTA Area - Enhanced for Better Balance ---- */}
                     <div className='flex flex-col sm:flex-row items-center justify-start gap-x-5 gap-y-4 mt-4 flex-wrap'>
-                        {/* ---- CTA Button with Enhanced Hover Effects ---- */}
+                        {/* ---- Primary CTA Button ---- */}
                         <button className='group inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-accent rounded-lg shadow-sm transition-all duration-300 ease-in-out hover:bg-gradient-to-br hover:from-accent hover:to-blue-600 hover:shadow-md hover:translate-y-[-1px] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent'>
                             <span className="flex items-center">
                                 ثبت نام در کلاس ها
@@ -65,9 +66,22 @@ export default function CounselingDetailedClean() {
                             </span>
                         </button>
 
+                        {/* ---- Secondary CTA Button (Outline Style) ---- */}
+                        <Link href="/home-school" className='w-full sm:w-auto'>
+                            <button className='group inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-accent bg-transparent border border-accent rounded-lg transition-all duration-300 ease-in-out hover:bg-accent hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent'>
+                                <span className="flex items-center">
+                                    مشاهده جزئیات
+                                </span>
+                            </button>
+                        </Link>
+
                         {/* ---- Tags with Enhanced Styling ---- */}
                         <div className='flex items-center gap-3 flex-wrap'>
-              
+                            {/* {tags && tags.map((tag) => (
+                          <span key={tag} className='px-3 py-1 text-sm font-medium text-gray-600 bg-gray-100 rounded-full shadow-sm hover:bg-gray-200 transition-colors duration-200'>
+                              {tag}
+                          </span>
+                      ))} */}
                         </div>
                     </div>
                     {/* ---- End Enhanced Tags & CTA ---- */}

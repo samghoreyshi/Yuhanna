@@ -76,7 +76,7 @@ export default function Pension() {
                             <br className="hidden md:block" />
                             <span className="relative text-accent inline-block px-1">حضوری</span> خانه یوحــــنا
                         </h1>
-                        <p className="text-[clamp(15px,3vw,18px)] text-slate-600 max-w-2xl md:text-justify leading-relaxed mb-8">
+                        <p className="text-[clamp(15px,3vw,18px)] text-slate-600 max-w-2xl text-center md:text-justify leading-relaxed mb-8">
                             اگر به دنبال یک محیط <span className="font-semibold text-slate-700">آرام، منظم و پرانرژی</span> برای مطالعه و آمادگی کنکور هستید، پانسیون مطالعاتی حضوری ما بهترین انتخاب برای شماست!
                             اینجا، شما در یک فضای <span className="font-semibold text-slate-700">اختصاصی و حرفه‌ای</span> بدون حواس‌پرتی، می‌توانید با تمرکز کامل درس بخوانید.
                             با <span className="font-semibold text-slate-700">برنامه‌ریزی و نظارت روزانه</span>، مدیریت زمان و سیستم‌های هوشمند، بهره‌وری شما به حداکثر می‌رسد.

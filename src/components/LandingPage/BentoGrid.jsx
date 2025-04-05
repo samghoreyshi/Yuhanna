@@ -20,7 +20,7 @@ export default function BentoGrid() {
           <div className="flex gap-2 items-center animate-marquee overflow-visible py-5">
             {[...cardData, ...cardData, ...cardData].map(({ id, href, imgSrc, title, description }, index) => (
               <Link key={id + '-' + index} href={href} passHref>
-                <div className="relative cursor-pointer group w-[160px] h-[160px] md:w-[360px] md:h-[360px]  inline-block bg-gradient-to-t from-accent/10 to-white border border-[#9EC3CE] rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:scale-105">
+                <div className="relative cursor-pointer group w-[160px] h-[160px] md:w-[260px] md:h-[260px]  inline-block bg-gradient-to-t from-accent/10 to-white border border-[#9EC3CE] rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:scale-105">
                   <ImageWithPlaceholder
                     src={imgSrc}
                     className="w-full h-full object-cover object-center"

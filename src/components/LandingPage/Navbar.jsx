@@ -85,9 +85,10 @@ export default function Navbar() {
     // --- Menu Items Data ---
     const MenuItems = [
         { id: 1, title: "صفحه نخست", href: "/", subMenu: false, icon: false, iconPath: null, },
-        { id: 8, title: "مقالات و اخبار", href: "/blog", subMenu: false, icon: false, iconPath: null, },
+        { id: 3, title: "مقالات و اخبار", href: "/blog", subMenu: false, icon: false, iconPath: null, },
+        { id: 8, title: "خانه آموزش", href: "/home-school", subMenu: false, icon: false, iconPath: null, },
         {
-            id: 2, title: "پانسیون‌ها", href: "#", subMenu: true, icon: true, iconPath: "/icons/navbar/arrow-down.svg", subMenuItems: [
+            id: 2, title: "خانه مطالعه", href: "#", subMenu: true, icon: true, iconPath: "/icons/navbar/arrow-down.svg", subMenuItems: [
                 { id: 41, title: "پانسیون حضوری", subTitle: "فضای مطالعه اختصاصی", href: "/pension-inperson", icon: "/icons/navbar/inp.svg", },
                 { id: 42, title: "پانسیون آنلاین", subTitle: "پلتفرم آنلاین مطالعاتی", href: "/pension-online", icon: "/icons/navbar/online.svg", },
             ]
